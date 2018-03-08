@@ -1,0 +1,111 @@
+@startuml
+!include design.plantuml.txt
+
+title EPR_QueryingGovernmentServices MPI/CPI/HPD
+
+box "Patient Portal" #B9C0B8
+	participant pp_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
+	participant pp_svs_value_set_consumer as "Value \nSet \nConsumer"
+	participant pp_atna_secure_node as "Secure \nNode"
+end box
+
+box "Health Professional Portal" #DCBEC7
+	participant ps_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
+'	participant ps_hpd_provider_info_source as "Provider \nInformation \nSource"
+	participant ps_svs_value_set_consumer as "Value \nSet \nConsumer"
+	participant ps_atna_secure_node as "Secure \nNode"
+end box
+
+box "Community Components" #FFEFDE
+	participant cc_atna_ar as "Audit \nRecord \nRepository"
+	participant cc_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
+'	participant cc_hpd_provider_info_source as "Provider \nInformation \nSource"
+	participant cc_hpd_provider_info_directory as "Provider \nInformation \nDirectory"
+	participant cc_svs_value_set_consumer as "Value \nSet \nConsumer"
+	participant cc_atna_secure_node as "Secure \nNode"
+	participant cc_cpi_consumer as "CPI\nConsumer"
+end box
+
+box "Government Services" #E2F3F8
+	participant gs_mdi as "Metadata \nIndex \nService"
+	participant gs_hpd as "Healthcare \nProvider \nDirectory"
+	participant gs_cpi as "CPI\nProvider"
+end box
+
+pp_svs_value_set_consumer -> gs_mdi : [ITI-48] Retrieve Value Sets
+activate pp_svs_value_set_consumer
+activate gs_mdi
+gs_mdi -> pp_svs_value_set_consumer : [ITI-48] Retrieve Value Sets Response
+deactivate gs_mdi
+
+pp_svs_value_set_consumer -> gs_mdi : [ITI-60] Retrieve Multiple Value Sets
+activate gs_mdi
+gs_mdi -> pp_svs_value_set_consumer : [ITI-60] Retrieve Multiple Value Sets Response
+deactivate gs_mdi
+
+deactivate pp_svs_value_set_consumer
+
+ps_svs_value_set_consumer -> gs_mdi : [ITI-48] Retrieve Value Sets
+activate ps_svs_value_set_consumer  
+activate gs_mdi
+gs_mdi -> ps_svs_value_set_consumer: [ITI-48] Retrieve Value Sets Response
+deactivate gs_mdi
+
+ps_svs_value_set_consumer -> gs_mdi : [ITI-60] Retrieve Multiple Value Sets
+activate gs_mdi
+gs_mdi -> ps_svs_value_set_consumer : [ITI-60] Retrieve Multiple Value Sets Response
+deactivate gs_mdi
+deactivate ps_svs_value_set_consumer
+
+cc_svs_value_set_consumer -> gs_mdi : [ITI-48] Retrieve Value Sets
+activate cc_svs_value_set_consumer
+activate gs_mdi
+gs_mdi -> cc_svs_value_set_consumer: [ITI-48] Retrieve Value Sets Response
+deactivate gs_mdi
+cc_svs_value_set_consumer -> gs_mdi : [ITI-60] Retrieve Multiple Value Sets
+activate gs_mdi
+gs_mdi -> cc_svs_value_set_consumer : [ITI-60] Retrieve Multiple Value Sets Response
+deactivate gs_mdi
+deactivate cc_svs_value_set_consumer
+
+cc_cpi_consumer -> gs_cpi : [CH:CIQ] Community Information Query 
+activate cc_cpi_consumer
+activate gs_cpi
+gs_cpi -> cc_cpi_consumer: [CH:CIQ] Community Information Query Response
+deactivate gs_cpi
+cc_cpi_consumer -> gs_cpi : [CH:CIDD] Community Information Delta Download
+activate gs_cpi
+gs_cpi -> cc_cpi_consumer : [CH:CIDD] Community Information Delta Download Response
+deactivate gs_cpi
+deactivate cc_cpi_consumer
+
+pp_hpd_provider_info_consumer -> cc_hpd_provider_info_directory : [ITI-58] Provider Information Query Request
+activate pp_hpd_provider_info_consumer
+activate cc_hpd_provider_info_directory
+pp_hpd_provider_info_consumer <- cc_hpd_provider_info_directory : [ITI-58] Provider Information Query Response
+deactivate cc_hpd_provider_info_directory
+deactivate pp_hpd_provider_info_consumer
+
+ps_hpd_provider_info_consumer -> cc_hpd_provider_info_directory : [ITI-58] Provider Information Query Request
+activate ps_hpd_provider_info_consumer
+activate cc_hpd_provider_info_directory
+ps_hpd_provider_info_consumer <- cc_hpd_provider_info_directory : [ITI-58] Provider Information Query Response
+deactivate cc_hpd_provider_info_directory
+deactivate ps_hpd_provider_info_consumer
+
+cc_hpd_provider_info_consumer -> gs_hpd : [ITI-58] Provider Information Query Request
+activate cc_hpd_provider_info_consumer
+activate gs_hpd
+cc_hpd_provider_info_consumer <- gs_hpd : [ITI-58] Provider Information Query Response
+deactivate gs_hpd
+deactivate cc_hpd_provider_info_consumer
+
+cc_hpd_provider_info_consumer -> gs_hpd : [CH:PIDD] Provider Information Delta Download
+activate cc_hpd_provider_info_consumer
+activate gs_hpd
+cc_hpd_provider_info_consumer <- gs_hpd : [CH:PIDD] Provider Information Delta Download Response
+deactivate gs_hpd
+deactivate cc_hpd_provider_info_consumer
+
+
+@enduml 

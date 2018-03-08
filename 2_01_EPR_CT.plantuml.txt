@@ -1,0 +1,73 @@
+@startuml
+!include design.plantuml.txt
+title 2.1 EPR_CT\nRequirements on CT Profile for Swiss Time Service
+
+box "Patient Portal" #B9C0B8
+	participant pp_ct_time_client as "Time Client"
+end box
+
+box "Health Professional Portal" #DCBEC7
+	participant ps_ct_time_client as "Time Client"
+end box
+
+box "Community Components" #FFEFDE
+	participant cc_ct_time_client as "Time Client"
+end box
+
+box "Secondary Systems" #F7A69E
+	participant ss_ct_time_client as "Time Client"
+end box
+
+box "Government Services HPD" #E2F3F8
+	participant gs_hpd_ct_time_client as "Time Client"
+end box
+
+box "Government Services MDI" #E2F3F8
+	participant gs_mdi_ct_time_client as "Time Client"
+end box
+
+box "Government Services CPI" #E2F3F8
+	participant gs_cpi_ct_time_client as "Time Client"
+end box
+
+box "Government Services Time Server" #E2F3F8
+	participant gs_ts as "Time Server"
+end box
+
+pp_ct_time_client -> gs_ts: [ITI-1] Maintain Time Request
+activate gs_ts
+pp_ct_time_client <- gs_ts: [ITI-1] Maintain Time Response
+deactivate gs_ts
+
+ps_ct_time_client -> gs_ts: [ITI-1] Maintain Time Request
+activate gs_ts
+ps_ct_time_client <- gs_ts: [ITI-1] Maintain Time Response
+deactivate gs_ts
+
+cc_ct_time_client -> gs_ts: [ITI-1] Maintain Time Request
+activate gs_ts
+cc_ct_time_client <- gs_ts: [ITI-1] Maintain Time Response
+deactivate gs_ts
+
+ss_ct_time_client -> gs_ts: [ITI-1] Maintain Time Request
+activate gs_ts
+ss_ct_time_client <- gs_ts: [ITI-1] Maintain Time Response
+deactivate gs_ts
+
+gs_hpd_ct_time_client -> gs_ts: [ITI-1] Maintain Time Request
+activate gs_ts
+gs_hpd_ct_time_client <- gs_ts: [ITI-1] Maintain Time Response
+deactivate gs_ts
+
+gs_mdi_ct_time_client -> gs_ts: [ITI-1] Maintain Time Request
+activate gs_ts
+gs_mdi_ct_time_client <- gs_ts: [ITI-1] Maintain Time Response
+deactivate gs_ts
+
+gs_cpi_ct_time_client -> gs_ts: [ITI-1] Maintain Time Request
+activate gs_ts
+gs_cpi_ct_time_client <- gs_ts: [ITI-1] Maintain Time Response
+deactivate gs_ts
+
+
+@enduml 

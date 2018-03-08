@@ -1,0 +1,40 @@
+@startuml
+!include design.plantuml.txt
+title 1.16 EPR_PatientEPRInactivate
+
+actor admin as "Operator"
+
+box "Community Components" #FFEFDE
+  participant cc_upi_client as "UPI Client"
+  end box
+
+box "Government Services" #E2F3F8
+	participant gs_upi as "Unique Person Identification Service" 
+end box
+
+box "Other Communities" #91D2E8
+  participant oc_upi_client as "UPI Client"
+end box
+
+
+activate gs_upi
+
+gs_upi -> cc_upi_client: eCH-0215: Make broadcast to reference community about 2 active EPR-SPID
+activate cc_upi_client
+
+cc_upi_client -> admin
+admin -> cc_upi_client: Decide which should be inactivated
+
+cc_upi_client->gs_upi: eCH-0213: [EPR-SPID] to be inactivated
+deactivate gs_upi
+
+gs_upi -> oc_upi_client: eCH-0215: Make broadcast to all communities to inactivate EPR for patient [EPR-SPID]
+activate gs_upi
+
+gs_upi -> cc_upi_client: eCH-0215: Make broadcast to all communities to inactivate EPR for patient [EPR-SPID]
+deactivate gs_upi
+cc_upi_client -> admin: Perform inactivation within community (replace inactive EPR-SPID with active EPR-SPID)
+deactivate cc_upi_client
+
+
+@enduml 

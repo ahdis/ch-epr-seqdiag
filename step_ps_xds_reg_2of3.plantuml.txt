@@ -1,0 +1,29 @@
+ps_gui -> ps_doc_consumer: retrieve documents within others communities
+activate ps_doc_consumer
+ps_doc_consumer -> cc_ig: [ITI-18] Registry Stored Query for document entries for patient [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_ig
+
+loop over all responding gateways
+  cc_ig -> xc_rg: [ITI-55] Cross Patient Discovery Request [EPR-SPID]
+  note right: Handling of the Authorization \ndecision is done in the remote \ncommunity and not displayed here
+  activate xc_rg
+  cc_ig <- xc_rg: [ITI-55] Cross Patient Discovery Response [MPI_B-PID, homeCommunityId] 
+  cc_ig -> xc_rg: [ITI-38] Cross Gateway Query [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  cc_ig <- xc_rg: [ITI-38] Cross Gateway Response
+  deactivate xc_rg
+end
+  ps_doc_consumer <- cc_ig: [ITI-18] Registry Stored Query Response
+deactivate cc_ig
+
+loop over all document entries received
+  ps_doc_consumer -> cc_ig: [ITI-43] Retrieve Document Set Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate cc_ig
+  cc_ig -> xc_rg: [ITI-39] Cross Gateway Retrieve [homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate xc_rg
+  cc_ig <- xc_rg: [ITI-39] Cross Gateway Retrieve Response
+  deactivate xc_rg
+  ps_doc_consumer <- cc_ig: [ITI-43] Retrieve Document Set Response
+  deactivate cc_ig
+end  
+ps_gui <- ps_doc_consumer
+deactivate ps_doc_consumer

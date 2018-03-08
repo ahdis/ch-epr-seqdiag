@@ -1,0 +1,8 @@
+ps_gui -> ps_x_service_user : get XUA Assertion
+activate ps_x_service_user
+ps_x_service_user -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions [EPR-SPID]
+activate cc_x_assertion_provider
+ps_x_service_user <- cc_x_assertion_provider: CH:XUA Get-XUser Assertions Response [EPR-SPID] according to CH:XUA
+deactivate cc_x_assertion_provider
+ps_gui <- ps_x_service_user
+deactivate ps_x_service_user

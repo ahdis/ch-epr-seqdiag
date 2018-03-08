@@ -1,0 +1,26 @@
+ps_gui -> ps_doc_consumer
+activate ps_doc_consumer
+ps_doc_consumer -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_doc_registry
+loop policy enforcing from remote community
+  cc_doc_registry -> xc_adp: XADR Cross-Community Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate xc_adp
+  cc_doc_registry <- xc_adp: XADR Cross-Community Authorization Decision Response
+  deactivate xc_adp
+end  
+ps_doc_consumer <- cc_doc_registry: [ITI-18] Registry Stored Query Response
+deactivate cc_doc_registry
+loop
+  ps_doc_consumer -> ss_doc_repository: [ITI-43] Retrieve Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate ss_doc_repository
+  loop policy enforcing from remote community
+    ss_doc_repository -> xc_adp: XADR Cross-Community Authorization Decision Request\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+    activate xc_adp
+    ss_doc_repository <- xc_adp: XADR Cross-Community Authorization Decision Response
+    deactivate xc_adp
+  end  
+  ps_doc_consumer <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
+  deactivate ss_doc_repository
+end
+ps_gui <- ps_doc_consumer
+deactivate ps_doc_consumer

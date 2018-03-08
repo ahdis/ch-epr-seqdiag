@@ -1,0 +1,44 @@
+@startuml
+!include design.plantuml.txt
+title 1.15 EPR_PatientQueryByDemographicsOrSSN
+
+actor admin as "Operator"
+
+box "Community Components" #FFEFDE
+	participant cc_upi_client as "UPI Client"
+end box
+
+box "Government Services" #E2F3F8
+	participant gs_upi as "Unique Person Identification Service" 
+end box
+
+== Query by demographics ==
+
+admin -> cc_upi_client: Query by demographics
+activate cc_upi_client
+cc_upi_client->gs_upi:eCH-0214:  Input demographic attributes of the patient
+activate gs_upi
+cc_upi_client<-gs_upi:eCH-0214:  Response SSN (Social Security Number), EPR-SPID and demographics for the patient 
+deactivate gs_upi
+admin<-cc_upi_client
+deactivate cc_upi_client
+
+== Query EPR-SPID by SSN ==
+
+admin -> cc_upi_client: Query EPR-SPID by SSN
+activate cc_upi_client
+cc_upi_client->gs_upi:eCH-0214:  Input SSN (Social Security Number) 
+activate gs_upi
+cc_upi_client<-gs_upi:eCH-0214:  Response SSN (Social Security Number), EPR-SPID and demographics for the patient 
+deactivate gs_upi
+admin<-cc_upi_client
+
+deactivate cc_upi_client
+
+
+note right admin
+  You can use the SSN (Social Security Number) under Article 50c AHVG for:
+  A. Retrieving the EPR-SPID from the Unique Person Identification Service of the Central Compensation Office (CCO);
+  B. The correct assignment of the EPR-SPID.
+end note
+@enduml 

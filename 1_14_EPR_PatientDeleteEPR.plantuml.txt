@@ -1,0 +1,73 @@
+@startuml
+!include design.plantuml.txt
+title 1.14 EPR_PatientDeleteEPR
+
+actor admin as "Operator"
+
+box "Community Components" #FFEFDE
+	participant cc_upi_client as "UPI Client"
+  participant cc_doc_admin as "Document Administrator"
+	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
+  participant cc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
+	participant cc_ppq_policy_repository as "Policy Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User"
+end box
+
+box "Government Services" #E2F3F8
+	participant gs_upi as "Unique Person Identification Service" 
+end box
+
+box "Other Communities" #91D2E8
+  participant oc_upi_client as "UPI Client"
+end box
+
+note right cc_upi_client:  eCH-0213, eCH-0214 need a sedex certificate\neCH-0215 needs a sedex client 
+
+admin -> cc_upi_client: Inform that patient has renounced his EPR
+activate cc_upi_client
+cc_upi_client->gs_upi: eCH-0213: cancel [EPR-SPID]
+activate gs_upi
+
+deactivate cc_upi_client
+deactivate gs_upi
+
+gs_upi -> oc_upi_client: eCH-0215: Make cancellation message broadcast to all communities to inactivate EPR for patient [EPR-SPID]
+
+activate gs_upi
+
+gs_upi -> cc_upi_client: eCH-0215: Make cancellation message  broadcast to all communities to delete EPR for patient [EPR-SPID]
+activate cc_upi_client
+deactivate gs_upi
+
+opt optional transactions
+cc_upi_client -> cc_doc_admin: Delete all documents in \ncommunity (tbd: EPR_PatientDeleteDocument deprecated)
+activate cc_doc_admin
+cc_upi_client <- cc_doc_admin:  Delete all documents Response
+deactivate cc_doc_admin
+
+cc_upi_client -> cc_mpi_x_ref_manager: Delete patient in MPI [ITI-44]
+activate cc_mpi_x_ref_manager
+loop
+cc_mpi_x_ref_manager -> cc_pix_x_ref_consumer: Update Notfications for Consumer [ITI-46]
+activate cc_pix_x_ref_consumer
+cc_mpi_x_ref_manager <- cc_pix_x_ref_consumer: Update Notification Response
+deactivate cc_pix_x_ref_consumer
+end
+cc_upi_client <- cc_mpi_x_ref_manager
+deactivate cc_mpi_x_ref_manager
+
+note right cc_upi_client: can all policies for a paitent be deleted with Delete Policy Request?
+  cc_upi_client -> cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Requests for patient [EPR-SPID]
+  activate cc_ppq_policy_repository
+  cc_upi_client <- cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Request Response
+  deactivate cc_ppq_policy_repository
+
+deactivate cc_upi_client
+
+end
+
+cc_upi_client -> admin
+
+
+note right admin: tests for deletion of all data
+
+@enduml 

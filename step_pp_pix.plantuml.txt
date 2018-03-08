@@ -1,0 +1,8 @@
+pp_gui -> pp_pix_x_ref_consumer: query MPI_A-PID from MPI using local ID in portal
+activate pp_pix_x_ref_consumer
+pp_pix_x_ref_consumer -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [local ID]
+activate cc_mpi_x_ref_manager
+pp_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
+deactivate cc_mpi_x_ref_manager
+pp_gui <- pp_pix_x_ref_consumer
+deactivate pp_pix_x_ref_consumer

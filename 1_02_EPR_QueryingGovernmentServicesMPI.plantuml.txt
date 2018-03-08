@@ -1,0 +1,59 @@
+@startuml
+!include design.plantuml.txt
+
+title EPR_QueryingGovernmentServices MPI
+
+box "Patient Portal" #B9C0B8
+	participant pp_svs_value_set_consumer as "Value \nSet \nConsumer"
+end box
+
+box "Health Professional Portal" #DCBEC7
+	participant ps_svs_value_set_consumer as "Value \nSet \nConsumer"
+end box
+
+box "Community Components" #FFEFDE
+	participant cc_svs_value_set_consumer as "Value \nSet \nConsumer"
+end box
+
+box "Government Services" #E2F3F8
+	participant gs_mdi as "Metadata \nIndex \nService"
+end box
+
+pp_svs_value_set_consumer -> gs_mdi : [ITI-48] Retrieve Value Sets
+activate pp_svs_value_set_consumer
+activate gs_mdi
+gs_mdi -> pp_svs_value_set_consumer : [ITI-48] Retrieve Value Sets Response
+deactivate gs_mdi
+
+pp_svs_value_set_consumer -> gs_mdi : [ITI-60] Retrieve Multiple Value Sets
+activate gs_mdi
+gs_mdi -> pp_svs_value_set_consumer : [ITI-60] Retrieve Multiple Value Sets Response
+deactivate gs_mdi
+
+deactivate pp_svs_value_set_consumer
+
+ps_svs_value_set_consumer -> gs_mdi : [ITI-48] Retrieve Value Sets
+activate ps_svs_value_set_consumer  
+activate gs_mdi
+gs_mdi -> ps_svs_value_set_consumer: [ITI-48] Retrieve Value Sets Response
+deactivate gs_mdi
+
+ps_svs_value_set_consumer -> gs_mdi : [ITI-60] Retrieve Multiple Value Sets
+activate gs_mdi
+gs_mdi -> ps_svs_value_set_consumer : [ITI-60] Retrieve Multiple Value Sets Response
+deactivate gs_mdi
+deactivate ps_svs_value_set_consumer
+
+cc_svs_value_set_consumer -> gs_mdi : [ITI-48] Retrieve Value Sets
+activate cc_svs_value_set_consumer
+activate gs_mdi
+gs_mdi -> cc_svs_value_set_consumer: [ITI-48] Retrieve Value Sets Response
+deactivate gs_mdi
+cc_svs_value_set_consumer -> gs_mdi : [ITI-60] Retrieve Multiple Value Sets
+activate gs_mdi
+gs_mdi -> cc_svs_value_set_consumer : [ITI-60] Retrieve Multiple Value Sets Response
+deactivate gs_mdi
+deactivate cc_svs_value_set_consumer
+
+
+@enduml 

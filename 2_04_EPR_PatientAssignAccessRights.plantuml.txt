@@ -1,0 +1,75 @@
+@startuml
+!include design.plantuml.txt
+title 2.4 EPR_PatientAssignAccessRights
+
+actor patient as  "Patient"
+
+box "Patient Portal" #B9C0B8
+	participant pp_gui as "Patient Portal"
+	participant pp_x_service_user as "X-Service User"
+	participant pp_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
+	participant pp_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
+	participant pp_ppq_policy_source as "Policy Source"
+end box
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
+end box
+
+box "Community Components" #FFEFDE
+  participant cc_hpd_provider_info_directory as "Provider \nInformation \nDirectory"
+	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
+  participant cc_x_assertion_provider as "X-Assertion Provider" 
+	participant cc_ppq_policy_repository as "Policy Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User"
+	participant cc_adp as "Authorization Decision Provider | X-Service Provider"
+end box
+
+box "Government Services" #E2F3F8
+	participant gs_hpd as "Healthcare \nProvider \nDirectory"
+end box
+
+
+patient -> pp_gui: Patient assign \naccess rights to \na health professional
+activate pp_gui
+
+!include step_pp_gui_saml.plantuml.txt
+
+pp_gui -> pp_hpd_provider_info_consumer:query Health Professional Directory
+activate pp_hpd_provider_info_consumer
+
+opt either health professional directory of community or government service
+pp_hpd_provider_info_consumer -> cc_hpd_provider_info_directory: [ITI-58] Provider Information Query Request
+activate cc_hpd_provider_info_directory
+pp_hpd_provider_info_consumer <- cc_hpd_provider_info_directory: [ITI-58] Provider Information Query Response
+deactivate cc_hpd_provider_info_directory
+else
+pp_hpd_provider_info_consumer -> gs_hpd: [ITI-58] Provider Information Query Request
+activate gs_hpd
+pp_hpd_provider_info_consumer <- gs_hpd: [ITI-58] Provider Information Query Response
+deactivate gs_hpd
+end
+
+pp_gui <- pp_hpd_provider_info_consumer
+deactivate pp_hpd_provider_info_consumer
+
+!include step_pp_pix.plantuml.txt
+
+!include step_pp_xua.plantuml.txt
+
+
+pp_gui -> pp_ppq_policy_source: assign access right 
+activate pp_ppq_policy_source
+pp_ppq_policy_source -> cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed, AddPolicyRequest modify access right for patient\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID] 
+activate cc_ppq_policy_repository
+cc_ppq_policy_repository -> cc_adp: ADR Authorization Decision Request (policy enforcing home community)\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+cc_ppq_policy_repository <- cc_adp: ADR Authorization Decision Response
+deactivate cc_adp
+
+pp_ppq_policy_source <- cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed, EPR AddPolicyRepsonse
+deactivate cc_ppq_policy_repository
+pp_gui <- pp_ppq_policy_source
+deactivate pp_ppq_policy_source
+patient <- pp_gui
+
+@enduml 

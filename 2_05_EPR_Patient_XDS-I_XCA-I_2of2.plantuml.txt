@@ -1,0 +1,95 @@
+@startuml
+
+
+!include design.plantuml.txt
+title 2.5 EPR_Patient_XDS-I/XCA-I: Note Maturity Level Specification/Revision started
+
+skinparam backgroundColor Orange
+
+actor patient as "Patient"
+
+box "Patient Portal" #B9C0B8
+	participant pp_gui as "Patient Portal"
+	participant pp_x_service_user as "X-Service User"
+	participant pp_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
+    participant pp_doc_consumer as "Document Consumer"
+	participant pp_img_doc_consumer as "Imaging Document Consumer"
+end box
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
+end box
+
+box "Community Components" #FFEFDE
+	participant cc_x_assertion_provider as "X-Assertion Provider" 
+	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
+	participant cc_ig as "Initiating Gateway" 
+	participant cc_img_ig as "Initiating Imaging Gateway" 
+end box
+
+box "Other Communities" #91D2E8
+	participant xc_rg as "Responding Gateway"
+	participant xc_img_rg as "Responding Imaging Gateway"
+	participant xc_img_docsource as "Imaging Document Source" 
+end box
+
+== downloading dicom images in the patient portal from another community (XCA-I) ==
+
+hp -> pp_gui
+activate pp_gui
+
+!include_many step_pp_gui_saml.plantuml.txt
+
+!include step_pp_pix.plantuml.txt
+
+!include_many step_pp_xua.plantuml.txt
+
+pp_gui -> pp_doc_consumer: retrieve documents within others communities
+activate pp_doc_consumer
+pp_doc_consumer -> cc_ig: [ITI-18] Registry Stored Query for document entries for patient [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_ig
+cc_ig -> xc_rg: [ITI-38] Cross Gateway Query [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate xc_rg
+cc_ig <- xc_rg: [ITI-38] Cross Gateway Response
+deactivate xc_rg
+
+pp_doc_consumer <- cc_ig: [ITI-18] Registry Stored Query Response
+deactivate cc_ig
+
+  pp_doc_consumer -> cc_ig: [ITI-43] Retrieve Document Set Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate cc_ig
+  cc_ig -> xc_rg: [ITI-39] Cross Gateway Retrieve [homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate xc_rg
+  cc_ig <- xc_rg: [ITI-39] Cross Gateway Retrieve Response
+  deactivate xc_rg
+  pp_doc_consumer <- cc_ig: [ITI-43] Retrieve Document Set Response
+deactivate cc_ig
+
+pp_doc_consumer -> pp_img_doc_consumer
+activate pp_img_doc_consumer
+
+pp_img_doc_consumer -> cc_img_ig: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_img_ig
+
+cc_img_ig -> xc_img_rg: [RAD-75] Cross Gateway Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate xc_img_rg
+xc_img_rg -> xc_img_docsource: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate xc_img_docsource
+xc_img_rg <- xc_img_docsource: [RAD-69] Retrieve Imaging Document Set Response
+deactivate xc_img_docsource
+cc_img_ig <- xc_img_rg: [RAD-75] Cross Gateway Retrieve Imaging Document Set Response
+deactivate xc_img_rg
+
+pp_img_doc_consumer <- cc_img_ig: [RAD-69] Retrieve Imaging Document Set Response
+deactivate cc_img_ig
+
+pp_doc_consumer <- pp_img_doc_consumer
+deactivate pp_img_doc_consumer
+
+pp_gui <- pp_doc_consumer
+deactivate pp_doc_consumer
+
+patient <- pp_gui
+deactivate pp_gui
+
+@enduml 

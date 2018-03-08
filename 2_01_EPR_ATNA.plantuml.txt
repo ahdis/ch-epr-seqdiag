@@ -1,0 +1,170 @@
+@startuml
+!include design.plantuml.txt
+title 2.1 EPR_ATNA\nCH:ATNA Requirements on ATNA, XDS.b and XCA Profiles for Audit Trail Consumption
+
+box "Patient Portal" #B9C0B8
+    participant pp_atna_secure_node as "Secure \nNode"
+end box
+
+box "Health Professional Portal" #DCBEC7
+    participant ps_atna_secure_node as "Secure \nNode"
+end box
+
+box "Community Components" #FFEFDE
+    participant cc_atna_secure_node as "Secure \nNode"
+    participant cc_atna_audit_repository as "Audit Repository\nAudit Record Repository"
+    participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
+end box
+
+box "Secondary Systems" #F7A69E
+    participant ss_atna_secure_node as "Secure \nNode"
+    participant ss_atna_audit_repository as "Audit Repository\nAudit Record Repository"
+end box
+
+box "Government Services HPD" #E2F3F8
+    participant gs_hpd_atna_secure_node as "Secure \nNode"
+end box
+
+box "Government Services MDI" #E2F3F8
+    participant gs_mdi_atna_secure_node as "Secure \nNode"
+end box
+
+box "Government Services CPI" #E2F3F8
+    participant gs_cpi_atna_secure_node as "Secure \nNode"
+end box
+
+box "Government Services Time Server" #E2F3F8
+    participant gs_ts_atna_secure_node as "Secure \nNode"
+end box
+
+==Patient Portal==
+
+pp_atna_secure_node -> cc_atna_secure_node: [ITI-19] Node Authentication Request
+activate cc_atna_secure_node
+pp_atna_secure_node <- cc_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate cc_atna_secure_node
+
+pp_atna_secure_node -> ss_atna_secure_node: [ITI-19] Node Authentication Request
+activate ss_atna_secure_node
+pp_atna_secure_node <- ss_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate ss_atna_secure_node
+
+pp_atna_secure_node -> gs_hpd_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_hpd_atna_secure_node
+pp_atna_secure_node <- gs_hpd_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_hpd_atna_secure_node
+
+pp_atna_secure_node -> gs_mdi_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_mdi_atna_secure_node
+pp_atna_secure_node <- gs_mdi_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_mdi_atna_secure_node
+
+pp_atna_secure_node -> gs_cpi_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_cpi_atna_secure_node
+pp_atna_secure_node <- gs_cpi_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_cpi_atna_secure_node
+
+pp_atna_secure_node -> gs_ts_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_ts_atna_secure_node
+pp_atna_secure_node <- gs_ts_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_ts_atna_secure_node
+
+pp_atna_secure_node -> cc_atna_audit_repository: [ITI-20] Record Audit Event Request
+activate cc_atna_audit_repository
+pp_atna_secure_node <- cc_atna_audit_repository: [ITI-20] Record Audit Event Response
+deactivate cc_atna_audit_repository
+
+==Health Professional Portal==
+
+ps_atna_secure_node -> cc_atna_secure_node: [ITI-19] Node Authentication Request
+activate cc_atna_secure_node
+ps_atna_secure_node <- cc_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate cc_atna_secure_node
+
+ps_atna_secure_node -> ss_atna_secure_node: [ITI-19] Node Authentication Request
+activate ss_atna_secure_node
+ps_atna_secure_node <- ss_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate ss_atna_secure_node
+
+ps_atna_secure_node -> gs_hpd_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_hpd_atna_secure_node
+ps_atna_secure_node <- gs_hpd_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_hpd_atna_secure_node
+
+ps_atna_secure_node -> gs_mdi_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_mdi_atna_secure_node
+ps_atna_secure_node <- gs_mdi_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_mdi_atna_secure_node
+
+ps_atna_secure_node -> gs_cpi_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_cpi_atna_secure_node
+ps_atna_secure_node <- gs_cpi_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_cpi_atna_secure_node
+
+ps_atna_secure_node -> gs_ts_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_ts_atna_secure_node
+ps_atna_secure_node <- gs_ts_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_ts_atna_secure_node
+
+ps_atna_secure_node -> cc_atna_audit_repository: [ITI-20] Record Audit Event Request
+activate cc_atna_audit_repository
+ps_atna_secure_node <- cc_atna_audit_repository: [ITI-20] Record Audit Event Response
+deactivate cc_atna_audit_repository
+
+==Community Components==
+
+cc_atna_secure_node -> ss_atna_secure_node: [ITI-19] Node Authentication Request
+activate ss_atna_secure_node
+cc_atna_secure_node <- ss_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate ss_atna_secure_node
+
+cc_atna_secure_node -> gs_hpd_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_hpd_atna_secure_node
+cc_atna_secure_node <- gs_hpd_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_hpd_atna_secure_node
+
+cc_atna_secure_node -> gs_mdi_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_mdi_atna_secure_node
+cc_atna_secure_node <- gs_mdi_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_mdi_atna_secure_node
+
+cc_atna_secure_node -> gs_cpi_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_cpi_atna_secure_node
+cc_atna_secure_node <- gs_cpi_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_cpi_atna_secure_node
+
+cc_atna_secure_node -> gs_ts_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_ts_atna_secure_node
+cc_atna_secure_node <- gs_ts_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_ts_atna_secure_node
+
+cc_atna_secure_node -> cc_atna_audit_repository: [ITI-20] Record Audit Event Request
+activate cc_atna_audit_repository
+cc_atna_secure_node <- cc_atna_audit_repository: [ITI-20] Record Audit Event Response
+deactivate cc_atna_audit_repository
+
+==Secondary Systems==
+
+ss_atna_secure_node -> cc_atna_secure_node: [ITI-19] Node Authentication Request
+activate cc_atna_secure_node
+ss_atna_secure_node <- cc_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate cc_atna_secure_node
+
+ss_atna_secure_node -> gs_ts_atna_secure_node: [ITI-19] Node Authentication Request
+activate gs_ts_atna_secure_node
+ss_atna_secure_node <- gs_ts_atna_secure_node: [ITI-19] Node Authentication Response
+deactivate gs_ts_atna_secure_node
+
+opt free to choose the audit repository
+ss_atna_secure_node -> ss_atna_audit_repository: [ITI-20] Record Audit Event Request
+activate ss_atna_audit_repository
+ss_atna_secure_node <- ss_atna_audit_repository: [ITI-20] Record Audit Event Response
+deactivate ss_atna_audit_repository
+else
+ss_atna_secure_node -> cc_atna_audit_repository: [ITI-20] Record Audit Event Request
+activate ss_atna_audit_repository
+ss_atna_secure_node <- cc_atna_audit_repository: [ITI-20] Record Audit Event Response
+deactivate ss_atna_audit_repository
+end
+
+@enduml 

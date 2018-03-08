@@ -1,0 +1,92 @@
+@startuml
+!include design.plantuml.txt
+title 2.5 EPR_XDS-I/XCA-I: Note Maturity Level Specification/Revision started
+
+skinparam backgroundColor Orange
+
+actor hp as "Health Professional"
+
+box "Health Professional Portal" #DCBEC7
+	participant ps_gui as "Health Professional Portal"
+	participant ps_x_service_user as "X-Service User"
+	participant ps_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
+	participant ps_doc_consumer as "Document Consumer"
+	participant ps_img_doc_consumer as "Imaging Document Consumer"
+end box
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
+end box
+
+box "Community Components" #FFEFDE
+	participant cc_mpi_patient_demographics_supplier as "Patient \nDemographics \nSupplier"
+	participant cc_x_assertion_provider as "X-Assertion Provider" 
+	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
+	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
+    participant cc_adp as "Authorization \nDecision \nProvider"
+end box
+
+box "Secondary Systems" #F7A69E
+	participant ss_doc_repository as "Document Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
+	participant ss_img_docsource as "Imaging Document Source" 
+end box
+
+hp -> ps_gui
+activate ps_gui
+
+!include_many step_ps_gui_saml.plantuml.txt
+
+!include step_ps_pix.plantuml.txt
+
+!include_many step_ps_xua.plantuml.txt
+
+ps_gui -> ps_doc_consumer: retrieve document entries
+activate ps_doc_consumer
+ps_doc_consumer -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_doc_registry
+  cc_doc_registry -> cc_adp: ADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate cc_adp
+  cc_doc_registry <- cc_adp: ADR Authorization Decision Response
+  deactivate cc_adp
+
+ps_doc_consumer <- cc_doc_registry: [ITI-18] Registry Stored Query Response for selecting study
+deactivate cc_doc_registry
+
+ps_doc_consumer -> ss_doc_repository: [ITI-43] Retrieve Document Set for DICOM Manifest (KOS)\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate ss_doc_repository
+note left cc_adp: not explicitly written in national extension\nbut repository needs policy enforcing also on [ITI-43]
+ss_doc_repository -> cc_adp: ADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+ss_doc_repository <- cc_adp: ADR Authorization Decision Response
+deactivate cc_adp
+ps_doc_consumer <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
+deactivate ss_doc_repository
+
+ps_doc_consumer -> ps_img_doc_consumer
+activate ps_img_doc_consumer
+
+opt retrieve images from source to display in browser
+	loop 
+	ps_img_doc_consumer -> ss_img_docsource: [RAD-55] WADO Retrieve
+	note left ss_img_docsource: WADO in discussion; will probably be deprecated
+	activate ss_img_docsource
+	ps_img_doc_consumer <- ss_img_docsource: [RAD-55] WADO Retrieve Response
+	deactivate ss_img_docsource
+	end
+else retrieve dicom objects
+	ps_img_doc_consumer -> ss_img_docsource: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+	activate ss_img_docsource
+	ps_img_doc_consumer <- ss_img_docsource: [RAD-69] Retrieve Imaging Document Set Response
+	deactivate ss_img_docsource
+end
+
+ps_doc_consumer <- ps_img_doc_consumer
+deactivate ps_img_doc_consumer
+
+ps_gui <- ps_doc_consumer
+deactivate ps_doc_consumer
+
+hp <- ps_gui
+deactivate ps_gui
+
+@enduml 

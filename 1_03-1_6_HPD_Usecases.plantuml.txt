@@ -1,0 +1,32 @@
+@startuml
+!include design.plantuml.txt
+
+title HPD Usecases
+
+box "Community Components" #FFEFDE
+	participant cc_hpd_provider_info_source as "Provider \nInformation \nSource"
+end box
+
+box "Government Services" #E2F3F8
+	participant gs_hpd as "Healthcare \nProvider \nDirectory"
+end box
+
+== 1.3 HPD_RegisterHP/HO==
+cc_hpd_provider_info_source -> gs_hpd: [ITI-59] Provider Information Feed Request
+activate gs_hpd
+cc_hpd_provider_info_source <- gs_hpd: [ITI-59] Provider Information Feed Response
+deactivate gs_hpd
+
+== 1.4 HPD_UpdateHP/HO==
+cc_hpd_provider_info_source -> gs_hpd: [ITI-59] Provider Information Feed Request
+activate gs_hpd
+cc_hpd_provider_info_source <- gs_hpd: [ITI-59] Provider Information Feed Response
+deactivate gs_hpd
+
+== 1.6 HPD_DeleteHP/HO==
+cc_hpd_provider_info_source -> gs_hpd: [ITI-59] Provider Information Feed Request
+activate gs_hpd
+cc_hpd_provider_info_source <- gs_hpd: [ITI-59] Provider Information Feed Response
+deactivate gs_hpd
+
+@enduml 

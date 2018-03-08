@@ -1,0 +1,39 @@
+@startuml
+!include design.plantuml.txt
+
+title EPR_QueryingGovernmentServices HPD
+
+box "Patient Portal" #B9C0B8
+	participant pp_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
+end box
+
+box "Health Professional Portal" #DCBEC7
+	participant ps_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
+end box
+
+box "Community Components" #FFEFDE
+	participant cc_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
+	participant cc_hpd_provider_info_directory as "Provider \nInformation \nDirectory"
+end box
+
+box "Government Services" #E2F3F8
+	participant gs_hpd as "Healthcare \nProvider \nDirectory"
+end box
+
+pp_hpd_provider_info_consumer -> cc_hpd_provider_info_directory : [ITI-58] Provider Information Query Request
+activate pp_hpd_provider_info_consumer
+activate cc_hpd_provider_info_directory
+pp_hpd_provider_info_consumer <- cc_hpd_provider_info_directory : [ITI-58] Provider Information Query Response
+deactivate cc_hpd_provider_info_directory
+deactivate pp_hpd_provider_info_consumer
+
+ps_hpd_provider_info_consumer -> cc_hpd_provider_info_directory : [ITI-58] Provider Information Query Request
+activate ps_hpd_provider_info_consumer
+activate cc_hpd_provider_info_directory
+ps_hpd_provider_info_consumer <- cc_hpd_provider_info_directory : [ITI-58] Provider Information Query Response
+deactivate cc_hpd_provider_info_directory
+deactivate ps_hpd_provider_info_consumer
+
+
+
+@enduml 

@@ -1,0 +1,23 @@
+@startuml
+!include design.plantuml.txt
+
+title EPR_CommunityInCircleOfTrust
+
+box "Community Components" #FFEFDE
+	participant cc_cpi_consumer as "CPI\nConsumer"
+end box
+
+box "Government Services" #E2F3F8
+	participant gs_cpi as "CPI\nProvider"
+end box
+
+cc_cpi_consumer -> gs_cpi : [CH:CPI] Query ComStatus Attribute of Community\n(https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2017/E/EPD_ZAD_CPI_Attribute_01.xlsx)
+activate cc_cpi_consumer
+activate gs_cpi
+gs_cpi -> cc_cpi_consumer: [CH:CPI] ComStatus Result of Community
+deactivate gs_cpi
+note right cc_cpi_consumer: If ComStatus is 'inactive' prohibit further communication with other community
+
+deactivate cc_cpi_consumer
+
+@enduml 

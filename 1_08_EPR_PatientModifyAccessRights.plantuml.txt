@@ -1,0 +1,68 @@
+@startuml
+!include design.plantuml.txt
+title 1.8 Patient Modify Access Rights
+
+actor patient as "Patient"
+
+box "Patient Portal" #B9C0B8
+	participant pp_gui as "Patient Portal"
+	participant pp_x_service_user as "X-Service User"
+	participant pp_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
+	participant pp_ppq_policy_consumer as "Policy Consumer"
+	participant pp_ppq_policy_source as "Policy Source"
+end box
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
+end box
+
+box "Community Components" #FFEFDE
+	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
+  participant cc_x_assertion_provider as "X-Assertion Provider" 
+	participant cc_ppq_policy_repository as "Policy Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User"
+	participant cc_adp as "Authorization Decision Provider \n| X-Service Provider"
+end box
+
+patient -> pp_gui: Patient queries access rights
+activate pp_gui
+
+!include step_pp_gui_saml.plantuml.txt
+
+!include step_pp_pix.plantuml.txt
+
+!include step_pp_xua.plantuml.txt
+
+pp_gui -> pp_ppq_policy_consumer: query access right 
+activate pp_ppq_policy_consumer
+pp_ppq_policy_consumer -> cc_ppq_policy_repository: Privacy Policy Retrieve Request [CH:PPQ-2]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID] 
+activate cc_ppq_policy_repository
+cc_ppq_policy_repository -> cc_adp: ADR Authorization Decision Request (policy enforcing home community)\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+cc_ppq_policy_repository <- cc_adp: ADR Authorization Decision Response
+deactivate cc_adp
+pp_ppq_policy_consumer <- cc_ppq_policy_repository: Privacy Policy Retrieve Reponse [CH:PPQ-2]
+deactivate cc_ppq_policy_repository
+pp_gui <- pp_ppq_policy_consumer
+deactivate pp_ppq_policy_consumer
+patient <- pp_gui
+
+loop
+patient -> pp_gui: Patient modifies access rights
+
+pp_gui -> pp_ppq_policy_source: modify access right 
+activate pp_ppq_policy_source
+pp_ppq_policy_source -> cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID] 
+activate cc_ppq_policy_repository
+cc_ppq_policy_repository -> cc_adp: ADR Authorization Decision Request (policy enforcing home community)\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+cc_ppq_policy_repository <- cc_adp: ADR Authorization Decision Response
+deactivate cc_adp
+
+pp_ppq_policy_source <- cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed Response
+deactivate cc_ppq_policy_repository
+pp_gui <- pp_ppq_policy_source
+deactivate pp_ppq_policy_source
+patient <- pp_gui
+end
+
+@enduml 

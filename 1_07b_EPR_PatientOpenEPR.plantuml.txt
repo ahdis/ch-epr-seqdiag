@@ -1,0 +1,54 @@
+@startuml
+!include design.plantuml.txt
+title 1.7b EPR_PatientOpenEPR
+
+actor admin as "Operator"
+
+box "Community Components" #FFEFDE
+	participant cc_upi_client as "UPI Client"
+	participant cc_mpi_source as "Patient \nIdentity \nSource"
+	participant cc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
+	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
+	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
+end box
+
+box "Government Services" #E2F3F8
+	participant gs_upi as "Unique \nPerson \nIdentification \nService"
+end box
+
+admin -> cc_upi_client: Get existing EPR-SPID from UPI \nusing Social Security Number (AHVN13) \nand demographics
+activate cc_upi_client
+cc_upi_client -> gs_upi:eCH-0214 (Search)
+activate gs_upi
+cc_upi_client <- gs_upi: [EPR-SPID] 
+deactivate gs_upi
+admin <- cc_upi_client: EPR-SPID
+deactivate cc_upi_client
+
+admin -> admin: Check EPR-SPID attributed to the correct person
+
+admin -> cc_mpi_source: register patient including demographics from ZAS and EPR-SPID in MPI and registry
+activate cc_mpi_source
+cc_mpi_source -> cc_mpi_x_ref_manager: [ITI-44] Patient Identity Feed [EPR-SPID]
+activate cc_mpi_x_ref_manager
+cc_mpi_source <- cc_mpi_x_ref_manager: Patient Identity Feed Response
+deactivate cc_mpi_x_ref_manager
+
+cc_mpi_source -> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using EPR-SPID
+activate cc_pix_x_ref_consumer
+cc_pix_x_ref_consumer -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [EPR-SPID]
+activate cc_mpi_x_ref_manager
+cc_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
+deactivate cc_mpi_x_ref_manager
+cc_mpi_source <- cc_pix_x_ref_consumer
+deactivate cc_pix_x_ref_consumer
+
+cc_mpi_source -> cc_doc_registry: [ITI-44] Patient Identity Feed [MPI_A-PID]
+activate cc_doc_registry
+cc_mpi_source <- cc_doc_registry: [ITI-44] Patient Identity Feed Response
+deactivate cc_doc_registry
+
+admin <- cc_mpi_source
+deactivate cc_mpi_source
+
+@enduml 
