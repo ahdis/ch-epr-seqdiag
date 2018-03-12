@@ -8,7 +8,7 @@ box "Health Professional Portal" #DCBEC7
 	participant ps_gui as "Health Professional Portal"
 	participant ps_x_service_user as "X-Service User"
 	participant ps_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
-	participant ps_doc_source as "Document Source"
+	participant ps_doc_source as "Document Sourcey\n| X-Service User"
 end box
 
 box "IdP" #DFF3F7
@@ -24,11 +24,11 @@ box "Community Components" #FFEFDE
 	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
     participant cc_ppq_policy_repository as "Policy Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User"
-	participant cc_adp as "Authorization \nDecision \nProvider"
+	participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
 box "Other Communities" #91D2E8
-	participant xc_adp as "Authorization \nDecision \nProvider"
+	participant xc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
 hp -> ps_gui

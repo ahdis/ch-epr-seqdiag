@@ -14,6 +14,7 @@ Updated specifications for the next Swiss #EPR #projectathon at The Hague @IHE_E
 
 1_09b_EPR_PatientModifyConfLevelDoc
 * XCPD needs not to be grouped with XUA [ITI-40] Provide X-User Assertion [EPR-SPID] (decision AG TSI meeting)
+* Initiating Gateway should be grouped with X-Service User, not X-Service Provider
 
 1_10_EPR_PatientVerifiesAccessLog.plantuml !DEPRECATED!
 * Marked specific specs for Audit Trail Consumption as deprecated because it must be reworked completely. Specs and changes on IHE ATNA Audit Messages are valid. [EPD-65]
@@ -49,6 +50,8 @@ steps_ps_xds_reg2_of3
 2_05_EPR_XDS-I_XCA-I_2of2
 2_05_EPR_XDS-I_XCA-I
 * added Note Maturity Level Specification/Revision started to each of the sequence diagrams
+
+* added grouping actors (X-Service User, Proivder) of [ITI-40] excplicit in all actors, affects all diagrams
 
 # Changes after approval
 11.7.2017 rename EPR-PID in EPR-SPID

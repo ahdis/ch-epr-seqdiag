@@ -9,7 +9,7 @@ box "Health Professional Portal" #DCBEC7
 	participant ps_x_service_user as "X-Service User"
 	participant ps_pdq_patient_demographics_consumer as "Patient \nDemographics \nConsumer"
 	participant ps_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
-	participant ps_doc_consumer as "Document Consumer"
+	participant ps_doc_consumer as "Document Consumer\n| X-Service User"
 end box
 
 box "IdP" #DFF3F7
@@ -22,11 +22,11 @@ box "Community Components" #FFEFDE
 	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
 	participant cc_mpi_patient_demographics_supplier as "Patient \nDemographics \nSupplier"
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
-  participant cc_adp as "Authorization \nDecision \nProvider"
+  participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 	participant cc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant cc_doc_consumer as "Document Consumer"
-	participant cc_ig as "Initiating Gateway" 
-	participant cc_rg as "Responding Gateway"
+	participant cc_ig as "Initiating Gateway\n| X-Service User" 
+	participant cc_rg as "Responding Gateway\n| X-Service Provider"
 end box
 
 box "Secondary Systems" #F7A69E
@@ -34,9 +34,9 @@ box "Secondary Systems" #F7A69E
 end box
 
 box "Other Communities" #91D2E8
-	participant xc_rg as "Responding Gateway"
-	participant xc_ig as "Initiating Gateway"
-	participant xc_adp as "Authorization \nDecision \nProvider"
+	participant xc_rg as "Responding Gateway\n| X-Service Provider"
+	participant xc_ig as "Initiating Gateway\n| X-Service User"
+	participant xc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
 == documents from this communtiy from patient whereas this community is also the patient reference community  ==
@@ -113,7 +113,7 @@ xc_ig <- cc_rg: [ITI-55] Cross Patient Discovery Response [MPI_B-PID, homeCommun
 deactivate cc_rg
 deactivate xc_ig
 
-xc_ig -> cc_rg: [ITI-38] Cross Gateway Query [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+xc_ig -> cc_rg: [ITI-38] Cross Gateway Query [MPI_B-PID, homeCommunityId]
 activate xc_ig
 activate cc_rg
 cc_rg -> cc_doc_consumer: retrieve document entries

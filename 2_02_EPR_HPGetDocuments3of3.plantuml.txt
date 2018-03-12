@@ -8,7 +8,7 @@ box "Health Professional Portal" #DCBEC7
 	participant ps_gui as "Health Professional Portal"
 	participant ps_x_service_user as "X-Service User"
 	participant ps_pdq_patient_demographics_consumer as "Patient \nDemographics \nConsumer"
-	participant ps_doc_consumer as "Document Consumer"
+	participant ps_doc_consumer as "Document Consumer\n| X-Service User"
 end box
 
 box "IdP" #DFF3F7
@@ -26,7 +26,7 @@ box "Secondary Systems" #F7A69E
 end box
 
 box "Other Communities" #91D2E8
-	participant xc_adp as "Authorization \nDecision \nProvider"
+	participant xc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
 hp -> ps_gui

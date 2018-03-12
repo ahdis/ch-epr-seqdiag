@@ -6,10 +6,10 @@ actor patient as "Patient"
 
 box "Patient Portal" #B9C0B8
 	participant pp_gui as "Patient Portal"
-	participant pp_x_service_user as "X-Service User"
+	participant pp_x_service_user as "X-Service User"	
 	participant pp_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
-	participant pp_ppq_policy_consumer as "Policy Consumer"
-	participant pp_ppq_policy_source as "Policy Source"
+	participant pp_ppq_policy_consumer as "Policy Consumer\n| X-Service User"
+	participant pp_ppq_policy_source as "Policy Source\n| X-Service User"
 end box
 
 box "IdP" #DFF3F7

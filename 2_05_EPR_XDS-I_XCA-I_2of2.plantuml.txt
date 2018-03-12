@@ -12,8 +12,8 @@ box "Health Professional Portal" #DCBEC7
 	participant ps_gui as "Health Professional Portal"
 	participant ps_x_service_user as "X-Service User"
 	participant ps_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
-	participant ps_doc_consumer as "Document Consumer"
-	participant ps_img_doc_consumer as "Imaging Document Consumer"
+	participant ps_doc_consumer as "Document Consumer\n| X-Service User"
+	participant ps_img_doc_consumer as "Imaging Document Consumer\n| X-Service User"
 end box
 
 box "IdP" #DFF3F7
@@ -23,14 +23,14 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
-	participant cc_ig as "Initiating Gateway" 
-	participant cc_img_ig as "Initiating Imaging Gateway" 
+	participant cc_ig as "Initiating Gateway\n| X-Service User" 
+	participant cc_img_ig as "Initiating Imaging Gateway\n| X-Service User" 
 end box
 
 box "Other Communities" #91D2E8
-	participant xc_rg as "Responding Gateway"
-	participant xc_img_rg as "Responding Imaging Gateway"
-	participant xc_img_docsource as "Imaging Document Source" 
+	participant xc_rg as "Responding Gateway\n| X-Service Provider"
+	participant xc_img_rg as "Responding Imaging Gateway\n| X-Service Provider"
+	participant xc_img_docsource as "Imaging Document Sourcen| X-Service User" 
 end box
 
 == viewing or downloading dicom images in the health professional portal from another community (XCA-I) ==

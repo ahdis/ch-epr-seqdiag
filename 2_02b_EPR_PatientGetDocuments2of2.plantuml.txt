@@ -8,7 +8,7 @@ box "Patient Portal" #B9C0B8
 	participant pp_gui as "Patient Portal"
 	participant pp_x_service_user as "X-Service User"
 	participant pp_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
-    participant pp_doc_consumer as "Document Consumer"
+    participant pp_doc_consumer as "Document Consumer\n| X-Service User"
 end box
 
 box "IdP" #DFF3F7
@@ -18,8 +18,8 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
-	participant cc_ig as "Initiating Gateway | X-Service Provider" 
-	participant cc_adp as "Authorization \nDecision \nProvider"
+	participant cc_ig as "Initiating Gateway | X-Service User" 
+	participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
 
@@ -28,7 +28,7 @@ box "Other Communities" #91D2E8
 	participant xc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant xc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
 	participant xc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 	
-	participant xc_doc_consumer as "Document Consumer"
+	participant xc_doc_consumer as "Document Consumer | X-Service User"
 end box
 
 box "Secondary Systems" #F7A69E

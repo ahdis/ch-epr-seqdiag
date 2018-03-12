@@ -9,7 +9,7 @@ box "Patient Portal" #B9C0B8
 	participant pp_x_service_user as "X-Service User"
 	participant pp_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
 	participant pp_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
-	participant pp_ppq_policy_source as "Policy Source"
+	participant pp_ppq_policy_source as "Policy Sourcey\n| X-Service User"
 end box
 
 box "IdP" #DFF3F7
