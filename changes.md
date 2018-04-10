@@ -1,3 +1,22 @@
+# 2018-04-10: adding sequence diagrams for TOZ chapter 10.2, 8l5 (XDM related)
+
+The ordonnance of the EPR (SR 816.111.1_Anhang 2_DE.pdf, see Article 10.2 Offline archiving of medical data and metadata) specifies that patients shall have the possibility to export/import data from the EPR in the reference community. 
+
+* The explanations to the ordonnance (Erlaeuterungen EPDV und EPDV-EDI_DE.pdf, page 33) request an integrity check of the exported data (page 33). 
+* XDM is the listed IHE integration profile which is relevant to import/export, which option of the probile __(USB, CD-R, ZIP over Email option)__ is not specified
+* An exported entry in a XDM export has a hash, size provided, however there is no integrity check defined over the complete export. __Should this be a discussion point in the next AG TSI?__
+
+Articel 8.5 of the ordonnance requests that the individual policy configuration can be transferred to the new reference community.
+There is currently no document exchange format available in CH:PPQ that this configuration can be exported/imported via an XDM mechanism. __Needs to be specified?__
+
+The following changes have been made:
+* The Portable Media Importer actor needs to be added to the overview graphic to the patient portal. The Portable Media importer should be moved to the patient portal as an actor (USB, CD icon removed).
+* 2_06_EPR_PatientExportDocuments.plantuml
+* 2_07_EPR_PatientImportDocuments.plantuml
+
+Open Question: If the patient changes his reference community, does he get a new EPRS-PID? If yes, this would have implications of a reimport of documents,
+if no, the handover of the policies needs to timed that their are not suddenly two Authorization Decision Responders responding to access decisions. 
+
 # 2018-03-05: changes after specification update from ehealth suisse/MOFH
 Updated specifications for the next Swiss #EPR #projectathon at The Hague @IHE_Europe, check [google group]( https://groups.google.com/forum/#!topic/epd_projectathon/6tHhL_ztSL8epd_projectathon@googlegroups.com) and [overview](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2018/E/180220_Grafik_Swiss_Electronic_Patient_Record_v1.4_e.pdf) 
 
