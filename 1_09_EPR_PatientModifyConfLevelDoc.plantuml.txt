@@ -9,7 +9,7 @@ box "Patient Portal" #B9C0B8
 	participant pp_x_service_user as "X-Service User"	
 	participant pp_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant pp_doc_consumer as "Document Consumer\n| X-Service User"
-	participant pp_doc_admin as "Document Administrator\n| X-Service User"
+	participant pp_doc_admin as "Update Initiator or Document Administrator\n| X-Service User"
 end box
 
 box "IdP" #DFF3F7
@@ -19,7 +19,7 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
-	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
+	participant cc_doc_registry as "Document Registry | Update Responder |  X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
 end box
 
 == EPR_PatientModifyConfLevelDoc == 
@@ -36,10 +36,19 @@ activate pp_gui
 
 pp_gui -> pp_doc_admin: updated confidentiality level
 activate pp_doc_admin
+
+alt XDS MU
 pp_doc_admin -> cc_doc_registry: [ITI-57] Update Document Set with new confidentiality level\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_doc_registry
 pp_doc_admin <- cc_doc_registry: [ITI-57] Update Document Set Response
 deactivate cc_doc_registry
+else RMU 
+pp_doc_admin -> cc_doc_registry: [ITI-X1] Restricted Update Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_doc_registry
+pp_doc_admin <- cc_doc_registry: [ITI-X1] Restricted Update Document Set Response
+deactivate cc_doc_registry
+end
+
 pp_gui <- pp_doc_admin
 deactivate pp_doc_admin
 

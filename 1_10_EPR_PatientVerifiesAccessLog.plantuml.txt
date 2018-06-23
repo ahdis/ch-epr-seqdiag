@@ -1,9 +1,6 @@
 @startuml
 !include design.plantuml.txt
-title 1.10 EPR_PatientVerifiesAccessLog - DEPRECATED [EPD-65], Note Maturity Level: Specification/Revision started
-
-
-skinparam backgroundColor Orange
+title 1.10 EPR_PatientVerifiesAccessLog
 
 actor patient as "Patient"
 
@@ -11,7 +8,7 @@ box "Patient Portal" #B9C0B8
 	participant pp_gui as "Patient Portal"
 	participant pp_x_service_user as "X-Service User"
 	participant pp_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
-	participant pp_doc_audit_consumer as "Document \nAudit \nConsumer"
+	participant pp_patient_audit_consumer as "Patient\nAudit \nConsumer"
 end box
 
 box "IdP" #DFF3F7
@@ -21,22 +18,15 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
-	participant cc_atna_arr as "Audit Record Repository"
-	participant cc_ig as "Initiating \nGateway"
-end box
-
-box "Secondary Systems" #F7A69E
-	participant ss_atna_arr as "Audit Record Repository"
+	participant cc_pat_arr as "Patient Audit Record Repository"
 end box
 
 box "Other Communities" #91D2E8
-	participant xc_rg as "Responding \nGateway"
+	participant xc_pat_arr as "Patient Audit Record Repository"
 end box
 
 patient -> pp_gui: Patient verifies access log to his EPR
 activate pp_gui
-
-note right patient: Marked specific specs for Audit Trail Consumption as deprecated because it must be reworked completely. Specs and changes on IHE ATNA Audit Messages are valid.
 
 !include step_pp_gui_saml.plantuml.txt
 
@@ -44,68 +34,28 @@ note right patient: Marked specific specs for Audit Trail Consumption as depreca
 
 !include step_pp_xua.plantuml.txt
 
-== Audit Record Repository - Community  ==
+== Patient Audit Record Repository - Reference Community  ==
 
-pp_gui -> pp_doc_audit_consumer: retrieve access logs
-activate pp_doc_audit_consumer
+pp_gui -> pp_patient_audit_consumer: retrieve access logs reference community
+activate pp_patient_audit_consumer
 
-pp_doc_audit_consumer -> cc_ig: [ITI-18] Registry Stored Query for audit trail (local community) [MPI_A-PID]\n$XDSDocumentEntryTypeCode contains the value 60049 (Audit trail\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-activate cc_ig
+pp_patient_audit_consumer -> cc_pat_arr: [ITI-81] Retrieve Audit Event [EPR-SPID] grouped with IUA [ITI-72]
+activate cc_pat_arr
+pp_patient_audit_consumer <- cc_pat_arr: [ITI-81] Retrieve Audit Event Response
+deactivate cc_pat_arr
 
-cc_ig -> cc_atna_arr: [ITI-18] Registry Stored Query for audit trail (local community) [MPI_A-PID]
-activate cc_atna_arr
-cc_ig <- cc_atna_arr: [ITI-18] Registry Stored Query Response
-deactivate cc_atna_arr
-
-loop over all audit record repository of secondary systems
-  cc_ig -> ss_atna_arr: [ITI-18] Registry Stored Query for audit trail (local community) [MPI_A-PID]
-	activate ss_atna_arr
-  cc_ig <- ss_atna_arr: [ITI-18] Registry Stored Query Response
-	deactivate ss_atna_arr
-end
-
-pp_doc_audit_consumer <- cc_ig: [ITI-18] Registry Stored Query for audit trail (local community) [MPI_A-PID]\n$XDSDocumentEntryTypeCode contains the value 60049 (Audit trail\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-deactivate cc_ig
-
-pp_doc_audit_consumer -> cc_atna_arr: [ITI-43] Retrieve Document Set
-activate cc_atna_arr
-pp_doc_audit_consumer <- cc_atna_arr: [ITI-43] Retrieve Document Set Response
-deactivate cc_atna_arr
-
-loop over all audit record repository of secondary systems
-  pp_doc_audit_consumer -> ss_atna_arr: [ITI-43] Retrieve Document Set
-  activate ss_atna_arr
-  pp_doc_audit_consumer <- ss_atna_arr: [ITI-43] Retrieve Document Set Response
-  deactivate ss_atna_arr
-end
-
-== Audit Record Repository - Other Communities  ==
+== Patient Audit Record Repository - Other Communities  ==
 
 loop over all communities
-  pp_doc_audit_consumer -> cc_ig: [ITI-18] Registry Stored Query for audit trail [MPI_A-ID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]  
-    activate cc_ig
-    cc_ig -> xc_rg: [ITI-38] Cross Gateway Query \ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-    note left xc_rg: If the parameter $XDSDocumentEntryTypeCode contains the value 722160009 (Audit trail report), these actors MUST initiate a Registry Stored Query to all local ATNA Audit Repositories. See also chapter “1.4.3.1.1 Parameters for stored query FindDocuments” on page 10.
-    activate xc_rg
-    cc_ig <- xc_rg: [ITI-38] Cross Gateway Query Response
-    deactivate xc_rg
-  pp_doc_audit_consumer <- cc_ig
-  deactivate cc_ig
-  pp_doc_audit_consumer -> cc_ig: [ITI-43] Retrieve Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-  activate cc_ig
-  cc_ig -> xc_rg: [ITI-39] Cross Gateway Retrieve\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-  activate xc_rg
-	cc_ig <- xc_rg: [ITI-39] Cross Gateway Retrieve Response
-  deactivate xc_rg
-	pp_doc_audit_consumer <- cc_ig: [ITI-43] Retrieve Document Set Response
-  deactivate cc_ig
+pp_patient_audit_consumer -> xc_pat_arr: [ITI-81] Retrieve Audit Event [EPR-SPID] grouped with IUA [ITI-72]
+activate xc_pat_arr
+pp_patient_audit_consumer <- xc_pat_arr: [ITI-81] Retrieve Audit Event Response
+deactivate xc_pat_arr
 end
 
-pp_doc_audit_consumer -> pp_doc_audit_consumer: consolidate documents
-pp_gui <- pp_doc_audit_consumer: return consolidated access log as document
-deactivate pp_doc_audit_consumer
+pp_patient_audit_consumer -> pp_patient_audit_consumer: consolidate Audit Events
+pp_gui <- pp_patient_audit_consumer: return consolidated Audit Events
+deactivate pp_patient_audit_consumer
 patient <- pp_gui
-
-
 
 @enduml 

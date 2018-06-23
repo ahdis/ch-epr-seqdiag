@@ -2,7 +2,7 @@ pp_gui -> pp_x_service_user : GUI for Authentication
 activate pp_x_service_user
 pp_x_service_user -> idp_user_authentication_provider : CH:XUA Authenticate user
 activate idp_user_authentication_provider
-pp_x_service_user <- idp_user_authentication_provider : CH:XUA Authenticate user response \n(SAML 2.0 token returned to Portal)
+pp_x_service_user <- idp_user_authentication_provider : CH:XUA Authenticate user response \n(SAML 2.0 token returned to Portal with UAP-ID)
 deactivate idp_user_authentication_provider
 pp_gui <- pp_x_service_user
 deactivate pp_x_service_user

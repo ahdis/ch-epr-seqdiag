@@ -1,8 +1,133 @@
+# 2018-03-19: update of specifications from ehealth suisse/MOFH
+Updated specifications for the next Swiss #EPR #projectathon in Bern September 2018, check [eHealth Suisse Relevant Specification]( https://www.e-health-suisse.ch/gemeinschaften-umsetzung/umsetzung/programmierhilfen/relevante-spezifikationen.html) and [overview](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2018/E/180220_Grafik_Swiss_Electronic_Patient_Record_v1.4_e.pdf) 
+
+1_02_EPR_QueryingGovernmentServices
+* removed Secure Node from Patient Portal, Health Professional Portal (no connected transcations, minor)
+
+1_02_EPR_QueryingGovernmentServicesHPD - no change 
+
+1_02_EPR_QueryingGovernmentServicesMPI - no chane
+
+1_02b_EPR_CommunityInCircleOfTrust
+* attribute ComStatus is now shcStatus, Inactive instead of inactive
+* transaction is called CH:CIQ
+
+1_03-1_6_HPD_Usecases - no changes
+
+1_07_EPR_PatientCreateEPR
+* added note: initializing policies will be supported with a next revision of PPQ (decided in AG TSI, 16th meeting, issue EPD-28)
+* changed origin of transcation for triggering policies from Patient Identity Source to Operator (Actor will not be specified by PPQ)
+
+1_07b_EPR_PatientOpenEPR - no changes
+
+1_08_EPR_PatientModifyAccessRights - no change, but depending on resolution of **SEQ_001**
+
+1_09_EPR_PatientModifyConfLevelDoc 
+* XUA depending on resolution of **SEQ_001**
+* Added actors/transaction from RMU as alternative to XDS MU
+
+1_09b_EPR_PatientModifyConfLevelDoc
+* XUA depending on resolution of **SEQ_001**
+* Replaced actors/transaction from XCMU with RMU (Update Initiator/Responder instead of XCMU Document Administrator)
+
+1_10_EPR_PatientVerifiesAccessLog
+* XUA depending on resolution of **SEQ_001**
+* Replace deprecated sequence diagram with new sequence diagrams based on CH:ATC Profile
+
+1_12_EPR_PatientDeleteDocumen
+* removed deprecated sequence diagram, deletion of document is postponed
+
+1_14_EPR_PatientDeleteEPR
+* moved optional deletion task from UPI_Client actor to operator
+* **SEQ_002**: PPQ: Can all policies for a patient be deleted with a Delete Policy Request?
+
+1_15_EPR_PatientEPRQuery - no changes
+
+1_16_EPR_PatientEPRInactivate - no chnages
+
+2_01_EPR_ATNA
+* removed Audit Record Repository actor
+
+2_01_EPR_CT
+* rem oved Government Services HPD/MDI/CPI clients actors and transaction
+
+2_02_EPR_HPGetDocuments
+* see 2_02_EPR_HPGetDocuments1of3, 2_02_EPR_HPGetDocuments2of3, 2_02_EPR_HPGetDocuments3of3
+
+2_02_EPR_HPGetDocuments1of3 - TODO
+* [04] CH:XUA Authenticate user response added UAP-ID as response identifier for clarification
+* [11] CH:XUA Get-XUser Assertions uses UAP-ID for Request (before EPRS-PID)
+* [12] **SEQ_003** A5E1 1.6.2.2 states that a data source is need for UAP-Identifier to GLN for a health professional. How can this transformation be done? 
+    * A) If the X-Assertion Provider is directly grouped with the Health Professional Portal (X-Service User) then this would be possible because the health professional portal has the information between UAP-ID and local ID. 
+    * B) If the X-Assertion Provider is within the community one possiblity would be to register the UAP-ID of the patient in the HPD as an identifier (by the Health Professional Portal?).
+    * C) An independent Data Source?
+* HPD Information Consumer, Provider grouping have been added
+
+2_02_EPR_HPGetDocuments2of3 
+* see 2_02_EPR_HPGetDocuments1of3
+
+2_02_EPR_HPGetDocuments3of3 
+* see 2_02_EPR_HPGetDocuments1of3
+
+2_02b_EPR_PatientGetDocuments1of2
+* [04] CH:XUA Authenticate user response added UAP-ID as response identifier for clarification
+* [11] CH:XUA Get-XUser Assertions uses UAP-ID for Request (before EPRS-PID)
+* [12] **SEQ_001** A5E1 1.6.2.2 states that a data source is need for UAP-Identifier to MPI-ID. How can this transformation be done? 
+    * A) If the X-Assertion Provider is directly grouped with the Patient Portal (X-Service User) then this would be possible because the patient portal has the information between UAP-ID and local ID of the patient portal. 
+    * B) If the X-Assertion Provider is within the community the only possiblity would be to register the UAP-ID of the patient in the MPI (by the Patient Portal?)
+    * C) An independent Data Source? Mapping between UAP-ID and MPI-PID is problematic, since the MPI-PID can change.
+* [13-15] The EPR-SPID needs to be returned, the X-Assertion Provider nees to call the MPI with a PIX-Query to resolve the EPRS-PID, this has actually already been done in [06-09]
+
+2_02b_EPR_PatientGetDocuments2of2 
+* see 2_02b_EPR_PatientGetDocuments1of2
+
+2_03_EPR_HPStoreDocuments
+* see 2_02_EPR_HPGetDocuments
+
+2_03b_EPR_PatientStoreDocuments
+* see 2_02b_EPR_PatientGetDocuments1of2
+
+2_04_EPR_PatientAssignAccessRights
+* see 2_02b_EPR_PatientGetDocuments1of2
+
+2_05_EPR_Patient_XDS-I_XCA-I_1of2
+* removed [RAD-55] WADO Retrieve
+* open issue grouping CH:XUA with Imaging Document Source
+* see 2_02b_EPR_PatientGetDocuments1of2
+* removed maturity level text
+
+2_05_EPR_Patient_XDS-I_XCA-I_2of2
+* open issue grouping CH:XUA with Imaging Document Source
+* see 2_02b_EPR_PatientGetDocuments1of2
+* removed maturity level text
+
+2_05_EPR_XDS-I_XCA-I
+* see 2_05_EPR_XDS-I_XCA-I_1of2, 2_05_EPR_XDS-I_XCA-I_2of2
+
+2_05_EPR_XDS-I_XCA-I_1of2
+* removed [RAD-55] WADO Retrieve
+* open issue grouping CH:XUA with Imaging Document Source
+* see 2_02_EPR_HPGetDocuments1of3
+* removed maturity level text
+
+2_05_EPR_XDS-I_XCA-I_2of2
+* open issue grouping CH:XUA with Imaging Document Source
+* see 2_02_EPR_HPGetDocuments1of3
+* removed maturity level text
+
+TODO: Add sequence diagrams for XDM
+
+to discuss:
+* new Sequence diagram how a representative gets a CH:XUA token from a patient portal?
+* new Sequence diagram how an assistant gets a CH:XUA token from a health professional portal portal?
+* new Sequence diagram for a technical user (machine upload) gets a CH:XUA token from a health professional portal portal?
+* new Sequence diagram for an administrative user ( to get a CH:XUA token from a health professional portal portal?
+
 # 2018-03-05: changes after specification update from ehealth suisse/MOFH
 Updated specifications for the next Swiss #EPR #projectathon at The Hague @IHE_Europe, check [google group]( https://groups.google.com/forum/#!topic/epd_projectathon/6tHhL_ztSL8epd_projectathon@googlegroups.com) and [overview](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2018/E/180220_Grafik_Swiss_Electronic_Patient_Record_v1.4_e.pdf) 
 
 1_02_EPR_QueryingGovernmentServices
-* introduction of CH:CPI profile: change actor from Community \nPortal \nIndex to CPI Provide,r Value Set Consumer to CPI Consumer and added transcations Community Information Query [CH:CIQ] and Community Information [CH:CIDD] Delta Download
+* introduction of CH:CPI profile: change actor from Community \nPortal \nIndex to CPI Provider, Value Set Consumer to CPI Consumer and added transcations Community Information Query [CH:CIQ] and Community Information [CH:CIDD] Delta Download
 * separated CH:PIDD from ITI-58 in HP
 * adjusted sub sequence diagrams 1_02_EPR_QueryingGovernmentServicesHPD and 1_02_EPR_QueryingGovernmentServicesMPI
 
@@ -51,7 +176,7 @@ steps_ps_xds_reg2_of3
 2_05_EPR_XDS-I_XCA-I
 * added Note Maturity Level Specification/Revision started to each of the sequence diagrams
 
-* added grouping actors (X-Service User, Proivder) of [ITI-40] excplicit in all actors, affects all diagrams
+* added grouping actors (X-Service User, Provider) of [ITI-40] excplicit in all actors, affects all diagrams
 
 # Changes after approval
 11.7.2017 rename EPR-PID in EPR-SPID

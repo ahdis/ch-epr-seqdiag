@@ -52,14 +52,16 @@ activate cc_doc_registry
 cc_mpi_source <- cc_doc_registry: [ITI-44] Patient Identity Feed Response
 deactivate cc_doc_registry
 
-opt no transaction, but default policies for patient have to be generated if this is the reference community (EPR-SPID was generated with eCH-0213)
-  cc_mpi_source -> cc_ppq_policy_repository: PPQ set default policies for patient [EPR-SPID]
-  activate cc_ppq_policy_repository
-  cc_mpi_source <- cc_ppq_policy_repository
-  deactivate cc_ppq_policy_repository
-end
-
 admin <- cc_mpi_source
 deactivate cc_mpi_source
+ 
+
+opt default policies for patient have to be generated if this is the reference community (EPR-SPID was generated with eCH-0213)
+note right admin: initializing policies will be supported with a next revision of PPQ (decided in AG TSI, 16th meeting, issue EPD-28) 
+  admin -> cc_ppq_policy_repository: [ITI-44 trigger default policies for patient [EPR-SPID]
+  activate cc_ppq_policy_repository
+  admin <- cc_ppq_policy_repository
+  deactivate cc_ppq_policy_repository
+end
 
 @enduml 

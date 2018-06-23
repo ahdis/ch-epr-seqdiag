@@ -18,18 +18,6 @@ box "Secondary Systems" #F7A69E
 	participant ss_ct_time_client as "Time Client"
 end box
 
-box "Government Services HPD" #E2F3F8
-	participant gs_hpd_ct_time_client as "Time Client"
-end box
-
-box "Government Services MDI" #E2F3F8
-	participant gs_mdi_ct_time_client as "Time Client"
-end box
-
-box "Government Services CPI" #E2F3F8
-	participant gs_cpi_ct_time_client as "Time Client"
-end box
-
 box "Government Services Time Server" #E2F3F8
 	participant gs_ts as "Time Server"
 end box
@@ -52,21 +40,6 @@ deactivate gs_ts
 ss_ct_time_client -> gs_ts: [ITI-1] Maintain Time Request
 activate gs_ts
 ss_ct_time_client <- gs_ts: [ITI-1] Maintain Time Response
-deactivate gs_ts
-
-gs_hpd_ct_time_client -> gs_ts: [ITI-1] Maintain Time Request
-activate gs_ts
-gs_hpd_ct_time_client <- gs_ts: [ITI-1] Maintain Time Response
-deactivate gs_ts
-
-gs_mdi_ct_time_client -> gs_ts: [ITI-1] Maintain Time Request
-activate gs_ts
-gs_mdi_ct_time_client <- gs_ts: [ITI-1] Maintain Time Response
-deactivate gs_ts
-
-gs_cpi_ct_time_client -> gs_ts: [ITI-1] Maintain Time Request
-activate gs_ts
-gs_cpi_ct_time_client <- gs_ts: [ITI-1] Maintain Time Response
 deactivate gs_ts
 
 

@@ -18,6 +18,8 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_mpi_patient_demographics_supplier as "Patient \nDemographics \nSupplier"
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
+	participant cc_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
+	participant cc_hpd_provider_info_directory as "Provider \nInformation \nDirectory"
 	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
 end box
 

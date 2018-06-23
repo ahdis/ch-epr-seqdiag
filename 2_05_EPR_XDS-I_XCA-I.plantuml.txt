@@ -1,8 +1,6 @@
 @startuml
 !include design.plantuml.txt
-title 2.5 EPR_XDS-I/XCA-I: Note Maturity Level Specification/Revision started
-
-skinparam backgroundColor Orange
+title 2.5 EPR_XDS-I/XCA-I
 
 actor hp as "Health Professional"
 
@@ -21,6 +19,8 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_mpi_patient_demographics_supplier as "Patient \nDemographics \nSupplier"
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
+	participant cc_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
+	participant cc_hpd_provider_info_directory as "Provider \nInformation \nDirectory"
 	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
     participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"

@@ -7,6 +7,8 @@ actor admin as "Operator"
 box "Community Components" #FFEFDE
 	participant cc_upi_client as "UPI Client"
   participant cc_doc_admin as "Document Administrator"
+  participant cc_mpi_source as "Patient \nIdentity \nSource"
+	participant pp_ppq_policy_source as "Policy Source\n| X-Service User"
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
   participant cc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant cc_ppq_policy_repository as "Policy Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User"
@@ -36,15 +38,21 @@ activate gs_upi
 
 gs_upi -> cc_upi_client: eCH-0215: Make cancellation message  broadcast to all communities to delete EPR for patient [EPR-SPID]
 activate cc_upi_client
+cc_upi_client -> admin
 deactivate gs_upi
 
 opt optional transactions
-cc_upi_client -> cc_doc_admin: Delete all documents in \ncommunity (tbd: EPR_PatientDeleteDocument deprecated)
+deactivate cc_upi_client
+
+admin -> cc_doc_admin: Delete all documents in \ncommunity (no transaction defined, IHE ITI RMD as a possiblity)
 activate cc_doc_admin
-cc_upi_client <- cc_doc_admin:  Delete all documents Response
+admin <- cc_doc_admin:  Delete all documents Response
 deactivate cc_doc_admin
 
-cc_upi_client -> cc_mpi_x_ref_manager: Delete patient in MPI [ITI-44]
+
+admin -> cc_mpi_source: Delete patient in MPI
+activate cc_mpi_source
+cc_mpi_source -> cc_mpi_x_ref_manager: Revise patient in MPI [ITI-44]\nNote: Revise is not a real delete in the MPI
 activate cc_mpi_x_ref_manager
 loop
 cc_mpi_x_ref_manager -> cc_pix_x_ref_consumer: Update Notfications for Consumer [ITI-46]
@@ -52,21 +60,22 @@ activate cc_pix_x_ref_consumer
 cc_mpi_x_ref_manager <- cc_pix_x_ref_consumer: Update Notification Response
 deactivate cc_pix_x_ref_consumer
 end
-cc_upi_client <- cc_mpi_x_ref_manager
+cc_mpi_source <- cc_mpi_x_ref_manager
 deactivate cc_mpi_x_ref_manager
+admin <- cc_mpi_source
+deactivate cc_mpi_source
 
-note right cc_upi_client: can all policies for a paitent be deleted with Delete Policy Request?
-  cc_upi_client -> cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Requests for patient [EPR-SPID]
+admin -> pp_ppq_policy_source
+activate pp_ppq_policy_source
+note left pp_ppq_policy_source: <b>SEQ_002</b> can all policies for a patient be deleted with Delete Policy Request?
+  pp_ppq_policy_source -> cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Requests for patient [EPR-SPID]
   activate cc_ppq_policy_repository
-  cc_upi_client <- cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Request Response
+  pp_ppq_policy_source <- cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Request Response
   deactivate cc_ppq_policy_repository
-
-deactivate cc_upi_client
+admin <-pp_ppq_policy_source
+deactivate pp_ppq_policy_source
 
 end
-
-cc_upi_client -> admin
-
 
 note right admin: tests for deletion of all data
 

@@ -11,12 +11,12 @@ box "Government Services" #E2F3F8
 	participant gs_cpi as "CPI\nProvider"
 end box
 
-cc_cpi_consumer -> gs_cpi : [CH:CPI] Query ComStatus Attribute of Community\n(https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2017/E/EPD_ZAD_CPI_Attribute_01.xlsx)
+cc_cpi_consumer -> gs_cpi : [CH:CQI] Community Information Query\nQuery shcStatus  of Community
 activate cc_cpi_consumer
 activate gs_cpi
-gs_cpi -> cc_cpi_consumer: [CH:CPI] ComStatus Result of Community
+gs_cpi -> cc_cpi_consumer: [CH:CQI] Community Information Reponse
 deactivate gs_cpi
-note right cc_cpi_consumer: If ComStatus is 'inactive' prohibit further communication with other community
+note right cc_cpi_consumer: If shcStatus is 'Inactive' prohibit further communication with other community
 
 deactivate cc_cpi_consumer
 

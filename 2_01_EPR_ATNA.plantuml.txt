@@ -1,6 +1,6 @@
 @startuml
 !include design.plantuml.txt
-title 2.1 EPR_ATNA\nCH:ATNA Requirements on ATNA, XDS.b and XCA Profiles for Audit Trail Consumption
+title 2.1 EPR_ATNA\nCH:ATNA
 
 box "Patient Portal" #B9C0B8
     participant pp_atna_secure_node as "Secure \nNode"
@@ -12,13 +12,13 @@ end box
 
 box "Community Components" #FFEFDE
     participant cc_atna_secure_node as "Secure \nNode"
-    participant cc_atna_audit_repository as "Audit Repository\nAudit Record Repository"
+    participant cc_atna_audit_repository as "Audit Repository"
     participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
 end box
 
 box "Secondary Systems" #F7A69E
     participant ss_atna_secure_node as "Secure \nNode"
-    participant ss_atna_audit_repository as "Audit Repository\nAudit Record Repository"
+    participant ss_atna_audit_repository as "Audit Repository"
 end box
 
 box "Government Services HPD" #E2F3F8

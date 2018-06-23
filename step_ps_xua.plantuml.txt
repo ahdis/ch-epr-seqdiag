@@ -1,7 +1,17 @@
 ps_gui -> ps_x_service_user : get XUA Assertion
 activate ps_x_service_user
-ps_x_service_user -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions [EPR-SPID]
+ps_x_service_user -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions [UAP-ID] and resource-id [EPR-SPID]
 activate cc_x_assertion_provider
+note right cc_x_assertion_provider: open issue <b>SEQ_003</b> how this transformation can be done
+cc_x_assertion_provider -> cc_x_assertion_provider: Identifier Transformation from UAP-ID to GLN
+cc_x_assertion_provider -> cc_hpd_provider_info_consumer: NameID Transformation from GLN, organizations relationship
+activate cc_hpd_provider_info_consumer
+cc_hpd_provider_info_consumer -> cc_hpd_provider_info_directory : [ITI-58] Provider Information Query Request
+activate cc_hpd_provider_info_directory
+cc_hpd_provider_info_consumer <- cc_hpd_provider_info_directory : [ITI-58] Provider Information Query Response
+deactivate cc_hpd_provider_info_directory
+cc_x_assertion_provider <- cc_hpd_provider_info_consumer
+deactivate cc_hpd_provider_info_consumer
 ps_x_service_user <- cc_x_assertion_provider: CH:XUA Get-XUser Assertions Response [EPR-SPID] according to CH:XUA
 deactivate cc_x_assertion_provider
 ps_gui <- ps_x_service_user

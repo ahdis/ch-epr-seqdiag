@@ -22,6 +22,8 @@ box "Community Components" #FFEFDE
   participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 	participant cc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant cc_doc_consumer as "Document Consumer"
+	participant cc_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
+	participant cc_hpd_provider_info_directory as "Provider \nInformation \nDirectory"
 	participant cc_ig as "Initiating Gateway\n| X-Service User" 
 	participant cc_rg as "Responding Gateway\n| X-Service Provider"
 end box

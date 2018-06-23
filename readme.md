@@ -6,7 +6,7 @@ The sequence diagram have been finalized in Bern in 2017 during a workshop with 
 the test diagrams in [gazelle](https://ehealthsuisse.ihe-europe.net/gazelle/home.seam). See [changes](changes.md) for latest updates, the sequence diagrams are kept in sync.
 
 ## specifications
-spec check [google group]( https://groups.google.com/forum/#!topic/epd_projectathon/6tHhL_ztSL8epd_projectathon@googlegroups.com) and [overview](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2018/E/180220_Grafik_Swiss_Electronic_Patient_Record_v1.4_e.pdf) 
+Updated specifications for the next Swiss #EPR #projectathon in Bern September 2018, check [eHealth Suisse Relevant Specification]( https://www.e-health-suisse.ch/gemeinschaften-umsetzung/umsetzung/programmierhilfen/relevante-spezifikationen.html) and [overview](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2018/E/180220_Grafik_Swiss_Electronic_Patient_Record_v1.4_e.pdf) 
 
 ## building the diagrams
 [PlantUML](http://plantuml.com/) is used to generate the sequence diagrams. execute the shell script ./do-it.sh

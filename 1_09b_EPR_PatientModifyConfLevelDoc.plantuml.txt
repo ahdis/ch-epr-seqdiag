@@ -9,7 +9,7 @@ box "Patient Portal" #B9C0B8
 	participant pp_x_service_user as "X-Service User"
 	participant pp_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant pp_doc_consumer as "Document Consumer\n| X-Service User"
-	participant pp_doc_admin as "Document Administrator\n| X-Service User"
+	participant pp_upd_init as "Update Initiator\n| X-Service User"
 end box
 
 box "IdP" #DFF3F7
@@ -19,17 +19,18 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
-	participant cc_ig as "Initiating Gateway | X-Service User" 
+	participant cc_ig as "Initiating Gateway | X-Service User"   
 	participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
+	participant cc_updresp_init as "Update Responder\nUpdate Initiator"
 end box
 
 box "Other Communities" #91D2E8
 	participant xc_rg as "Responding Gateway"
 	participant xc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant xc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
-	participant xc_doc_admin as "Document Administrator"
 	participant xc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 	
 	participant xc_doc_consumer as "Document Consumer | X-Service User"
+	participant xc_updresp as "Update Responder"
 end box
 
 
@@ -85,31 +86,24 @@ deactivate cc_ig
 pp_gui <- pp_doc_consumer
 deactivate pp_doc_consumer
 
-pp_gui -> pp_doc_admin: updated confidentiality level cross community
-activate pp_doc_admin
-pp_doc_admin -> cc_ig: [ITI-57] Update Document Set with new confidentiality level\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-activate cc_ig
+pp_gui -> pp_upd_init: updated confidentiality level cross community
+activate pp_upd_init
+pp_upd_init -> cc_updresp_init: [ITI-X1] Update Restricted Document Set [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_updresp_init
 
-  cc_ig -> xc_rg: [ITI-X1] Cross-Gateway Update Document Set [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-  activate xc_rg
+  cc_updresp_init -> xc_updresp: [ITI-X1] Update Restricted Document Set [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate xc_updresp
 
-  xc_rg -> xc_doc_admin: updated confidentiality level
-  activate xc_doc_admin
-  xc_doc_admin -> xc_doc_registry: [ITI-57] Update Document Set with new confidentiality level\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-  activate xc_doc_registry
-  xc_doc_admin <- xc_doc_registry: [ITI-57] Update Document Set Response
-  deactivate xc_doc_registry
-  xc_rg <- xc_doc_admin
-  deactivate xc_doc_admin
-  cc_ig <- xc_rg: [ITI-X1] Cross-Gateway Update Document Set Response
-  deactivate xc_rg
+  xc_updresp -> xc_updresp: updated confidentiality level
+  cc_updresp_init <- xc_updresp: [ITI-X1] Cross-Gateway Update Document Set Response
+  deactivate xc_updresp
 
 
 
-pp_doc_admin <- cc_ig: [ITI-57] Update Document Set Response
-deactivate cc_ig
-pp_gui <- pp_doc_admin
-deactivate pp_doc_admin
+pp_upd_init <- cc_updresp_init: [ITI-X1] Cross-Gateway Update Document Set Response
+deactivate cc_updresp_init
+pp_gui <- pp_upd_init
+deactivate pp_upd_init
 
 patient <- pp_gui
 deactivate pp_gui
