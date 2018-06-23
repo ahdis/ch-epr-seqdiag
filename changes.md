@@ -115,20 +115,18 @@ Updated specifications for the next Swiss #EPR #projectathon in Bern September 2
 * see 2_02_EPR_HPGetDocuments1of3
 * removed maturity level text
 
-# new sequence diagrams for XDM
-
-2_06_EPR_PatientExportDocuments
+2_06_EPR_PatientExportDocuments - new sequence diagram
 * XUA depending on resolution of **SEQ_001**
 * export of privacy policies is not covered
 
-* 2_07_EPR_PatientImportDocuments
+2_07_EPR_PatientImportDocuments  - new sequence diagram
 * XUA depending on resolution of **SEQ_001**
 
 to discuss:
-* new Sequence diagram how a representative gets a CH:XUA token from a patient portal?
-* new Sequence diagram how an assistant gets a CH:XUA token from a health professional portal portal?
-* new Sequence diagram for a technical user (machine upload) gets a CH:XUA token from a health professional portal portal?
-* new Sequence diagram for an administrative user ( to get a CH:XUA token from a health professional portal portal?
+* new Sequence diagram or test how a representative gets a CH:XUA token from a patient portal?
+* new Sequence diagram or test how an assistant gets a CH:XUA token from a health professional portal portal?
+* new Sequence diagram or test for a technical user (machine upload) gets a CH:XUA token from a health professional portal portal?
+* new Sequence diagram or test for an administrative user ( to get a CH:XUA token from a health professional portal portal?
 
 # 2018-03-05: changes after specification update from ehealth suisse/MOFH
 Updated specifications for the next Swiss #EPR #projectathon at The Hague @IHE_Europe, check [google group]( https://groups.google.com/forum/#!topic/epd_projectathon/6tHhL_ztSL8epd_projectathon@googlegroups.com) and [overview](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2018/E/180220_Grafik_Swiss_Electronic_Patient_Record_v1.4_e.pdf) 
