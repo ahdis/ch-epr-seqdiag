@@ -1,10 +1,7 @@
 @startuml
 
-
 !include design.plantuml.txt
-title 2.5 EPR_XDS-I/XCA-I: Note Maturity Level Specification/Revision started
-
-skinparam backgroundColor Orange
+title 2.5 EPR_XDS-I/XCA-Is
 
 actor hp as "Health Professional"
 
@@ -23,6 +20,8 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
+	participant cc_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
+	participant cc_hpd_provider_info_directory as "Provider \nInformation \nDirectory"
 	participant cc_ig as "Initiating Gateway\n| X-Service User" 
 	participant cc_img_ig as "Initiating Imaging Gateway\n| X-Service User" 
 end box
@@ -68,6 +67,7 @@ deactivate cc_ig
 ps_doc_consumer -> ps_img_doc_consumer
 activate ps_img_doc_consumer
 
+note left cc_img_ig: grouping with [ITI-40] is an open issues
 ps_img_doc_consumer -> cc_img_ig: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_img_ig
 

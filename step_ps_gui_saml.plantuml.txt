@@ -2,7 +2,7 @@ ps_gui -> ps_x_service_user : GUI for Authentication
 activate ps_x_service_user
 ps_x_service_user -> idp_user_authentication_provider : CH:XUA Authenticate user
 activate idp_user_authentication_provider
-ps_x_service_user <- idp_user_authentication_provider : CH:XUA Authenticate user response (SAML 2.0 token returned to Portal [NameID with GLN])
+ps_x_service_user <- idp_user_authentication_provider : CH:XUA Authenticate user response (SAML 2.0 token returned to Portal with UAP-ID)
 deactivate idp_user_authentication_provider
 ps_gui <- ps_x_service_user
 deactivate ps_x_service_user

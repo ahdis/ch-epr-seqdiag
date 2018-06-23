@@ -2,9 +2,7 @@
 
 
 !include design.plantuml.txt
-title 2.5 EPR_Patient_XDS-I/XCA-I: Note Maturity Level Specification/Revision started
-
-skinparam backgroundColor Orange
+title 2.5 EPR_Patient_XDS-I/XCA-I
 
 actor patient as "Patient"
 
@@ -68,6 +66,7 @@ deactivate cc_ig
 pp_doc_consumer -> pp_img_doc_consumer
 activate pp_img_doc_consumer
 
+note left cc_img_ig: grouping with [ITI-40] is an open issues
 pp_img_doc_consumer -> cc_img_ig: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_img_ig
 

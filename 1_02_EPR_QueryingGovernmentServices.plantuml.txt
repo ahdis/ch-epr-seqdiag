@@ -6,14 +6,12 @@ title EPR_QueryingGovernmentServices MPI/CPI/HPD
 box "Patient Portal" #B9C0B8
 	participant pp_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
 	participant pp_svs_value_set_consumer as "Value \nSet \nConsumer"
-	participant pp_atna_secure_node as "Secure \nNode"
 end box
 
 box "Health Professional Portal" #DCBEC7
 	participant ps_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
 '	participant ps_hpd_provider_info_source as "Provider \nInformation \nSource"
 	participant ps_svs_value_set_consumer as "Value \nSet \nConsumer"
-	participant ps_atna_secure_node as "Secure \nNode"
 end box
 
 box "Community Components" #FFEFDE
@@ -22,7 +20,6 @@ box "Community Components" #FFEFDE
 '	participant cc_hpd_provider_info_source as "Provider \nInformation \nSource"
 	participant cc_hpd_provider_info_directory as "Provider \nInformation \nDirectory"
 	participant cc_svs_value_set_consumer as "Value \nSet \nConsumer"
-	participant cc_atna_secure_node as "Secure \nNode"
 	participant cc_cpi_consumer as "CPI\nConsumer"
 end box
 
