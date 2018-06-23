@@ -38,20 +38,14 @@ activate pp_gui
 
 !include_many step_pp_xua.plantuml.txt
 
-note right pp_gui: the patient portal needs to verify an integrity check with the original exporter otherwise data needs to be marked as patient generated
-
 pp_gui -> pp_pmi: [ITI-32] Distribute Document Set on Media
 activate pp_pmi
 pp_gui <- pp_pmi: import all document entries from archive
 deactivate pp_pmi
 
 loop over each doument entry
-pp_gui -> pp_doc_consumer: verify if document entry is still available in own or other community\nsee 2_02b_EPR_PatientGetDoucments1of2 and 2_02b_EPR_PatientGetDoucments2of2)
-activate pp_doc_consumer
-pp_gui <- pp_doc_consumer
-deactivate pp_doc_consumer
 
-pp_gui -> pp_doc_source: if not available, submit document entries to the reposity of the patient
+pp_gui -> pp_doc_source: submit document entries to patients repository
 activate pp_doc_source
 pp_gui <- pp_doc_source
 deactivate pp_doc_source

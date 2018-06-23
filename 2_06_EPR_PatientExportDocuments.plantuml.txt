@@ -41,7 +41,6 @@ activate pp_pmc
 pp_gui <- pp_pmc: [ITI-32] Distribute Document Set on Media
 deactivate pp_pmc
 
-note right pp_gui: the patient portal needs to generate and be able to verify an integrity check for the future of this export
 patient <- pp_gui
 deactivate pp_gui
 
