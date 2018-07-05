@@ -63,11 +63,19 @@ deactivate ss_doc_repository
 pp_doc_consumer -> pp_img_doc_consumer
 activate pp_img_doc_consumer
 
-note left ss_img_docsource: grouping with [ITI-40] is an open issues
-pp_img_doc_consumer -> ss_img_docsource: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-activate ss_img_docsource
-pp_img_doc_consumer <- ss_img_docsource: [RAD-69] Retrieve Imaging Document Set Response
-deactivate ss_img_docsource
+opt retrieve images from source to display in browser
+	pp_img_doc_consumer -> ss_img_docsource: [RAD-55] WADO Retrieve
+	note left ss_img_docsource: WADO in discussion, security open issue
+	activate ss_img_docsource
+	pp_img_doc_consumer <- ss_img_docsource: [RAD-55] WADO Retrieve Response
+	deactivate ss_img_docsource
+else retrieve dicom objects
+    note left ss_img_docsource: grouping with [ITI-40] is an open issues
+    pp_img_doc_consumer -> ss_img_docsource: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+    activate ss_img_docsource
+    pp_img_doc_consumer <- ss_img_docsource: [RAD-69] Retrieve Imaging Document Set Response
+    deactivate ss_img_docsource
+end
 
 pp_doc_consumer <- pp_img_doc_consumer
 deactivate pp_img_doc_consumer

@@ -1,4 +1,10 @@
-# 2018-03-19: update of specifications from ehealth suisse/MOFH
+# 2018-07-05: update of specifications from ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E3 V1.4)
+
+2_05_EPR_Patient_XDS-I_XCA-I_1of2
+2_05_EPR_XDS-I_XCA-I_1of2
+* readded [RAD-55] WADO Retrieve (E-Mail from David Moessner 2.7 to EPD Projectathon google group: We were planning to remove RAD-55 WADO Retrieve but after a discussion in the working group technical-semantically interoperability some questions were raised which we have to look at first before making a final decision. So for now the transaction will not be removed.)
+
+# 2018-06-19: update of specifications from ehealth suisse/MOFH
 Updated specifications for the next Swiss #EPR #projectathon in Bern September 2018, check [eHealth Suisse Relevant Specification]( https://www.e-health-suisse.ch/gemeinschaften-umsetzung/umsetzung/programmierhilfen/relevante-spezifikationen.html) and [overview](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2018/E/180220_Grafik_Swiss_Electronic_Patient_Record_v1.4_e.pdf) 
 
 1_02_EPR_QueryingGovernmentServices
@@ -34,7 +40,7 @@ Updated specifications for the next Swiss #EPR #projectathon in Bern September 2
 * XUA depending on resolution of **SEQ_001**
 * Replace deprecated sequence diagram with new sequence diagrams based on CH:ATC Profile
 
-1_12_EPR_PatientDeleteDocumen
+1_12_EPR_PatientDeleteDocument
 * removed deprecated sequence diagram, deletion of document is postponed
 
 1_14_EPR_PatientDeleteEPR
@@ -121,12 +127,6 @@ Updated specifications for the next Swiss #EPR #projectathon in Bern September 2
 
 2_07_EPR_PatientImportDocuments  - new sequence diagram
 * XUA depending on resolution of **SEQ_001**
-
-to discuss:
-* new Sequence diagram or test how a representative gets a CH:XUA token from a patient portal?
-* new Sequence diagram or test how an assistant gets a CH:XUA token from a health professional portal portal?
-* new Sequence diagram or test for a technical user (machine upload) gets a CH:XUA token from a health professional portal portal?
-* new Sequence diagram or test for an administrative user ( to get a CH:XUA token from a health professional portal portal?
 
 # 2018-03-05: changes after specification update from ehealth suisse/MOFH
 Updated specifications for the next Swiss #EPR #projectathon at The Hague @IHE_Europe, check [google group]( https://groups.google.com/forum/#!topic/epd_projectathon/6tHhL_ztSL8epd_projectathon@googlegroups.com) and [overview](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2018/E/180220_Grafik_Swiss_Electronic_Patient_Record_v1.4_e.pdf) 
