@@ -4,93 +4,115 @@ title 3.01 mHealth - get document for patient
 
 actor user as "Patient"
 
-box "App" #BFCAD2
-	participant app as "App"
+box "mHealth App" #BFCAD2
+	participant app as "App GUI"
     participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer (PIXm)"
     participant docconsumer as "Document Consumer (MHD)"
 end box
 
-box "Mobile Portal" #DEEDE0
-	participant mp_fhirserver as "FHIR API"
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "SMART\nAutz Server"
+end box
+
+box "Mobile Access Portal for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
+	participant mp_fhirserver as "SMART\nFHIR Server"
 	participant mp_pix_x_ref_mgr as "Patient Identifier Cross-reference Manager (PIXm)\nPatient Identifier Cross-reference Consumer (PIXV3)"
 	participant mp_doc_responder as "Document Responder (MHD)\nDocument Consumer (XDS) | X-Service User"
 end box
 
-box "IdP" #DFF3F7
-	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
-end box
-
 box "Community Components" #FFEFDE
-	participant cc_x_assertion_provider as "X-Assertion Provider" 
-	participant cc_doc_registry as "Document Registry | X-Service Provider | Authorization Decision Consumer | X-Service User\nInitiating Gateway | X-Service Provider" 
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
+	participant cc_x_assertion_provider as "X-Assertion Provider" 
+	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
+	participant cc_ig as "Initiating Gateway| X-Service Provider\n| X-Service User" 
 end box
 
 box "Secondary Systems" #F7A69E
 	participant ss_doc_repository as "Document Repository | X-Service Provider" 
 end box
 
-user -> app: read doc
+box "Other Communities" #91D2E8
+	participant xc_rg as "Responding Gateway\n| X-Service Provider"
+'	participant ss_doc_repository2 as "Document Repository | X-Service Provider" 
+end box
+
+
+user -[#black]> app: read doc
 activate app
 
 app -> mp_fhirserver: GET /metadata
 activate mp_fhirserver
 app <- mp_fhirserver: Conformance statement incl. OAuth 2.0 endpoints
 deactivate mp_fhirserver
-app -> idp_user_authentication_provider: Redirect to Authz Server (SMART standalone launce sequence)
+app -> idp_user_authentication_provider: Redirect to Authz Server (SMART standalone launce sequence)\nwith OpenID Connect
 activate idp_user_authentication_provider
 idp_user_authentication_provider -> idp_user_authentication_provider: Authenticate and authorize User
 idp_user_authentication_provider -> app: On Approval redirect to app with code
 deactivate idp_user_authentication_provider
 app -> idp_user_authentication_provider: Exchange code for access token
 activate idp_user_authentication_provider
-app <- idp_user_authentication_provider: access token for response
+app <- idp_user_authentication_provider: access token for response [JWT:UAP-ID]
 deactivate idp_user_authentication_provider
 
-app -> pixmconsumer: get MPI_PID
+app -[#black]> pixmconsumer: get MPI_PID
 activate pixmconsumer
-pixmconsumer -> mp_pix_x_ref_mgr: [ITI-83] Mobile Patient Identifier Cross-reference Query 
+pixmconsumer -> mp_pix_x_ref_mgr: [ITI-83] Mobile Patient Identifier Cross-reference Query [UAP-ID, JWT:UAP-ID]
 activate mp_pix_x_ref_mgr
-mp_pix_x_ref_mgr -> mp_pix_x_ref_mgr: PIXm to PIX V3
+mp_pix_x_ref_mgr -[#black]> mp_pix_x_ref_mgr: PIXm to PIX V3
 activate mp_pix_x_ref_mgr
 
 mp_pix_x_ref_mgr -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [UAP ID]
 activate cc_mpi_x_ref_manager
-mp_pix_x_ref_mgr <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
+mp_pix_x_ref_mgr <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI-PID, EPR-SPID]
 deactivate cc_mpi_x_ref_manager
+mp_pix_x_ref_mgr <[#black]- mp_pix_x_ref_mgr: PIX V3 to PIXm
 
 deactivate mp_pix_x_ref_mgr
-pixmconsumer <- mp_pix_x_ref_mgr: [ITI-83] PIXm Query Response [MPI_A-PID, EPR-SPID]
+pixmconsumer <- mp_pix_x_ref_mgr: [ITI-83] PIXm Query Response [MPI-PID]
 deactivate mp_pix_x_ref_mgr
-app <- pixmconsumer: 
+app <[#black]- pixmconsumer: 
 deactivate pixmconsumer
 
-app -> docconsumer: query documents
+app -[#black]> docconsumer: query documents
 activate docconsumer
-docconsumer -> mp_doc_responder: [ITI-67] Find Document References 
+docconsumer -> mp_doc_responder: [ITI-67] Find Document References  [MPI-PID, JWT:UAP-ID]
 activate mp_doc_responder
-mp_doc_responder -> mp_doc_responder: MHD to XDS
+mp_doc_responder -[#black]> mp_doc_responder: MHD to XDS
 activate mp_doc_responder
 mp_doc_responder -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions [UAP-ID]
 activate cc_x_assertion_provider
 mp_doc_responder <- cc_x_assertion_provider: CH:XUA Get-XUser Assertions Response [EPR-SPID] according to CH:XUA
 deactivate cc_x_assertion_provider
 
-mp_doc_responder -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+mp_doc_responder -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_doc_registry
 mp_doc_responder <- cc_doc_registry: [ITI-18] Registry Stored Query Response
 deactivate cc_doc_registry
+
+mp_doc_responder -> cc_ig: [ITI-18] Registry Stored Query [MPI-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_ig
+loop over all responding gateways
+  cc_ig -> xc_rg: [ITI-38, 55]
+  activate xc_rg
+  cc_ig <- xc_rg: [ITI-38, 55]
+  deactivate xc_rg
+end
+
+mp_doc_responder <- cc_ig: [ITI-18] Registry Stored Query Response
+deactivate cc_ig
+
+mp_doc_responder <[#black]- mp_doc_responder: XDS to MHD
 deactivate mp_doc_responder
 docconsumer <- mp_doc_responder
 deactivate mp_doc_responder
-app <- docconsumer
+app <[#black]- docconsumer
 deactivate docconsumer
 
-app -> docconsumer: retrieve document
+app -[#black]> docconsumer: retrieve document [JWT:UAP-ID]
 activate docconsumer
 docconsumer -> mp_doc_responder: [ITI-68] Retrieve Document
 activate mp_doc_responder
-mp_doc_responder -> mp_doc_responder: MHD to XDS
+mp_doc_responder -[#black]> mp_doc_responder: MHD to XDS
 
 activate mp_doc_responder
 mp_doc_responder -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions [UAP-ID]
@@ -98,19 +120,31 @@ activate cc_x_assertion_provider
 mp_doc_responder <- cc_x_assertion_provider: CH:XUA Get-XUser Assertions Response [EPR-SPID] according to CH:XUA
 deactivate cc_x_assertion_provider
 
+opt
 mp_doc_responder -> ss_doc_repository: [ITI-43] Retrieve Document Set Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate ss_doc_repository
 mp_doc_responder <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
 deactivate ss_doc_repository
+else
+mp_doc_responder -> cc_ig: [ITI-43] Retrieve Document Set Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_ig
+cc_ig -> xc_rg: [ITI-39]
+activate xc_rg
+cc_ig <- xc_rg: [ITI-39]
+deactivate xc_rg
+mp_doc_responder <- cc_ig: [ITI-43] Retrieve Document Set Response
+deactivate cc_ig
+end
 
+mp_doc_responder <[#black]- mp_doc_responder: XDS to MHD
 
 deactivate mp_doc_responder
 docconsumer <- mp_doc_responder
 deactivate mp_doc_responder
-app <- docconsumer
+app <[#black]- docconsumer
 deactivate docconsumer
 
-user <- app
+user <[#black]- app
 deactivate app
 
 @enduml 
