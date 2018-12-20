@@ -23,16 +23,18 @@ box "Community Components" #FFEFDE
 	participant cc_adp as "Authorization Decision Provider \n| X-Service Provider"
 end box
 
-patient -> pp_gui: Patient queries access rights
+patient -[#black]> pp_gui: Patient queries access rights
 activate pp_gui
 
 !include step_pp_gui_saml.plantuml.txt
 
+opt
 !include step_pp_pix.plantuml.txt
+end
 
 !include step_pp_xua.plantuml.txt
 
-pp_gui -> pp_ppq_policy_consumer: query access right 
+pp_gui -[#black]> pp_ppq_policy_consumer: query access right 
 activate pp_ppq_policy_consumer
 pp_ppq_policy_consumer -> cc_ppq_policy_repository: Privacy Policy Retrieve Request [CH:PPQ-2]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID] 
 activate cc_ppq_policy_repository
@@ -42,14 +44,14 @@ cc_ppq_policy_repository <- cc_adp: ADR Authorization Decision Response
 deactivate cc_adp
 pp_ppq_policy_consumer <- cc_ppq_policy_repository: Privacy Policy Retrieve Reponse [CH:PPQ-2]
 deactivate cc_ppq_policy_repository
-pp_gui <- pp_ppq_policy_consumer
+pp_gui <[#black]- pp_ppq_policy_consumer
 deactivate pp_ppq_policy_consumer
-patient <- pp_gui
+patient <[#black]- pp_gui
 
 loop
-patient -> pp_gui: Patient modifies access rights
+patient -[#black]> pp_gui: Patient modifies access rights
 
-pp_gui -> pp_ppq_policy_source: modify access right 
+pp_gui -[#black]> pp_ppq_policy_source: modify access right 
 activate pp_ppq_policy_source
 pp_ppq_policy_source -> cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID] 
 activate cc_ppq_policy_repository
@@ -60,9 +62,9 @@ deactivate cc_adp
 
 pp_ppq_policy_source <- cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed Response
 deactivate cc_ppq_policy_repository
-pp_gui <- pp_ppq_policy_source
+pp_gui <[#black]- pp_ppq_policy_source
 deactivate pp_ppq_policy_source
-patient <- pp_gui
+patient <[#black]- pp_gui
 end
 
 @enduml 

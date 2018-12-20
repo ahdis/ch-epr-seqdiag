@@ -8,7 +8,7 @@ box "Patient Portal" #B9C0B8
 	participant pp_gui as "Patient Portal"
 	participant pp_x_service_user as "X-Service User"
 	participant pp_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
-	participant pp_patient_audit_consumer as "Patient\nAudit \nConsumer"
+	participant pp_patient_audit_consumer as "Patient Audit Consumer|\nAuthorization Client"
 end box
 
 box "IdP" #DFF3F7
@@ -18,25 +18,27 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
-	participant cc_pat_arr as "Patient Audit Record Repository"
+	participant cc_pat_arr as "Patient Audit Record Repository |\nResource Server"
 end box
 
 box "Other Communities" #91D2E8
-	participant xc_pat_arr as "Patient Audit Record Repository"
+	participant xc_pat_arr as "Patient Audit Record Repository|\nResource Server"
 end box
 
-patient -> pp_gui: Patient verifies access log to his EPR
+patient -[#black]> pp_gui: Patient verifies access log to his EPR
 activate pp_gui
 
 !include step_pp_gui_saml.plantuml.txt
 
+opt
 !include step_pp_pix.plantuml.txt
+end
 
 !include step_pp_xua.plantuml.txt
 
 == Patient Audit Record Repository - Reference Community  ==
 
-pp_gui -> pp_patient_audit_consumer: retrieve access logs reference community
+pp_gui -[#black]> pp_patient_audit_consumer: retrieve access logs reference community
 activate pp_patient_audit_consumer
 
 pp_patient_audit_consumer -> cc_pat_arr: [ITI-81] Retrieve Audit Event [EPR-SPID] grouped with IUA [ITI-72]
@@ -53,9 +55,9 @@ pp_patient_audit_consumer <- xc_pat_arr: [ITI-81] Retrieve Audit Event Response
 deactivate xc_pat_arr
 end
 
-pp_patient_audit_consumer -> pp_patient_audit_consumer: consolidate Audit Events
-pp_gui <- pp_patient_audit_consumer: return consolidated Audit Events
+pp_patient_audit_consumer -[#black]> pp_patient_audit_consumer: consolidate Audit Events
+pp_gui <[#black]- pp_patient_audit_consumer: return consolidated Audit Events
 deactivate pp_patient_audit_consumer
-patient <- pp_gui
+patient <[#black]- pp_gui
 
 @enduml 

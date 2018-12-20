@@ -6,62 +6,84 @@ actor admin as "Operator"
 
 box "Community Components" #FFEFDE
 	participant cc_upi_client as "UPI Client"
-	participant cc_mpi_source as "Patient \nIdentity \nSource"
-	participant cc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
+	participant cc_mpi_source as "Patient Identity Source |\nPatient Identifier Cross-reference Consumer"
+	participant cc_ppq_policy_source as "Policy Source | X-Service User"
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
-	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
+	participant cc_doc_registry as "Document Registry" 
+	participant cc_x_assertion_provider as "X-Assertion Provider"
 	participant cc_ppq_policy_repository as "Policy Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User"
+end box
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
 end box
 
 box "Government Services" #E2F3F8
 	participant gs_upi as "Unique \nPerson \nIdentification \nService"
 end box
 
-admin -> cc_upi_client: Get new EPR-SPID from UPI \nusing Social Security Number (AHVN13) \nand demographics
+admin -[#black]> cc_upi_client: Get new EPR-SPID from UPI \nusing Social Security Number (AHVN13) \nand demographics
 activate cc_upi_client
 cc_upi_client -> gs_upi:eCH-0213 (Generate)
 activate gs_upi
 cc_upi_client <- gs_upi: [EPR-SPID] if new, error message if existing
 deactivate gs_upi
-admin <- cc_upi_client: EPR-SPID
+admin <[#black]- cc_upi_client: EPR-SPID
 deactivate cc_upi_client
 
-admin ->x admin: Fork if EPR-SPID already exists
+admin -[#black]>x admin: Fork if EPR-SPID already exists
 
-admin -> admin: Check EPR-SPID attributed to the correct person
+admin -[#black]> admin: Check EPR-SPID attributed to the correct person
 
 
-admin -> cc_mpi_source: register patient including demographics from UPI and EPR-SPID in MPI and registry
+admin -[#black]> cc_mpi_source: register patient including demographics from UPI and EPR-SPID in MPI and registry
 activate cc_mpi_source
 cc_mpi_source -> cc_mpi_x_ref_manager: [ITI-44] Patient Identity Feed [EPR-SPID]
 activate cc_mpi_x_ref_manager
 cc_mpi_source <- cc_mpi_x_ref_manager: Patient Identity Feed Response
 deactivate cc_mpi_x_ref_manager
 
-cc_mpi_source -> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using EPR-SPID
-activate cc_pix_x_ref_consumer
-cc_pix_x_ref_consumer -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [EPR-SPID]
+cc_mpi_source -[#black]> cc_mpi_source: query MPI_A-PID from MPI using EPR-SPID
+activate cc_mpi_source
+cc_mpi_source -> cc_mpi_x_ref_manager: [ITI-45] PIX V3 Query [EPR-SPID]
 activate cc_mpi_x_ref_manager
-cc_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
+cc_mpi_source <- cc_mpi_x_ref_manager: [ITI-45] PIX V3 Response [MPI_A-PID, EPR-SPID]
 deactivate cc_mpi_x_ref_manager
-cc_mpi_source <- cc_pix_x_ref_consumer
-deactivate cc_pix_x_ref_consumer
+cc_mpi_source <[#black]- cc_mpi_source
+deactivate cc_mpi_source
 
 cc_mpi_source -> cc_doc_registry: [ITI-44] Patient Identity Feed [MPI_A-PID]
 activate cc_doc_registry
 cc_mpi_source <- cc_doc_registry: [ITI-44] Patient Identity Feed Response
 deactivate cc_doc_registry
 
-admin <- cc_mpi_source
+admin <[#black]- cc_mpi_source
 deactivate cc_mpi_source
  
 
 opt default policies for patient have to be generated if this is the reference community (EPR-SPID was generated with eCH-0213)
-note right admin: initializing policies will be supported with a next revision of PPQ (decided in AG TSI, 16th meeting, issue EPD-28) 
-  admin -> cc_ppq_policy_repository: [ITI-44 trigger default policies for patient [EPR-SPID]
+  admin -[#black]> cc_ppq_policy_source: trigger default policies for patient [EPR-SPID]
+  activate cc_ppq_policy_source
+  cc_ppq_policy_source -[#black]> cc_ppq_policy_source
+  activate cc_ppq_policy_source
+  cc_ppq_policy_source -> idp_user_authentication_provider : CH:XUA Authenticate user
+  activate idp_user_authentication_provider
+  cc_ppq_policy_source <- idp_user_authentication_provider : CH:XUA Authenticate user response \n(SAML 2.0 token returned to Portal with UAP-ID)
+  deactivate idp_user_authentication_provider
+  cc_ppq_policy_source -> cc_x_assertion_provider:  CH:XUA Get X-User Assertion with Policy Administrator Extension
+  activate cc_x_assertion_provider
+  cc_ppq_policy_source <- cc_x_assertion_provider
+  deactivate cc_x_assertion_provider
+  cc_ppq_policy_source <[#black]- cc_ppq_policy_source
+  deactivate cc_ppq_policy_source
+  cc_ppq_policy_source -> cc_ppq_policy_repository: [PPQ-1] Privacy Policy Feed with initial policy set in role policy administrator for patient [EPR-SPID]
   activate cc_ppq_policy_repository
-  admin <- cc_ppq_policy_repository
+  cc_ppq_policy_source <- cc_ppq_policy_repository
   deactivate cc_ppq_policy_repository
+  admin <[#black]- cc_ppq_policy_source
+  deactivate cc_ppq_policy_source
 end
+
+
 
 @enduml 

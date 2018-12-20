@@ -14,24 +14,24 @@ end box
 
 == Query by demographics ==
 
-admin -> cc_upi_client: Query by demographics
+admin -[#black]> cc_upi_client: Query by demographics
 activate cc_upi_client
 cc_upi_client->gs_upi:eCH-0214:  Input demographic attributes of the patient
 activate gs_upi
 cc_upi_client<-gs_upi:eCH-0214:  Response SSN (Social Security Number), EPR-SPID and demographics for the patient 
 deactivate gs_upi
-admin<-cc_upi_client
+admin<[#black]-cc_upi_client
 deactivate cc_upi_client
 
 == Query EPR-SPID by SSN ==
 
-admin -> cc_upi_client: Query EPR-SPID by SSN
+admin -[#black]> cc_upi_client: Query EPR-SPID by SSN
 activate cc_upi_client
 cc_upi_client->gs_upi:eCH-0214:  Input SSN (Social Security Number) 
 activate gs_upi
 cc_upi_client<-gs_upi:eCH-0214:  Response SSN (Social Security Number), EPR-SPID and demographics for the patient 
 deactivate gs_upi
-admin<-cc_upi_client
+admin<[#black]-cc_upi_client
 
 deactivate cc_upi_client
 

@@ -22,8 +22,8 @@ activate gs_upi
 gs_upi -> cc_upi_client: eCH-0215: Make broadcast to reference community about 2 active EPR-SPID
 activate cc_upi_client
 
-cc_upi_client -> admin
-admin -> cc_upi_client: Decide which should be inactivated
+cc_upi_client -[#black]> admin
+admin -[#black]> cc_upi_client: Decide which should be inactivated
 
 cc_upi_client->gs_upi: eCH-0213: [EPR-SPID] to be inactivated
 deactivate gs_upi
@@ -33,7 +33,7 @@ activate gs_upi
 
 gs_upi -> cc_upi_client: eCH-0215: Make broadcast to all communities to inactivate EPR for patient [EPR-SPID]
 deactivate gs_upi
-cc_upi_client -> admin: Perform inactivation within community (replace inactive EPR-SPID with active EPR-SPID)
+cc_upi_client -[#black]> admin: Perform inactivation within community (replace inactive EPR-SPID with active EPR-SPID)
 deactivate cc_upi_client
 
 

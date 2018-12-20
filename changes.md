@@ -1,4 +1,73 @@
-# 2018-07-05: update of specifications from ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E3 V1.4)
+# 2018-12-19: update to 1.6 specifications ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E2 V1.6, CN:ATC V1.1.0 ) 
+
+general updates:
+transactions which are neither IHE, eCH or CH:xxx have now a black colored arrow to differentiate 
+
+1_02_EPR_QueryingGovernmentServices - no changes
+Note: [ITI-60] Retrieve Multiple Value Sets will get optional, decided at AT TSI Meeting 12.12.18 but not reflected yet in ordinnace
+
+1_02_EPR_QueryingGovernmentServicesHPD - no changes
+
+1_02_EPR_QueryingGovernmentServicesMPI
+renamed to -1_02_EPR_QueryingGovernmentServicesMDI
+
+1_02b_EPR_CommunityInCircleOfTrust - no changes
+
+1_03-1_6_HPD_Usecases - no changes
+
+1_07_EPR_PatientCreateEPR
+* grouped actor Patient Identity Source and Patient identifier - Cross-reference Consumer (Feedback from JB)
+* introduced policy source for feeding initial patient policies into the policy repository by the policy administrator (see A5E1 2.3.2 A special case is the on-boarding process of a new patient)
+
+1_07b_EPR_PatientOpenEPR
+* grouped actor Patient Identity Source and Patient identifier - Cross-reference Consumer (Feedback from JB)
+
+1_08_EPR_PatientModifyAccessRights
+* resolved Note **SEQ_001** 
+    - optional to query MPI_A-PID from MPI using local ID / UAP-ID in portal (for patient portal UAP-ID can be directly provided)
+    - optional to resolve it to the EPR-SPID by querying the community data stores.
+
+1_09_EPR_PatientModifyConfLevelDoc
+* resolved Note **SEQ_001** 
+    - optional to resolve it to the EPR-SPID by querying the community data stores.
+* replaced [ITI-X1] with assigned transcation number: [ITI-92]
+
+1_09b_EPR_PatientModifyConfLevelDoc
+* resolved Note **SEQ_001** 
+    - optional to resolve it to the EPR-SPID by querying the community data stores.
+* replaced [ITI-X1] with assigned transcation number: [ITI-92]
+
+1_10_EPR_PatientVerifiesAccessLog
+* resolved Note **SEQ_001** 
+* added grouped actors Authorization Client / Resource Server
+
+1_14_EPR_PatientDeleteEPR
+* introduced policy administrator extension for CH:XUA
+* still open question: **SEQ_002**: PPQ: Can all policies for a patient be deleted with a Delete Policy Request?
+
+1_15_EPR_PatientEPRQuery - no changes
+1_16_EPR_PatientEPRInactivate  - no changes
+2_01_EPR_ATNA - no changes
+2_01_EPR_CT - no changes
+
+2_02_EPR_HPGetDocuments
+2_02_EPR_HPGetDocuments1of3
+2_02_EPR_HPGetDocuments2of3
+2_02_EPR_HPGetDocuments3of3
+2_02b_EPR_PatientGetDocuments1of2
+2_02b_EPR_PatientGetDocuments2of2
+2_03_EPR_HPStoreDocuments
+2_03b_EPR_PatientStoreDocuments
+2_04_EPR_PatientAssignAccessRights
+2_05_EPR_Patient_XDS-I_XCA-I_1of2
+2_05_EPR_Patient_XDS-I_XCA-I_2of2
+2_05_EPR_XDS-I_XCA-I
+2_05_EPR_XDS-I_XCA-I_1of2
+2_05_EPR_XDS-I_XCA-I_2of2
+2_06_EPR_PatientExportDocuments
+2_06_EPR_PatientImportDocuments
+
+# 2018-07-05: update of specifications from ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E2 V1.5)
 
 2_05_EPR_Patient_XDS-I_XCA-I_1of2
 2_05_EPR_XDS-I_XCA-I_1of2
