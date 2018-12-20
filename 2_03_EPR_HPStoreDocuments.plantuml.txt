@@ -16,7 +16,7 @@ box "IdP" #DFF3F7
 end box
 
 box "Secondary Systems" #F7A69E
-	participant ss_doc_repository as "Document Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
+	participant ss_doc_repository as "Document Repository | X-Service Provider|\nX-Service User" 
 end box
 
 box "Community Components" #FFEFDE
@@ -33,7 +33,7 @@ box "Other Communities" #91D2E8
 	participant xc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
-hp -> ps_gui
+hp -[#black]> ps_gui
 activate ps_gui
 
 !include step_ps_gui_saml.plantuml.txt
@@ -42,7 +42,7 @@ activate ps_gui
 
 !include step_ps_xua.plantuml.txt
 
-ps_gui -> ps_doc_source : provide and register document in repository grouped with xua
+ps_gui -[#black]> ps_doc_source : provide and register document in repository grouped with xua
 activate ps_doc_source
 loop For the XDS Register Document Set related access decision enforcement, the EPR relies on the \nXDS Confidentiality Code within the document metadata to be stored in the patient’s Health Record. \nThe Authorization Decisions Consumer (Document Registry) MUST create one request to query for \nan access decision for each Confidentiality Code, before allowing the Register transaction to a Document Repository.
   ps_doc_source -> ss_doc_repository: [ITI-41] Provide and Register Document Set-b Request [MPI_A-PID] \ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
@@ -69,10 +69,10 @@ loop For the XDS Register Document Set related access decision enforcement, the 
   deactivate ss_doc_repository
 end  
 
-ps_gui <- ps_doc_source
+ps_gui <[#black]- ps_doc_source
 deactivate ps_doc_source
 
-hp <- ps_gui
+hp <[#black]- ps_gui
 deactivate ps_gui
 
 

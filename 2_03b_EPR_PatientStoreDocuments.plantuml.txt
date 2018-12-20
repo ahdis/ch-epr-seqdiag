@@ -16,7 +16,7 @@ box "IdP" #DFF3F7
 end box
 
 box "Secondary Systems" #F7A69E
-	participant ss_doc_repository as "Document Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
+	participant ss_doc_repository as "Document Repository | X-Service Provider|\nX-Service User" 
 end box
 
 box "Community Components" #FFEFDE
@@ -28,7 +28,7 @@ box "Community Components" #FFEFDE
 	participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
-patient -> pp_gui: Patient uploads a document to his reference community
+patient -[#black]> pp_gui: Patient uploads a document to his reference community
 activate pp_gui
 
 !include step_pp_gui_saml.plantuml.txt
@@ -37,7 +37,7 @@ activate pp_gui
 
 !include step_pp_xua.plantuml.txt
 
-pp_gui -> pp_doc_source : provide and register document in repository grouped with xua
+pp_gui -[#black]> pp_doc_source : provide and register document in repository grouped with xua
 activate pp_doc_source
 
 pp_doc_source -> ss_doc_repository: [ITI-41] Provide and Register Document Set-b Request [MPI_A-PID] \ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
@@ -56,10 +56,10 @@ deactivate cc_doc_registry
 pp_doc_source <- ss_doc_repository: [ITI-41] Provide and Register Document Set-b Response
 deactivate ss_doc_repository
 
-pp_gui <- pp_doc_source
+pp_gui <[#black]- pp_doc_source
 deactivate pp_doc_source
 
-patient <- pp_gui
+patient <[#black]- pp_gui
 deactivate pp_gui
 
 @enduml 

@@ -51,21 +51,66 @@ renamed to -1_02_EPR_QueryingGovernmentServicesMDI
 2_01_EPR_CT - no changes
 
 2_02_EPR_HPGetDocuments
+* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+* removed grouped Authorization Decision Consumer actor from Document Repository
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+
 2_02_EPR_HPGetDocuments1of3
+* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+* removed grouped Authorization Decision Consumer actor from Document Repository
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+
 2_02_EPR_HPGetDocuments2of3
+* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+* removed grouped Authorization Decision Consumer actor from Document Repository
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+
 2_02_EPR_HPGetDocuments3of3
+* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+* removed grouped Authorization Decision Consumer actor from Document Repository
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+
 2_02b_EPR_PatientGetDocuments1of2
+* adapted CH:XUA Get X-User Assertions with Patient Extension
+* removed grouped Authorization Decision Consumer actor from Document Repository
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+
 2_02b_EPR_PatientGetDocuments2of2
+* adapted CH:XUA Get X-User Assertions with Patient Extension
+* removed grouped Authorization Decision Consumer actor from Document Repository
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+
 2_03_EPR_HPStoreDocuments
+* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+
 2_03b_EPR_PatientStoreDocuments
+* adapted CH:XUA Get X-User Assertions with Patient Extension
+
 2_04_EPR_PatientAssignAccessRights
+* adapted CH:XUA Get X-User Assertions with Patient Extension
+
 2_05_EPR_Patient_XDS-I_XCA-I_1of2
+* adapted CH:XUA Get X-User Assertions with Patient Extension
+* removed grouped Authorization Decision Consumer actor from Document Repository
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+* precised for wado that grouping with [ITI-IUA] is an open issues
+
 2_05_EPR_Patient_XDS-I_XCA-I_2of2
+* adapted CH:XUA Get X-User Assertions with Patient Extension
+
 2_05_EPR_XDS-I_XCA-I
+* removed, described in 2_05_EPR_XDS-I_XCA-I_1of2 and 2_05_EPR_XDS-I_XCA-I_2of2
+
 2_05_EPR_XDS-I_XCA-I_1of2
+* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+* precised for wado that grouping with [ITI-IUA] is an open issues
+
 2_05_EPR_XDS-I_XCA-I_2of2
-2_06_EPR_PatientExportDocuments
-2_06_EPR_PatientImportDocuments
+* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+
+2_06_EPR_PatientExportDocuments - no changes
+
+2_06_EPR_PatientImportDocuments - no changes
 
 # 2018-07-05: update of specifications from ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E2 V1.5)
 
