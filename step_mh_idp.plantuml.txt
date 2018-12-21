@@ -1,0 +1,16 @@
+
+
+app -> mp_fhirserver: GET /metadata
+activate mp_fhirserver
+app <- mp_fhirserver: Conformance statement incl. OAuth 2.0 endpoints
+deactivate mp_fhirserver
+app -> idp_user_authentication_provider: Redirect to Authz Server (SMART standalone launce sequence)\nwith OpenID Connect
+activate idp_user_authentication_provider
+idp_user_authentication_provider -> idp_user_authentication_provider: Authenticate and authorize User
+idp_user_authentication_provider -> app: On Approval redirect to app with code
+deactivate idp_user_authentication_provider
+app -> idp_user_authentication_provider: Exchange code for access token
+activate idp_user_authentication_provider
+app <- idp_user_authentication_provider: access token for response [JWT:UAP-ID]
+deactivate idp_user_authentication_provider
+

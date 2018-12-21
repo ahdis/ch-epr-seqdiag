@@ -1,0 +1,26 @@
+@startuml
+!include design.plantuml.txt
+title 3.01 mHealth - Authentication/Authorization
+
+actor user as "Patient"
+
+box "mHealth App" #BFCAD2
+	participant app as "App GUI"
+    participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer (PIXm)"
+end box
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "SMART\nAuthz Server"
+end box
+
+box "Mobile Access Portal for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
+	participant mp_fhirserver as "SMART\nFHIR Server"
+end box
+
+user -[#black]> app: authenticate
+activate app
+!include_many step_mh_idp.plantuml.txt
+user <[#black]- app
+deactivate app
+
+@enduml 

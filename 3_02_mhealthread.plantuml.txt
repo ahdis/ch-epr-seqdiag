@@ -1,6 +1,6 @@
 @startuml
 !include design.plantuml.txt
-title 3.01 mHealth - get document for patient
+title 3.02 mHealth - get document for patient
 
 actor user as "Patient"
 
@@ -11,7 +11,7 @@ box "mHealth App" #BFCAD2
 end box
 
 box "IdP" #DFF3F7
-	participant idp_user_authentication_provider as "SMART\nAutz Server"
+	participant idp_user_authentication_provider as "SMART\nAuthz Server"
 end box
 
 box "Mobile Access Portal for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
@@ -40,38 +40,9 @@ end box
 user -[#black]> app: read doc
 activate app
 
-app -> mp_fhirserver: GET /metadata
-activate mp_fhirserver
-app <- mp_fhirserver: Conformance statement incl. OAuth 2.0 endpoints
-deactivate mp_fhirserver
-app -> idp_user_authentication_provider: Redirect to Authz Server (SMART standalone launce sequence)\nwith OpenID Connect
-activate idp_user_authentication_provider
-idp_user_authentication_provider -> idp_user_authentication_provider: Authenticate and authorize User
-idp_user_authentication_provider -> app: On Approval redirect to app with code
-deactivate idp_user_authentication_provider
-app -> idp_user_authentication_provider: Exchange code for access token
-activate idp_user_authentication_provider
-app <- idp_user_authentication_provider: access token for response [JWT:UAP-ID]
-deactivate idp_user_authentication_provider
+!include_many step_mh_idp.plantuml.txt
 
-app -[#black]> pixmconsumer: get MPI_PID
-activate pixmconsumer
-pixmconsumer -> mp_pix_x_ref_mgr: [ITI-83] Mobile Patient Identifier Cross-reference Query [UAP-ID, JWT:UAP-ID]
-activate mp_pix_x_ref_mgr
-mp_pix_x_ref_mgr -[#black]> mp_pix_x_ref_mgr: PIXm to PIX V3
-activate mp_pix_x_ref_mgr
-
-mp_pix_x_ref_mgr -> cc_mpi_x_ref_manager: [ITI-45] PIX V3 Query [UAP ID]
-activate cc_mpi_x_ref_manager
-mp_pix_x_ref_mgr <- cc_mpi_x_ref_manager: [ITI-45] PIX V3 Response [MPI-PID, EPR-SPID]
-deactivate cc_mpi_x_ref_manager
-mp_pix_x_ref_mgr <[#black]- mp_pix_x_ref_mgr: PIX V3 to PIXm
-
-deactivate mp_pix_x_ref_mgr
-pixmconsumer <- mp_pix_x_ref_mgr: [ITI-83] PIXm Query Response [MPI-PID]
-deactivate mp_pix_x_ref_mgr
-app <[#black]- pixmconsumer: 
-deactivate pixmconsumer
+!include_many step_mh_pixm.plantuml.txt
 
 app -[#black]> docconsumer: query documents
 activate docconsumer
