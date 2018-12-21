@@ -1,18 +1,18 @@
 @startuml
 !include design.plantuml.txt
-title 3.1 Patient Idendity Cross Reference Management with EPR and primary systems
+title 3.1 Patient Identity Cross Reference Management with EPR and primary systems
 
 actor admin as "Admin"
 
 box "Primary System (Health Professional Portal)" #DCBEC7
-	participant ps_gui as "Primary System (Health Professional Portal)"
+	participant ps_gui as "Primary System\n(Health Professional Portal)" #99FF99
 	participant ps_pdq_patient_demographics_consumer as "Patient \nDemographics \nConsumer"
 	participant ps_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant ps_mpi_source as "Patient \nIdentity \nSource"
 end box
 
 box "Community Components" #FFEFDE
-	participant cc_pime_client as "Patient Identity Cross Ref Manager EPR"
+	participant cc_pime_client as "Patient Identity Cross Ref Manager EPR\nInterface to community components" #99FF99
 	participant cc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"	
 	participant cc_mpi_source as "Patient \nIdentity \nSource"
@@ -26,55 +26,55 @@ end box
 
 == I. Check if patient is already registered with this primary system in the community  ==
 
-admin -> ps_gui: Has Patient an EPR based on local ID?
+admin -[#black]> ps_gui: Has Patient an EPR based on local ID?
 activate ps_gui
-ps_gui -> ps_pix_x_ref_consumer: query MPI_A-PID from MPI using local ID
+ps_gui -[#black]> ps_pix_x_ref_consumer: query MPI_A-PID from MPI using local ID
 activate ps_pix_x_ref_consumer
 ps_pix_x_ref_consumer -> cc_pime_client: ITI-45 PIX V3 Query [local ID]
 activate cc_pime_client
-cc_pime_client -> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using local ID
+cc_pime_client -[#black]> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using local ID
 activate cc_pix_x_ref_consumer
 cc_pix_x_ref_consumer -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [local ID]
 activate cc_mpi_x_ref_manager
 cc_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
 note right cc_pime_client: a) found: [MPI_A-PID, EPR-SPID]\nb) not found: []
 deactivate cc_mpi_x_ref_manager
-cc_pime_client <- cc_pix_x_ref_consumer: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
+cc_pime_client <[#black]- cc_pix_x_ref_consumer: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
 deactivate cc_pix_x_ref_consumer
 
 ps_pix_x_ref_consumer <- cc_pime_client: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
 deactivate cc_pime_client
-ps_gui <- ps_pix_x_ref_consumer: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
+ps_gui <[#black]- ps_pix_x_ref_consumer: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
 deactivate ps_pix_x_ref_consumer
-admin <- ps_gui:  If MPI_A-PID and EPR-SPID available,\nPatient has an EPR which corresponds to local ID
+admin <[#black]- ps_gui:  If MPI_A-PID and EPR-SPID available,\nPatient has an EPR which corresponds to local ID
 deactivate ps_gui
 
 == II. Check if patient has an EPR independent of local ID of the primary system  ==
 
-admin -> ps_gui: Has Patient an EPR based on AHVN13 and optional demograhics?
+admin -[#black]> ps_gui: Has Patient an EPR based on AHVN13 and optional demographics?
 activate ps_gui
-ps_gui -> ps_pdq_patient_demographics_consumer: query person by AHVN13 and optional demographics
+ps_gui -[#black]> ps_pdq_patient_demographics_consumer: query person by AHVN13 and optional demographics
 activate ps_pdq_patient_demographics_consumer
 ps_pdq_patient_demographics_consumer -> cc_pime_client: [ITI-47] Patient Demographics Query
 activate cc_pime_client
 
-cc_pime_client -> cc_upi_client: Get existing EPR-SPID from UPI \nusing Social Security Number (AHVN13) \nand demographics
+cc_pime_client -[#black]> cc_upi_client: Get existing EPR-SPID from UPI \nusing Social Security Number (AHVN13) \nand demographics
 activate cc_upi_client
 cc_upi_client -> gs_upi:eCH-0214 (Search)
 activate gs_upi
 cc_upi_client <- gs_upi: [EPR-SPID] 
 deactivate gs_upi
-cc_pime_client <- cc_upi_client: EPR-SPID if found
+cc_pime_client <[#black]- cc_upi_client: EPR-SPID if found
 deactivate cc_upi_client
 
 opt EPR_SPID if EPR_SPID found check if Patient is registered in MPI
-cc_pime_client -> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using EPR-SPID
+cc_pime_client -[#black]> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using EPR-SPID
 activate cc_pix_x_ref_consumer
 cc_pix_x_ref_consumer -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [EPR-SPID]
 activate cc_mpi_x_ref_manager
 cc_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
 deactivate cc_mpi_x_ref_manager
-cc_pime_client <- cc_pix_x_ref_consumer
+cc_pime_client <[#black]- cc_pix_x_ref_consumer
 deactivate cc_pix_x_ref_consumer
 end
 
@@ -82,40 +82,40 @@ note right cc_pime_client: a) has EPR and registered in MPI: [EPR-SPID, MPI_A-PI
 
 ps_pdq_patient_demographics_consumer <- cc_pime_client: [ITI-47] Patient Demographics Response [MPI_A-PID, EPR-SPID]
 deactivate cc_pime_client
-ps_gui <- ps_pdq_patient_demographics_consumer: [ITI-47] Patient Demographics Response [MPI_A-PID, EPR-SPID]
+ps_gui <[#black]- ps_pdq_patient_demographics_consumer: [ITI-47] Patient Demographics Response [MPI_A-PID, EPR-SPID]
 deactivate ps_pdq_patient_demographics_consumer
-admin <- ps_gui:  If EPR-SPID available, Patient has an EPR which corresponds to AHVN13,\n if additional MPI_A_PID is availabe patient is registered in MPI
+admin <[#black]- ps_gui:  If EPR-SPID available, Patient has an EPR which corresponds to AHVN13,\n if additional MPI_A_PID is available patient is registered in MPI
 deactivate ps_gui
 
 
 == III. Register patient with local ID, EPR_SPID, demographics from UPI, optional MPI_A-PID  ==
 
-admin -> ps_gui: Register Patient with local ID, EPR_SPID,\ndemographics from UPI, optional MPI_A-PID in MPI
+admin -[#black]> ps_gui: Register Patient with local ID, EPR_SPID,\ndemographics from UPI, optional MPI_A-PID in MPI
 activate ps_gui
 
-ps_gui -> ps_mpi_source: register patient including demographics from UPI and EPR-SPID in MPI and registry
+ps_gui -[#black]> ps_mpi_source: register patient including demographics from UPI and EPR-SPID in MPI and registry
 activate ps_mpi_source
 ps_mpi_source -> cc_pime_client: [ITI-44] Patient Identity Feed [EPR-SPID, demographics from UPI, optional MPI_A-PID]
 activate cc_pime_client
 
-opt MPI_A-PID not specified: inital feed MPI with EPR-SPID, local ID, demographics data (see also UseCase 1_07b_EPRPatientOpenEPR)
+opt MPI_A-PID not specified: initial feed MPI with EPR-SPID, local ID, demographics data (see also UseCase 1_07b_EPRPatientOpenEPR)
 
-cc_pime_client -> cc_mpi_source: register patient including demographics from UPI and EPR-SPID in MPI and registry
+cc_pime_client -[#black]> cc_mpi_source: register patient including demographics from UPI and EPR-SPID in MPI and registry
 activate cc_mpi_source
 cc_mpi_source -> cc_mpi_x_ref_manager: [ITI-44] Patient Identity Feed [EPR-SPID]
 activate cc_mpi_x_ref_manager
 cc_mpi_source <- cc_mpi_x_ref_manager: Patient Identity Feed Response
 deactivate cc_mpi_x_ref_manager
-cc_pime_client <- cc_mpi_source: Patient Identity Feed Response
+cc_pime_client <[#black]- cc_mpi_source: Patient Identity Feed Response
 deactivate cc_mpi_source
 
-cc_pime_client -> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using EPR-SPID
+cc_pime_client -[#black]> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using EPR-SPID
 activate cc_pix_x_ref_consumer
 cc_pix_x_ref_consumer -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [EPR-SPID]
 activate cc_mpi_x_ref_manager
 cc_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
 deactivate cc_mpi_x_ref_manager
-cc_pime_client <- cc_pix_x_ref_consumer
+cc_pime_client <[#black]- cc_pix_x_ref_consumer
 deactivate cc_pix_x_ref_consumer
 
 cc_pime_client -> cc_doc_registry: [ITI-44] Patient Identity Feed [MPI_A-PID]
@@ -123,34 +123,34 @@ activate cc_doc_registry
 cc_pime_client <- cc_doc_registry: [ITI-44] Patient Identity Feed Response
 deactivate cc_doc_registry
 
-else MPI_A-PID specified: verify EPR_SPID correcly assigned and feed local ID to MPI
+else MPI_A-PID specified: verify EPR_SPID correctly assigned and feed local ID to MPI
 
-cc_pime_client -> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using EPR-SPID
+cc_pime_client -[#black]> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using EPR-SPID
 activate cc_pix_x_ref_consumer
 cc_pix_x_ref_consumer -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [EPR-SPID]
 activate cc_mpi_x_ref_manager
 cc_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
 deactivate cc_mpi_x_ref_manager
-cc_pime_client <- cc_pix_x_ref_consumer
+cc_pime_client <[#black]- cc_pix_x_ref_consumer
 deactivate cc_pix_x_ref_consumer
 
-cc_pime_client -> cc_pime_client: verfiy MPI_A-PID corresponds between request and MPI, otherwise abort
+cc_pime_client -[#black]> cc_pime_client: verify MPI_A-PID corresponds between request and MPI, otherwise abort
 
-cc_pime_client -> cc_mpi_source: register patient with local ID, MPI_A-PID in MPI
+cc_pime_client -[#black]> cc_mpi_source: register patient with local ID, MPI_A-PID in MPI
 activate cc_mpi_source
 cc_mpi_source -> cc_mpi_x_ref_manager: [ITI-44] Patient Identity Feed [local ID, MPI_A-PID]
 activate cc_mpi_x_ref_manager
 cc_mpi_source <- cc_mpi_x_ref_manager: Patient Identity Feed Response
 deactivate cc_mpi_x_ref_manager
-cc_pime_client <- cc_mpi_source: Patient Identity Feed Response
+cc_pime_client <[#black]- cc_mpi_source: Patient Identity Feed Response
 deactivate cc_mpi_source
 end
 
 ps_mpi_source <- cc_pime_client: Patient Identity Feed Response
 deactivate cc_pime_client
-ps_gui <- ps_mpi_source: Patient Identity Feed Response
+ps_gui <[#black]- ps_mpi_source: Patient Identity Feed Response
 deactivate ps_mpi_source
-admin <- ps_gui: Patient Identity Feed Response
+admin <[#black]- ps_gui: Patient Identity Feed Response
 deactivate ps_gui
 
 
