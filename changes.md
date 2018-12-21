@@ -1,4 +1,4 @@
-# 2018-12-19: update to 1.6 specifications ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E2 V1.6, CN:ATC V1.1.0 ) 
+# 2018-12-21: update to 1.6 specifications ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E2 V1.6, CN:ATC V1.1.0 ) 
 
 general updates:
 transactions which are neither IHE, eCH or CH:xxx have now a black colored arrow to differentiate 
@@ -30,12 +30,12 @@ renamed to -1_02_EPR_QueryingGovernmentServicesMDI
 1_09_EPR_PatientModifyConfLevelDoc
 * resolved Note **SEQ_001** 
     - optional to resolve it to the EPR-SPID by querying the community data stores.
-* replaced [ITI-X1] with assigned transcation number: [ITI-92]
+* replaced [ITI-X1] with assigned transaction number: [ITI-92]
 
 1_09b_EPR_PatientModifyConfLevelDoc
 * resolved Note **SEQ_001** 
     - optional to resolve it to the EPR-SPID by querying the community data stores.
-* replaced [ITI-X1] with assigned transcation number: [ITI-92]
+* replaced [ITI-X1] with assigned transaction number: [ITI-92]
 
 1_10_EPR_PatientVerifiesAccessLog
 * resolved Note **SEQ_001** 
@@ -54,32 +54,32 @@ renamed to -1_02_EPR_QueryingGovernmentServicesMDI
 * removed consolidation of 2_02_EPR_HPGetDocuments1of3, 2_02_EPR_HPGetDocuments2of3,2_02_EPR_HPGetDocuments2of3 diagram is to big
 
 2_02_EPR_HPGetDocuments1of3
-* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+* adapted CH:XUA Get X-User Assertions with Healthcare Professional Extension
 * removed grouped Authorization Decision Consumer actor from Document Repository
-* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transactions with ITI-18
 
 2_02_EPR_HPGetDocuments2of3
-* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+* adapted CH:XUA Get X-User Assertions with Healthcare Professional Extension
 * removed grouped Authorization Decision Consumer actor from Document Repository
-* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transactions with ITI-18
 
 2_02_EPR_HPGetDocuments3of3
-* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+* adapted CH:XUA Get X-User Assertions with Healthcare Professional Extension
 * removed grouped Authorization Decision Consumer actor from Document Repository
-* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transactions with ITI-18
 
 2_02b_EPR_PatientGetDocuments1of2
 * adapted CH:XUA Get X-User Assertions with Patient Extension
 * removed grouped Authorization Decision Consumer actor from Document Repository
-* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transactions with ITI-18
 
 2_02b_EPR_PatientGetDocuments2of2
 * adapted CH:XUA Get X-User Assertions with Patient Extension
 * removed grouped Authorization Decision Consumer actor from Document Repository
-* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transactions with ITI-18
 
 2_03_EPR_HPStoreDocuments
-* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+* adapted CH:XUA Get X-User Assertions with Healthcare Professional Extension
 
 2_03b_EPR_PatientStoreDocuments
 * adapted CH:XUA Get X-User Assertions with Patient Extension
@@ -90,7 +90,7 @@ renamed to -1_02_EPR_QueryingGovernmentServicesMDI
 2_05_EPR_Patient_XDS-I_XCA-I_1of2
 * adapted CH:XUA Get X-User Assertions with Patient Extension
 * removed grouped Authorization Decision Consumer actor from Document Repository
-* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transactions with ITI-18
 * precised for wado that grouping with [ITI-IUA] is an open issues
 
 2_05_EPR_Patient_XDS-I_XCA-I_2of2
@@ -100,11 +100,11 @@ renamed to -1_02_EPR_QueryingGovernmentServicesMDI
 * removed, described in 2_05_EPR_XDS-I_XCA-I_1of2 and 2_05_EPR_XDS-I_XCA-I_2of2
 
 2_05_EPR_XDS-I_XCA-I_1of2
-* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+* adapted CH:XUA Get X-User Assertions with Healthcare Professional Extension
 * precised for wado that grouping with [ITI-IUA] is an open issues
 
 2_05_EPR_XDS-I_XCA-I_2of2
-* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
+* adapted CH:XUA Get X-User Assertions with Healthcare Professional Extension
 
 2_06_EPR_PatientExportDocuments - no changes
 
@@ -120,7 +120,7 @@ renamed to -1_02_EPR_QueryingGovernmentServicesMDI
 Updated specifications for the next Swiss #EPR #projectathon in Bern September 2018, check [eHealth Suisse Relevant Specification]( https://www.e-health-suisse.ch/gemeinschaften-umsetzung/umsetzung/programmierhilfen/relevante-spezifikationen.html) and [overview](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2018/E/180220_Grafik_Swiss_Electronic_Patient_Record_v1.4_e.pdf) 
 
 1_02_EPR_QueryingGovernmentServices
-* removed Secure Node from Patient Portal, Health Professional Portal (no connected transcations, minor)
+* removed Secure Node from Patient Portal, Health Professional Portal (no connected transactions, minor)
 
 1_02_EPR_QueryingGovernmentServicesHPD - no change 
 
@@ -134,7 +134,7 @@ Updated specifications for the next Swiss #EPR #projectathon in Bern September 2
 
 1_07_EPR_PatientCreateEPR
 * added note: initializing policies will be supported with a next revision of PPQ (decided in AG TSI, 16th meeting, issue EPD-28)
-* changed origin of transcation for triggering policies from Patient Identity Source to Operator (Actor will not be specified by PPQ)
+* changed origin of transaction for triggering policies from Patient Identity Source to Operator (Actor will not be specified by PPQ)
 
 1_07b_EPR_PatientOpenEPR - no changes
 
@@ -244,7 +244,7 @@ Updated specifications for the next Swiss #EPR #projectathon in Bern September 2
 Updated specifications for the next Swiss #EPR #projectathon at The Hague @IHE_Europe, check [google group]( https://groups.google.com/forum/#!topic/epd_projectathon/6tHhL_ztSL8epd_projectathon@googlegroups.com) and [overview](https://www.e-health-suisse.ch/fileadmin/user_upload/Dokumente/2018/E/180220_Grafik_Swiss_Electronic_Patient_Record_v1.4_e.pdf) 
 
 1_02_EPR_QueryingGovernmentServices
-* introduction of CH:CPI profile: change actor from Community \nPortal \nIndex to CPI Provider, Value Set Consumer to CPI Consumer and added transcations Community Information Query [CH:CIQ] and Community Information [CH:CIDD] Delta Download
+* introduction of CH:CPI profile: change actor from Community \nPortal \nIndex to CPI Provider, Value Set Consumer to CPI Consumer and added transactions Community Information Query [CH:CIQ] and Community Information [CH:CIDD] Delta Download
 * separated CH:PIDD from ITI-58 in HP
 * adjusted sub sequence diagrams 1_02_EPR_QueryingGovernmentServicesHPD and 1_02_EPR_QueryingGovernmentServicesMPI
 
@@ -278,7 +278,7 @@ Updated specifications for the next Swiss #EPR #projectathon at The Hague @IHE_E
 * XCPD needs not to be grouped with XUA [ITI-40] Provide X-User Assertion [EPR-SPID] (decision AG TSI meeting)
 
 2_04_EPR_PatientAssignAccessRights
-* adjusted PPQ actor/transcation
+* adjusted PPQ actor/transaction
 
 steps_pp_xds_reg2_of2
 * XCPD needs not to be grouped with XUA [ITI-40] Provide X-User Assertion [EPR-SPID] (decision AG TSI meeting)
@@ -515,7 +515,7 @@ ACTION: OE Update Diagram, Walid provide footnote
 new sequence diagram with feedback from ZAS 
 OE: second community as well
 OE: replace actorn name UPI Client with UPI Clien: DONE
-OE: same pattern as before, add MPI transcation (note:with other data has also be dealt with, should be consolidated) -> reference to PR_PatientDeleteEPR
+OE: same pattern as before, add MPI transaction (note:with other data has also be dealt with, should be consolidated) -> reference to PR_PatientDeleteEPR
 
 DECISION: Sequence Diagram Needs revision to be approved at 26.4.2017
 ACTION: OE Update Diagram 
