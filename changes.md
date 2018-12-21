@@ -51,9 +51,7 @@ renamed to -1_02_EPR_QueryingGovernmentServicesMDI
 2_01_EPR_CT - no changes
 
 2_02_EPR_HPGetDocuments
-* adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
-* removed grouped Authorization Decision Consumer actor from Document Repository
-* removed note about policy enforcing in repository (now described in 3.1.12 Enforcement of XDS Retrieve Document Set transactions) and added transcations with ITI-18
+* removed consolidation of 2_02_EPR_HPGetDocuments1of3, 2_02_EPR_HPGetDocuments2of3,2_02_EPR_HPGetDocuments2of3 diagram is to big
 
 2_02_EPR_HPGetDocuments1of3
 * adapted CH:XUA Get X-User Assertions with Heathcare Professional Extension
