@@ -61,9 +61,9 @@ activate mp_pix_x_ref_mgr
 mp_pix_x_ref_mgr -[#black]> mp_pix_x_ref_mgr: PIXm to PIX V3
 activate mp_pix_x_ref_mgr
 
-mp_pix_x_ref_mgr -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [UAP ID]
+mp_pix_x_ref_mgr -> cc_mpi_x_ref_manager: [ITI-45] PIX V3 Query [UAP ID]
 activate cc_mpi_x_ref_manager
-mp_pix_x_ref_mgr <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI-PID, EPR-SPID]
+mp_pix_x_ref_mgr <- cc_mpi_x_ref_manager: [ITI-45] PIX V3 Response [MPI-PID, EPR-SPID]
 deactivate cc_mpi_x_ref_manager
 mp_pix_x_ref_mgr <[#black]- mp_pix_x_ref_mgr: PIX V3 to PIXm
 
