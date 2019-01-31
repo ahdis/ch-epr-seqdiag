@@ -1,27 +1,28 @@
-pp_gui -> pp_doc_consumer: retrieve document entries
+pp_gui -[#black]> pp_doc_consumer: retrieve document entries
 activate pp_doc_consumer
 pp_doc_consumer -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_doc_registry
+cc_doc_registry -> cc_adp: ADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+cc_doc_registry <- cc_adp: ADR Authorization Decision Response
+deactivate cc_adp
+pp_doc_consumer <- cc_doc_registry: [ITI-18] Registry Stored Query Response
+deactivate cc_doc_registry
+loop
+  pp_doc_consumer -> ss_doc_repository: [ITI-43] Retrieve Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate ss_doc_repository
+  ss_doc_repository -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate cc_doc_registry
   cc_doc_registry -> cc_adp: ADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate cc_adp
   cc_doc_registry <- cc_adp: ADR Authorization Decision Response
   deactivate cc_adp
-
-pp_doc_consumer <- cc_doc_registry: [ITI-18] Registry Stored Query Response
-deactivate cc_doc_registry
-
-loop
-  pp_doc_consumer -> ss_doc_repository: [ITI-43] Retrieve Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-  activate ss_doc_repository
-  note left cc_adp: not explicitly written in national extension\nbut repository needs policy enforcing also on [ITI-43]
-  ss_doc_repository -> cc_adp: ADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-  activate cc_adp
-  ss_doc_repository <- cc_adp: ADR Authorization Decision Response
-  deactivate cc_adp
+  ss_doc_repository <- cc_doc_registry: [ITI-18] Registry Stored Query Response
+  deactivate cc_doc_registry
   pp_doc_consumer <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
 end
 deactivate ss_doc_repository
 
-pp_gui <- pp_doc_consumer
+pp_gui <[#black]- pp_doc_consumer
 
 deactivate pp_doc_consumer

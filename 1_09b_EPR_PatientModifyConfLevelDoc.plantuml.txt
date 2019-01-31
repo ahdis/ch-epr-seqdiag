@@ -19,23 +19,22 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
-	participant cc_ig as "Initiating Gateway | X-Service User"   
-	participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
-	participant cc_updresp_init as "Update Responder\nUpdate Initiator"
+	participant cc_ig as "Initiating Gateway | X-Service Provider\nX-Service User"   
+	participant cc_updresp_init as "Update Responder | X-Service Provider\nUpdate Initiator | X-Service User"
 end box
 
 box "Other Communities" #91D2E8
-	participant xc_rg as "Responding Gateway"
+	participant xc_rg as "Responding Gateway |\nX-Service Provider"
+	participant xc_updresp as "Update Responder |\nX-Service Provider"
 	participant xc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant xc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
 	participant xc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 	
 	participant xc_doc_consumer as "Document Consumer | X-Service User"
-	participant xc_updresp as "Update Responder"
 end box
 
 
-== Cross-Community Metadata Update (XCMU) == 
-patient -> pp_gui: Patient modifies the \nconfidentiality level \nof a document
+== Cross-Community Metadata Update with RMU == 
+patient -[#black]> pp_gui: Patient modifies the \nconfidentiality level \nof a document\nin another community
 activate pp_gui
 
 !include step_pp_gui_saml.plantuml.txt
@@ -44,7 +43,7 @@ activate pp_gui
 
 !include step_pp_xua.plantuml.txt
 
-pp_gui -> pp_doc_consumer: retrieve documents
+pp_gui -[#black]> pp_doc_consumer: retrieve documents
 activate pp_doc_consumer
 
 pp_doc_consumer -> cc_ig: [ITI-18] Registry Stored Query for document entries for patient [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
@@ -54,13 +53,13 @@ loop over all responding gateways
   cc_ig -> xc_rg: [ITI-55] Cross Patient Discovery Request [EPR-SPID]
   activate xc_rg
 
-  xc_rg -> xc_pix_x_ref_consumer: query MPI_B-PID from MPI using EPR-SPID
+  xc_rg -[#black]> xc_pix_x_ref_consumer: query MPI_B-PID from MPI using EPR-SPID
   activate xc_pix_x_ref_consumer
   xc_pix_x_ref_consumer -> xc_mpi_x_ref_manager: ITI-45 PIX V3 Query [EPR-SPID]
   activate xc_mpi_x_ref_manager
   xc_pix_x_ref_consumer <- xc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_B-PID]
   deactivate xc_mpi_x_ref_manager
-  xc_rg <- xc_pix_x_ref_consumer
+  xc_rg <[#black]- xc_pix_x_ref_consumer
   deactivate xc_pix_x_ref_consumer
   cc_ig <- xc_rg: [ITI-55] Cross Patient Discovery Response [MPI_B-PID, homeCommunityId]
   deactivate xc_rg
@@ -68,13 +67,13 @@ loop over all responding gateways
   cc_ig -> xc_rg: [ITI-38] Cross Gateway Query [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate xc_rg
 
-  xc_rg -> xc_doc_consumer: retrieve document entries
+  xc_rg -[#black]> xc_doc_consumer: retrieve document entries
   activate xc_doc_consumer
   xc_doc_consumer -> xc_doc_registry: [ITI-18] Registry Stored Query [MPI_B-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate xc_doc_registry
   xc_doc_consumer <- xc_doc_registry: [ITI-18] Registry Stored Query Response
   deactivate xc_doc_registry
-  xc_rg <- xc_doc_consumer
+  xc_rg <[#black]- xc_doc_consumer
   deactivate xc_doc_consumer
   cc_ig <- xc_rg: [ITI-38] Cross Gateway Response
   deactivate xc_rg
@@ -83,29 +82,29 @@ end
 pp_doc_consumer <- cc_ig: [ITI-18] Registry Stored Query Response
 deactivate cc_ig
 
-pp_gui <- pp_doc_consumer
+pp_gui <[#black]- pp_doc_consumer
 deactivate pp_doc_consumer
 
-pp_gui -> pp_upd_init: updated confidentiality level cross community
+pp_gui -[#black]> pp_upd_init: updated confidentiality level cross community
 activate pp_upd_init
-pp_upd_init -> cc_updresp_init: [ITI-X1] Update Restricted Document Set [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+pp_upd_init -> cc_updresp_init: [ITI-92] Update Restricted Document Set [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_updresp_init
 
-  cc_updresp_init -> xc_updresp: [ITI-X1] Update Restricted Document Set [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  cc_updresp_init -> xc_updresp: [ITI-92] Update Restricted Document Set [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate xc_updresp
 
-  xc_updresp -> xc_updresp: updated confidentiality level
-  cc_updresp_init <- xc_updresp: [ITI-X1] Cross-Gateway Update Document Set Response
+  xc_updresp -[#black]> xc_updresp: updated confidentiality level
+  cc_updresp_init <- xc_updresp: [ITI-92] Cross-Gateway Update Document Set Response
   deactivate xc_updresp
 
 
 
-pp_upd_init <- cc_updresp_init: [ITI-X1] Cross-Gateway Update Document Set Response
+pp_upd_init <- cc_updresp_init: [ITI-92] Cross-Gateway Update Document Set Response
 deactivate cc_updresp_init
-pp_gui <- pp_upd_init
+pp_gui <[#black]- pp_upd_init
 deactivate pp_upd_init
 
-patient <- pp_gui
+patient <[#black]- pp_gui
 deactivate pp_gui
 
 @enduml 

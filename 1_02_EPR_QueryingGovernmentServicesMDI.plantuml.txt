@@ -1,7 +1,7 @@
 @startuml
 !include design.plantuml.txt
 
-title EPR_QueryingGovernmentServices MPI
+title EPR_QueryingGovernmentServices MDI
 
 box "Patient Portal" #B9C0B8
 	participant pp_svs_value_set_consumer as "Value \nSet \nConsumer"

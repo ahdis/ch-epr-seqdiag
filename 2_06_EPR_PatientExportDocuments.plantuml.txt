@@ -22,7 +22,7 @@ box "Community Components" #FFEFDE
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
 end box
 
-patient -> pp_gui
+patient -[#black]> pp_gui
 activate pp_gui
 
 !include_many step_pp_gui_saml.plantuml.txt
@@ -31,17 +31,17 @@ activate pp_gui
 
 !include_many step_pp_xua.plantuml.txt
 
-pp_gui -> pp_doc_consumer: retrieve document entries to archive from reference and other communities\nsee 2_02b_EPR_PatientGetDoucments1of2 and 2_02b_EPR_PatientGetDoucments2of2)
+pp_gui -[#black]> pp_doc_consumer: retrieve document entries to archive from reference and other communities\nsee 2_02b_EPR_PatientGetDoucments1of2 and 2_02b_EPR_PatientGetDoucments2of2)
 activate pp_doc_consumer
-pp_gui <- pp_doc_consumer
+pp_gui <[#black]- pp_doc_consumer
 deactivate pp_doc_consumer
 
-pp_gui -> pp_pmc: create archives from document entries including metadata
+pp_gui -[#black]> pp_pmc: create archives from document entries including metadata
 activate pp_pmc
 pp_gui <- pp_pmc: [ITI-32] Distribute Document Set on Media
 deactivate pp_pmc
 
-patient <- pp_gui
+patient <[#black]- pp_gui
 deactivate pp_gui
 
 @enduml 

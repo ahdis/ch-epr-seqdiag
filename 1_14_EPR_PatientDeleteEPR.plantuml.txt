@@ -8,10 +8,15 @@ box "Community Components" #FFEFDE
 	participant cc_upi_client as "UPI Client"
   participant cc_doc_admin as "Document Administrator"
   participant cc_mpi_source as "Patient \nIdentity \nSource"
-	participant pp_ppq_policy_source as "Policy Source\n| X-Service User"
+	participant cc_ppq_policy_source as "Policy Source\n| X-Service User"
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
   participant cc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
+	participant cc_x_assertion_provider as "X-Assertion Provider"
 	participant cc_ppq_policy_repository as "Policy Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User"
+end box
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
 end box
 
 box "Government Services" #E2F3F8
@@ -22,9 +27,10 @@ box "Other Communities" #91D2E8
   participant oc_upi_client as "UPI Client"
 end box
 
+
 note right cc_upi_client:  eCH-0213, eCH-0214 need a sedex certificate\neCH-0215 needs a sedex client 
 
-admin -> cc_upi_client: Inform that patient has renounced his EPR
+admin -[#black]> cc_upi_client: Inform that patient has renounced his EPR
 activate cc_upi_client
 cc_upi_client->gs_upi: eCH-0213: cancel [EPR-SPID]
 activate gs_upi
@@ -38,19 +44,19 @@ activate gs_upi
 
 gs_upi -> cc_upi_client: eCH-0215: Make cancellation message  broadcast to all communities to delete EPR for patient [EPR-SPID]
 activate cc_upi_client
-cc_upi_client -> admin
+cc_upi_client -[#black]> admin
 deactivate gs_upi
 
 opt optional transactions
 deactivate cc_upi_client
 
-admin -> cc_doc_admin: Delete all documents in \ncommunity (no transaction defined, IHE ITI RMD as a possiblity)
+admin -[#black]> cc_doc_admin: Delete all documents in \ncommunity (no transaction defined, IHE ITI RMD as a possiblity)
 activate cc_doc_admin
-admin <- cc_doc_admin:  Delete all documents Response
+admin <[#black]- cc_doc_admin:  Delete all documents Response
 deactivate cc_doc_admin
 
 
-admin -> cc_mpi_source: Delete patient in MPI
+admin -[#black]> cc_mpi_source: Delete patient in MPI
 activate cc_mpi_source
 cc_mpi_source -> cc_mpi_x_ref_manager: Revise patient in MPI [ITI-44]\nNote: Revise is not a real delete in the MPI
 activate cc_mpi_x_ref_manager
@@ -62,18 +68,30 @@ deactivate cc_pix_x_ref_consumer
 end
 cc_mpi_source <- cc_mpi_x_ref_manager
 deactivate cc_mpi_x_ref_manager
-admin <- cc_mpi_source
+admin <[#black]- cc_mpi_source
 deactivate cc_mpi_source
 
-admin -> pp_ppq_policy_source
-activate pp_ppq_policy_source
-note left pp_ppq_policy_source: <b>SEQ_002</b> can all policies for a patient be deleted with Delete Policy Request?
-  pp_ppq_policy_source -> cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Requests for patient [EPR-SPID]
-  activate cc_ppq_policy_repository
-  pp_ppq_policy_source <- cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Request Response
-  deactivate cc_ppq_policy_repository
-admin <-pp_ppq_policy_source
-deactivate pp_ppq_policy_source
+admin -[#black]> cc_ppq_policy_source
+activate cc_ppq_policy_source
+cc_ppq_policy_source -[#black]> cc_ppq_policy_source
+activate cc_ppq_policy_source
+cc_ppq_policy_source -> idp_user_authentication_provider : CH:XUA Authenticate user
+activate idp_user_authentication_provider
+cc_ppq_policy_source <- idp_user_authentication_provider : CH:XUA Authenticate user response \n(SAML 2.0 token returned to Portal with UAP-ID)
+deactivate idp_user_authentication_provider
+cc_ppq_policy_source -> cc_x_assertion_provider:  CH:XUA Get X-User Assertion with Policy Administrator Extension
+activate cc_x_assertion_provider
+cc_ppq_policy_source <- cc_x_assertion_provider
+deactivate cc_x_assertion_provider
+cc_ppq_policy_source <[#black]- cc_ppq_policy_source
+deactivate cc_ppq_policy_source
+note right cc_ppq_policy_source: <b>SEQ_002</b> can all policies for a patient be deleted with Delete Policy Request?
+cc_ppq_policy_source -> cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Requests for patient [EPR-SPID]
+activate cc_ppq_policy_repository
+cc_ppq_policy_source <- cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Request Response
+deactivate cc_ppq_policy_repository
+admin <[#black]-cc_ppq_policy_source
+deactivate cc_ppq_policy_source
 
 end
 

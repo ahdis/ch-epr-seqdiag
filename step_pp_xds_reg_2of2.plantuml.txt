@@ -1,4 +1,4 @@
-pp_gui -> pp_doc_consumer: retrieve documents within others communities
+pp_gui -[#black]> pp_doc_consumer: retrieve documents within others communities
 activate pp_doc_consumer
 pp_doc_consumer -> cc_ig: [ITI-18] Registry Stored Query for document entries for patient [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_ig
@@ -7,13 +7,13 @@ loop over all responding gateways
   cc_ig -> xc_rg: [ITI-55] Cross Patient Discovery Request [EPR-SPID]
   activate xc_rg
 
-  xc_rg -> xc_pix_x_ref_consumer: query MPI_B-PID from MPI using EPR-SPID
+  xc_rg -[#black]> xc_pix_x_ref_consumer: query MPI_B-PID from MPI using EPR-SPID
   activate xc_pix_x_ref_consumer
   xc_pix_x_ref_consumer -> xc_mpi_x_ref_manager: ITI-45 PIX V3 Query [EPR-SPID]
   activate xc_mpi_x_ref_manager
   xc_pix_x_ref_consumer <- xc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_B-PID]
   deactivate xc_mpi_x_ref_manager
-  xc_rg <- xc_pix_x_ref_consumer
+  xc_rg <[#black]- xc_pix_x_ref_consumer
   deactivate xc_pix_x_ref_consumer
   cc_ig <- xc_rg: [ITI-55] Cross Patient Discovery Response [MPI_B-PID, homeCommunityId]
   deactivate xc_rg
@@ -21,7 +21,7 @@ loop over all responding gateways
   cc_ig -> xc_rg: [ITI-38] Cross Gateway Query [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate xc_rg
 
-  xc_rg -> xc_doc_consumer: retrieve document entries
+  xc_rg -[#black]> xc_doc_consumer: retrieve document entries
   activate xc_doc_consumer
   xc_doc_consumer -> xc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate xc_doc_registry
@@ -31,7 +31,7 @@ loop over all responding gateways
   deactivate cc_adp
   xc_doc_consumer <- xc_doc_registry: [ITI-18] Registry Stored Query Response
   deactivate xc_doc_registry
-  xc_rg <- xc_doc_consumer
+  xc_rg <[#black]- xc_doc_consumer
   deactivate xc_doc_consumer
   cc_ig <- xc_rg: [ITI-38] Cross Gateway Response
   deactivate xc_rg
@@ -45,24 +45,28 @@ loop over all document entries received
   cc_ig -> xc_rg: [ITI-39] Cross Gateway Retrieve [homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate xc_rg
 
-xc_rg -> xc_doc_consumer: retrieve document entries
-activate xc_doc_consumer
-xc_doc_consumer -> ss_doc_repository: [ITI-43] Retrieve Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-activate ss_doc_repository
-ss_doc_repository -> cc_adp: XADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-activate cc_adp
-ss_doc_repository <- cc_adp: XADR Authorization Decision Response
-deactivate cc_adp
-xc_doc_consumer <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
-deactivate ss_doc_repository
-xc_rg <- xc_doc_consumer
-deactivate xc_doc_consumer
+  xc_rg -[#black]> xc_doc_consumer: retrieve document entries
+  activate xc_doc_consumer
+  xc_doc_consumer -> ss_doc_repository: [ITI-43] Retrieve Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate ss_doc_repository
+  ss_doc_repository -> xc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate xc_doc_registry
+  xc_doc_registry -> cc_adp: XADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate cc_adp
+  xc_doc_registry <- cc_adp: XADR Authorization Decision Response
+  deactivate cc_adp
+  ss_doc_repository <- xc_doc_registry: [ITI-18] Registry Stored Query Response
+  deactivate xc_doc_registry
 
+  xc_doc_consumer <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
+  deactivate ss_doc_repository
+  xc_rg <[#black]- xc_doc_consumer
+  deactivate xc_doc_consumer
 
   cc_ig <- xc_rg: [ITI-39] Cross Gateway Retrieve Response
   deactivate xc_rg
   pp_doc_consumer <- cc_ig: [ITI-43] Retrieve Document Set Response
   deactivate cc_ig
 end  
-pp_gui <- pp_doc_consumer
+pp_gui <[#black]- pp_doc_consumer
 deactivate pp_doc_consumer

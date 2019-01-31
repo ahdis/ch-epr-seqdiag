@@ -23,7 +23,7 @@ box "Community Components" #FFEFDE
 end box
 
 == EPR_PatientModifyConfLevelDoc == 
-patient -> pp_gui: Patient modifies the \nconfidentiality level \nof a document
+patient -[#black]> pp_gui: Patient modifies the \nconfidentiality level \nof a document
 activate pp_gui
 
 !include step_pp_gui_saml.plantuml.txt
@@ -34,7 +34,7 @@ activate pp_gui
 
 !include step_pp_xds_reg.plantuml.txt
 
-pp_gui -> pp_doc_admin: updated confidentiality level
+pp_gui -[#black]> pp_doc_admin: updated confidentiality level
 activate pp_doc_admin
 
 alt XDS MU
@@ -43,16 +43,16 @@ activate cc_doc_registry
 pp_doc_admin <- cc_doc_registry: [ITI-57] Update Document Set Response
 deactivate cc_doc_registry
 else RMU 
-pp_doc_admin -> cc_doc_registry: [ITI-X1] Restricted Update Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+pp_doc_admin -> cc_doc_registry: [ITI-92] Restricted Update Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_doc_registry
-pp_doc_admin <- cc_doc_registry: [ITI-X1] Restricted Update Document Set Response
+pp_doc_admin <- cc_doc_registry: [ITI-92] Restricted Update Document Set Response
 deactivate cc_doc_registry
 end
 
-pp_gui <- pp_doc_admin
+pp_gui <[#black]- pp_doc_admin
 deactivate pp_doc_admin
 
-patient <- pp_gui
+patient <[#black]- pp_gui
 deactivate pp_gui
 
 @enduml 

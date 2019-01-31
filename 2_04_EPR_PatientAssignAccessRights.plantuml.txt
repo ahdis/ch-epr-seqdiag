@@ -29,12 +29,12 @@ box "Government Services" #E2F3F8
 end box
 
 
-patient -> pp_gui: Patient assign \naccess rights to \na health professional
+patient -[#black]> pp_gui: Patient assign \naccess rights to \na health professional
 activate pp_gui
 
 !include step_pp_gui_saml.plantuml.txt
 
-pp_gui -> pp_hpd_provider_info_consumer:query Health Professional Directory
+pp_gui -[#black]> pp_hpd_provider_info_consumer:query Health Professional Directory
 activate pp_hpd_provider_info_consumer
 
 opt either health professional directory of community or government service
@@ -49,7 +49,7 @@ pp_hpd_provider_info_consumer <- gs_hpd: [ITI-58] Provider Information Query Res
 deactivate gs_hpd
 end
 
-pp_gui <- pp_hpd_provider_info_consumer
+pp_gui <[#black]- pp_hpd_provider_info_consumer
 deactivate pp_hpd_provider_info_consumer
 
 !include step_pp_pix.plantuml.txt
@@ -57,7 +57,7 @@ deactivate pp_hpd_provider_info_consumer
 !include step_pp_xua.plantuml.txt
 
 
-pp_gui -> pp_ppq_policy_source: assign access right 
+pp_gui -[#black]> pp_ppq_policy_source: assign access right 
 activate pp_ppq_policy_source
 pp_ppq_policy_source -> cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed, AddPolicyRequest modify access right for patient\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID] 
 activate cc_ppq_policy_repository
@@ -68,8 +68,9 @@ deactivate cc_adp
 
 pp_ppq_policy_source <- cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed, EPR AddPolicyRepsonse
 deactivate cc_ppq_policy_repository
-pp_gui <- pp_ppq_policy_source
+pp_gui <[#black]- pp_ppq_policy_source
 deactivate pp_ppq_policy_source
-patient <- pp_gui
+patient <[#black]- pp_gui
+deactivate pp_gui
 
 @enduml 

@@ -1,4 +1,4 @@
-ps_gui -> ps_doc_consumer: retrieve documents within others communities
+ps_gui -[#black]> ps_doc_consumer: retrieve documents within others communities
 activate ps_doc_consumer
 ps_doc_consumer -> cc_ig: [ITI-18] Registry Stored Query for document entries for patient [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_ig
@@ -25,5 +25,5 @@ loop over all document entries received
   ps_doc_consumer <- cc_ig: [ITI-43] Retrieve Document Set Response
   deactivate cc_ig
 end  
-ps_gui <- ps_doc_consumer
+ps_gui <[#black]- ps_doc_consumer
 deactivate ps_doc_consumer

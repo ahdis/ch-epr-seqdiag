@@ -33,7 +33,7 @@ end box
 
 == downloading dicom images in the patient portal from another community (XCA-I) ==
 
-hp -> pp_gui
+patient -[#black]> pp_gui
 activate pp_gui
 
 !include_many step_pp_gui_saml.plantuml.txt
@@ -42,7 +42,7 @@ activate pp_gui
 
 !include_many step_pp_xua.plantuml.txt
 
-pp_gui -> pp_doc_consumer: retrieve documents within others communities
+pp_gui -[#black]> pp_doc_consumer: retrieve documents within others communities
 activate pp_doc_consumer
 pp_doc_consumer -> cc_ig: [ITI-18] Registry Stored Query for document entries for patient [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_ig
@@ -63,7 +63,7 @@ deactivate cc_ig
   pp_doc_consumer <- cc_ig: [ITI-43] Retrieve Document Set Response
 deactivate cc_ig
 
-pp_doc_consumer -> pp_img_doc_consumer
+pp_doc_consumer -[#black]> pp_img_doc_consumer
 activate pp_img_doc_consumer
 
 note left cc_img_ig: grouping with [ITI-40] is an open issues
@@ -82,13 +82,13 @@ deactivate xc_img_rg
 pp_img_doc_consumer <- cc_img_ig: [RAD-69] Retrieve Imaging Document Set Response
 deactivate cc_img_ig
 
-pp_doc_consumer <- pp_img_doc_consumer
+pp_doc_consumer <[#black]- pp_img_doc_consumer
 deactivate pp_img_doc_consumer
 
-pp_gui <- pp_doc_consumer
+pp_gui <[#black]- pp_doc_consumer
 deactivate pp_doc_consumer
 
-patient <- pp_gui
+patient <[#black]- pp_gui
 deactivate pp_gui
 
 @enduml 

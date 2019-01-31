@@ -1,8 +1,8 @@
-pp_gui -> pp_doc_consumer: retrieve document entries
+pp_gui -[#black]> pp_doc_consumer: retrieve document entries
 activate pp_doc_consumer
 pp_doc_consumer -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_doc_registry
 pp_doc_consumer <- cc_doc_registry: [ITI-18] Registry Stored Query Response
 deactivate cc_doc_registry
-pp_gui <- pp_doc_consumer
+pp_gui <[#black]- pp_doc_consumer
 deactivate pp_doc_consumer

@@ -1,14 +1,15 @@
-pp_gui -> pp_x_service_user : get XUA Assertion
+pp_gui -[#black]> pp_x_service_user : get XUA Assertion
 activate pp_x_service_user
-pp_x_service_user -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions [UAP-ID]
+pp_x_service_user -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions with Patient Extension [UAP-ID and opt. EPR-SPID]
 activate cc_x_assertion_provider
-note right cc_x_assertion_provider: open issue <b>SEQ_001</b> how this transformation can be done
-cc_x_assertion_provider -> cc_x_assertion_provider: transform from UAP-ID to MPI_A-PID
+opt resolve it to the EPR-SPID by querying the community data stores.
+cc_x_assertion_provider -[#black]> cc_x_assertion_provider: transform from UAP-ID to MPI_A-PID
 cc_x_assertion_provider -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [MPI_A-PID]
 activate cc_mpi_x_ref_manager
 cc_x_assertion_provider <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
 deactivate cc_mpi_x_ref_manager
+end
 pp_x_service_user <- cc_x_assertion_provider: CH:XUA Get-XUser Assertions Response [EPR-SPID] according to CH:XUA
 deactivate cc_x_assertion_provider
-pp_gui <- pp_x_service_user
+pp_gui <[#black]- pp_x_service_user
 deactivate pp_x_service_user
