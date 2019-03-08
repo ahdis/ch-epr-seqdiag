@@ -81,7 +81,7 @@ deactivate docconsumer
 
 app -[#black]> docconsumer: retrieve document [JWT:UAP-ID]
 activate docconsumer
-docconsumer -> mp_doc_responder: [ITI-68] Retrieve Document
+docconsumer -> mp_doc_responder: [ITI-68] Retrieve Document [JWT:UAP-ID]
 activate mp_doc_responder
 mp_doc_responder -[#black]> mp_doc_responder: MHD to XDS
 
