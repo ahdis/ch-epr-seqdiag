@@ -85,7 +85,6 @@ cc_ppq_policy_source <- cc_x_assertion_provider
 deactivate cc_x_assertion_provider
 cc_ppq_policy_source <[#black]- cc_ppq_policy_source
 deactivate cc_ppq_policy_source
-note right cc_ppq_policy_source: <b>SEQ_002</b> can all policies for a patient be deleted with Delete Policy Request?
 cc_ppq_policy_source -> cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Requests for patient [EPR-SPID]
 activate cc_ppq_policy_repository
 cc_ppq_policy_source <- cc_ppq_policy_repository: [CH:PPQ-1] Privacy Policy Feed - Delete Policy Request Response

@@ -21,11 +21,12 @@ box "Community Components" #FFEFDE
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
 	participant cc_ig as "Initiating Gateway | X-Service Provider\nX-Service User"   
 	participant cc_updresp_init as "Update Responder | X-Service Provider\nUpdate Initiator | X-Service User"
+  participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
 box "Other Communities" #91D2E8
 	participant xc_rg as "Responding Gateway |\nX-Service Provider"
-	participant xc_updresp as "Update Responder |\nX-Service Provider"
+	participant xc_updresp as "Update Responder | X-Service Provider\n Update Initiator or Document Administration | X-Service User"
 	participant xc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant xc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
 	participant xc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 	
@@ -33,7 +34,7 @@ box "Other Communities" #91D2E8
 end box
 
 
-== Cross-Community Metadata Update with RMU == 
+== Cross-Community Metadata Update with RMU\nwith XDS Affinity Domain Option == 
 patient -[#black]> pp_gui: Patient modifies the \nconfidentiality level \nof a document\nin another community
 activate pp_gui
 
@@ -71,6 +72,10 @@ loop over all responding gateways
   activate xc_doc_consumer
   xc_doc_consumer -> xc_doc_registry: [ITI-18] Registry Stored Query [MPI_B-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate xc_doc_registry
+  xc_doc_registry -> cc_adp: XADR Cross-Community Authorization Decision Request\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate cc_adp
+  xc_doc_registry <- cc_adp: XADR Cross-Community Authorization Decision Response
+  deactivate cc_adp
   xc_doc_consumer <- xc_doc_registry: [ITI-18] Registry Stored Query Response
   deactivate xc_doc_registry
   xc_rg <[#black]- xc_doc_consumer
@@ -93,7 +98,26 @@ activate cc_updresp_init
   cc_updresp_init -> xc_updresp: [ITI-92] Update Restricted Document Set [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate xc_updresp
 
-  xc_updresp -[#black]> xc_updresp: updated confidentiality level
+alt XDS MU
+xc_updresp -> xc_doc_registry: [ITI-57] Update Document Set with new confidentiality level\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate xc_doc_registry
+xc_doc_registry -> cc_adp: XADR Cross-Community Authorization Decision Request\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+xc_doc_registry <- cc_adp: XADR Authorization Decision Response
+deactivate cc_adp
+xc_updresp <- xc_doc_registry: [ITI-57] Update Document Set Response
+deactivate xc_doc_registry
+else RMU 
+xc_updresp -> xc_doc_registry: [ITI-92] Restricted Update Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate xc_doc_registry
+xc_doc_registry -> cc_adp: XADR Cross-Community Authorization Decision Request\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+xc_doc_registry <- cc_adp: XADR Authorization Decision Response
+deactivate cc_adp
+xc_updresp <- xc_doc_registry: [ITI-92] Restricted Update Document Set Response
+deactivate xc_doc_registry
+end
+
   cc_updresp_init <- xc_updresp: [ITI-92] Cross-Gateway Update Document Set Response
   deactivate xc_updresp
 

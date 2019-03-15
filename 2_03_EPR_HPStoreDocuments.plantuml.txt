@@ -16,7 +16,7 @@ box "IdP" #DFF3F7
 end box
 
 box "Secondary Systems" #F7A69E
-	participant ss_doc_repository as "Document Repository | X-Service Provider|\nX-Service User" 
+	participant ss_doc_repository as "Document Repository | X-Service Provider" 
 end box
 
 box "Community Components" #FFEFDE

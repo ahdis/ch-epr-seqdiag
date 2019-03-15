@@ -2,6 +2,10 @@ pp_gui -[#black]> pp_doc_consumer: retrieve document entries
 activate pp_doc_consumer
 pp_doc_consumer -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_doc_registry
+cc_doc_registry -> cc_adp: ADR Authorization Decision Request (policy enforcing home community)\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+cc_doc_registry <- cc_adp: ADR Authorization Decision Response
+deactivate cc_adp
 pp_doc_consumer <- cc_doc_registry: [ITI-18] Registry Stored Query Response
 deactivate cc_doc_registry
 pp_gui <[#black]- pp_doc_consumer

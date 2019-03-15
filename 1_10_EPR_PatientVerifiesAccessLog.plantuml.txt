@@ -18,11 +18,12 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
-	participant cc_pat_arr as "Patient Audit Record Repository |\nResource Server"
+	participant cc_pat_arr as "Patient Audit Record Repository | Resource Server\nAuthorization Decision Consumer | X-Service User"
+	participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
 box "Other Communities" #91D2E8
-	participant xc_pat_arr as "Patient Audit Record Repository|\nResource Server"
+	participant xc_pat_arr as "Patient Audit Record Repository| Resource Server\nAuthorization Decision Consumer | X-Service User"
 end box
 
 patient -[#black]> pp_gui: Patient verifies access log to his EPR
@@ -43,6 +44,10 @@ activate pp_patient_audit_consumer
 
 pp_patient_audit_consumer -> cc_pat_arr: [ITI-81] Retrieve Audit Event [EPR-SPID] grouped with IUA [ITI-72]
 activate cc_pat_arr
+cc_pat_arr -> cc_adp: ADR Authorization Decision Request\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+cc_pat_arr <- cc_adp: ADR Authorization Decision Response
+deactivate cc_adp
 pp_patient_audit_consumer <- cc_pat_arr: [ITI-81] Retrieve Audit Event Response
 deactivate cc_pat_arr
 
@@ -51,6 +56,11 @@ deactivate cc_pat_arr
 loop over all communities
 pp_patient_audit_consumer -> xc_pat_arr: [ITI-81] Retrieve Audit Event [EPR-SPID] grouped with IUA [ITI-72]
 activate xc_pat_arr
+xc_pat_arr -> cc_adp: XADR Cross-Community Authorization Decision Request\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+xc_pat_arr <- cc_adp: XADR Cross-Community Authorization Decision Response
+deactivate cc_adp
+
 pp_patient_audit_consumer <- xc_pat_arr: [ITI-81] Retrieve Audit Event Response
 deactivate xc_pat_arr
 end

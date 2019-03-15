@@ -1,3 +1,54 @@
+# 2019-03-21: update to 1.8 specifications ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E2 V1.8, CH:ATC V1.2.0 ) and online wave 2 testing
+
+see also [EHS-169](https://gazelle.ihe.net/jira/projects/EHS/queues/issue/EHS-169)
+
+1_09_EPR_PatientModifyConfLevelDoc
+* added ADR to ITI-57 and ITI-92 and ITI-18 
+
+1_09b_EPR_PatientModifyConfLevelDoc
+* added note in title that XDS Affinity Domain Option is used
+* precised sequence diagram in remote community
+* added XADR to ITI-57 and ITI-92 and ITI-18 
+
+1_10_EPR_PatientVerifiesAccessLog 
+* add Authorization Decision Consumer | X-Service User grouped to Patient Audit Record Repository
+* added ADR and XADR sequence with Authorization Decision Provider
+
+1_14_EPR_PatientDeleteEPR
+* SEQ002 resolved, (initial) policies can be deleted 
+
+2_02_EPR_HPGetDocuments1of3
+* added Policy Enforcement Point to Document Repository and a note for [CH:ADR] Enforcement of XDS Retrieve Document Set transactions (3.1.12)
+
+2_02_EPR_HPGetDocuments2of3
+* added ADR and XADR transaction
+* added Policy Enforcement Point to Document Repository and a note for [CH:ADR] Enforcement of XDS Retrieve Document Set transactions (3.1.12)
+
+2_03_EPR_HPGetDocuments3of3
+* added Policy Enforcement Point to Document Repository and a note for [CH:ADR] Enforcement of XDS Retrieve Document Set transactions (3.1.12)
+
+2_02b_EPR_PatientGetDocuments1of2
+* added Policy Enforcement Point to Document Repository and a note for [CH:ADR] Enforcement of XDS Retrieve Document Set transactions (3.1.12)
+
+2_02b_EPR_PatientGetDocuments2of2
+* added Policy Enforcement Point to Document Repository and a note for [CH:ADR] Enforcement of XDS Retrieve Document Set transactions (3.1.12)
+
+2_05_EPR_Patient_XDS-I_XCA-I-1of2
+* added Policy Enforcement Point to Document Repository and a note for [CH:ADR] Enforcement of XDS Retrieve Document Set transactions (3.1.12)
+* added Policy Enforcement Point to Imaging Document Source and a note for [CH:ADR] Enforcement of XDS-I "Imaging Retrieve" transactions (3.1.13)
+* removed WADO-55 (Decision AG TSI from 27.2.2019)
+
+2_05_EPR_Patient_XDS-I_XCA-I-2of2
+* added Policy Enforcement Point to Imaging Document Source and a note for [CH:ADR] Enforcement of XDS-I "Imaging Retrieve" transactions (3.1.13)
+
+2_05_EPR_XDS-I-XCA-1of2
+* added Policy Enforcement Point to Imaging Document Source and a note for [CH:ADR] Enforcement of XDS-I "Imaging Retrieve" transactions (3.1.13)
+* added Policy Enforcement Point to Document Repository and a note for [CH:ADR] Enforcement of XDS Retrieve Document Set transactions (3.1.12)
+* removed WADO-55 (Decision AG TSI from 27.2.2019)
+
+2_05_EPR_XDS-I-XCA-2of2
+* added Policy Enforcement Point to Imaging Document Source and a note for [CH:ADR] Enforcement of XDS-I "Imaging Retrieve" transactions (3.1.13)
+
 # 2018-12-21: update to 1.6 specifications ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E2 V1.6, CN:ATC V1.1.0 ) 
 
 general updates:

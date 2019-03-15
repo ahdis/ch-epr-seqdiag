@@ -28,7 +28,7 @@ end box
 box "Other Communities" #91D2E8
 	participant xc_rg as "Responding Gateway\n| X-Service Provider"
 	participant xc_img_rg as "Responding Imaging Gateway\n| X-Service Provider"
-	participant xc_img_docsource as "Imaging Document Source| X-Service User" 
+	participant xc_img_docsource as "Imaging Document Source| X-Service Provider\nPolicy Enforcement Point" 
 end box
 
 == downloading dicom images in the patient portal from another community (XCA-I) ==
@@ -66,13 +66,13 @@ deactivate cc_ig
 pp_doc_consumer -[#black]> pp_img_doc_consumer
 activate pp_img_doc_consumer
 
-note left cc_img_ig: grouping with [ITI-40] is an open issues
 pp_img_doc_consumer -> cc_img_ig: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_img_ig
 
 cc_img_ig -> xc_img_rg: [RAD-75] Cross Gateway Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate xc_img_rg
 xc_img_rg -> xc_img_docsource: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+note right xc_img_docsource: [CH:ADR] Perform Enforcement of\nXDS-I "Imaging Retrieve" transactions (3.1.13)
 activate xc_img_docsource
 xc_img_rg <- xc_img_docsource: [RAD-69] Retrieve Imaging Document Set Response
 deactivate xc_img_docsource

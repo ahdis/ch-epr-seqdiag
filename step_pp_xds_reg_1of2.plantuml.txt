@@ -11,14 +11,7 @@ deactivate cc_doc_registry
 loop
   pp_doc_consumer -> ss_doc_repository: [ITI-43] Retrieve Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate ss_doc_repository
-  ss_doc_repository -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-  activate cc_doc_registry
-  cc_doc_registry -> cc_adp: ADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-  activate cc_adp
-  cc_doc_registry <- cc_adp: ADR Authorization Decision Response
-  deactivate cc_adp
-  ss_doc_repository <- cc_doc_registry: [ITI-18] Registry Stored Query Response
-  deactivate cc_doc_registry
+  note right ss_doc_repository: [CH:ADR] Perform Enforcement of\nXDS Retrieve Document Set transactions (3.1.12)
   pp_doc_consumer <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
 end
 deactivate ss_doc_repository

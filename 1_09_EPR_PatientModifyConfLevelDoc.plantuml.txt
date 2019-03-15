@@ -20,8 +20,9 @@ box "Community Components" #FFEFDE
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
 	participant cc_doc_registry as "Document Registry | Update Responder |  X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
+    participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
-
+ 
 == EPR_PatientModifyConfLevelDoc == 
 patient -[#black]> pp_gui: Patient modifies the \nconfidentiality level \nof a document
 activate pp_gui
@@ -40,11 +41,19 @@ activate pp_doc_admin
 alt XDS MU
 pp_doc_admin -> cc_doc_registry: [ITI-57] Update Document Set with new confidentiality level\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_doc_registry
+cc_doc_registry -> cc_adp: ADR Authorization Decision Request (policy enforcing home community)\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+cc_doc_registry <- cc_adp: ADR Authorization Decision Response
+deactivate cc_adp
 pp_doc_admin <- cc_doc_registry: [ITI-57] Update Document Set Response
 deactivate cc_doc_registry
 else RMU 
 pp_doc_admin -> cc_doc_registry: [ITI-92] Restricted Update Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_doc_registry
+cc_doc_registry -> cc_adp: ADR Authorization Decision Request (policy enforcing home community)\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+cc_doc_registry <- cc_adp: ADR Authorization Decision Response
+deactivate cc_adp
 pp_doc_admin <- cc_doc_registry: [ITI-92] Restricted Update Document Set Response
 deactivate cc_doc_registry
 end

@@ -5,7 +5,7 @@ activate cc_ig
 
 loop over all responding gateways
   cc_ig -> xc_rg: [ITI-55] Cross Patient Discovery Request [EPR-SPID]
-  note right: Handling of the Authorization \ndecision is done in the remote \ncommunity and not displayed here
+  note right: Handling of the Authorization \ndecision is done in the remote community\nsee next section (request from external community)
   activate xc_rg
   cc_ig <- xc_rg: [ITI-55] Cross Patient Discovery Response [MPI_B-PID, homeCommunityId] 
   cc_ig -> xc_rg: [ITI-38] Cross Gateway Query [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]

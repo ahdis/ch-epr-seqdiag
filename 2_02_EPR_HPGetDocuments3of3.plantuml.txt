@@ -24,7 +24,7 @@ box "Community Components" #FFEFDE
 end box
 
 box "Secondary Systems" #F7A69E
-	participant ss_doc_repository as "Document Repository | X-Service Provider|\nX-Service User" 
+	participant ss_doc_repository as "Document Repository | X-Service Provider\nPolicy Enforcement Point" 
 end box
 
 box "Other Communities" #91D2E8
