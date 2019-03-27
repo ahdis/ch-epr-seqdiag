@@ -1,4 +1,4 @@
-# 2019-03-21: update to 1.8 specifications ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E2 V1.8, CH:ATC V1.2.0 ) and online wave 2 testing
+# 2019-03-27: update to 1.8 specifications ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E2 V1.8, CH:ATC V1.2.0 ) and online wave 2 testing
 
 see also [EHS-169](https://gazelle.ihe.net/jira/projects/EHS/queues/issue/EHS-169)
 
@@ -10,11 +10,18 @@ see also [EHS-169](https://gazelle.ihe.net/jira/projects/EHS/queues/issue/EHS-16
 * precised sequence diagram in remote community
 * added XADR to ITI-57 and ITI-92 and ITI-18 
 
+1_07_EPR_PatientCreateEPR
+* Renamed Operator to Policy administrator
+
+1_07b_EPR_PatientOpenEPR
+* Renamed Operator to Policy administrator
+
 1_10_EPR_PatientVerifiesAccessLog 
 * add Authorization Decision Consumer | X-Service User grouped to Patient Audit Record Repository
 * added ADR and XADR sequence with Authorization Decision Provider
 
 1_14_EPR_PatientDeleteEPR
+* Renamed Operator to Policy administrator
 * SEQ002 resolved, (initial) policies can be deleted 
 
 2_02_EPR_HPGetDocuments1of3

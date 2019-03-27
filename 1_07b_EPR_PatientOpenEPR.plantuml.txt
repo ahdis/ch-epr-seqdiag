@@ -2,7 +2,7 @@
 !include design.plantuml.txt
 title 1.7b EPR_PatientOpenEPR
 
-actor admin as "Operator"
+actor admin as "Policy administrator"
 
 box "Community Components" #FFEFDE
 	participant cc_upi_client as "UPI Client"
