@@ -1,0 +1,11 @@
+ps_gui -[#black]> ps_x_service_user : get XUA Assertion
+activate ps_x_service_user
+ps_x_service_user -> cc_x_assertion_provider: CH:XUA Get X-User Assertions with Technical User Extension [SAML 2 Identity Assertion, GLN, name] and resource-id [EPR-SPID]
+activate cc_x_assertion_provider
+cc_x_assertion_provider -[#black]> cc_x_assertion_provider: Validate the SAML 2 Identity Assertion\nconveyed in the security header
+cc_x_assertion_provider -[#black]> cc_x_assertion_provider: Authenticate and validate the technical user\nor with the community data stores\nfor the X.509 certificate registered.
+cc_x_assertion_provider -[#black]> cc_x_assertion_provider: Check that the time interval defined is\nneither exceeded nor below the limit.
+ps_x_service_user <- cc_x_assertion_provider: CH:XUA Get X-User Assertions Response [EPR-SPID] according to CH:XUA
+deactivate cc_x_assertion_provider
+ps_gui <[#black]- ps_x_service_user
+deactivate ps_x_service_user

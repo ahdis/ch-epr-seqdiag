@@ -1,3 +1,6 @@
+# 2019-09-24: added group test
+TCU test
+
 # 2019-03-27: update to 1.8 specifications ehealth suisse/MOFH after update of specifications from ehealth suisse/MOFH (A5E1/A5E2 V1.8, CH:ATC V1.2.0 ) and online wave 2 testing
 
 see also [EHS-169](https://gazelle.ihe.net/jira/projects/EHS/queues/issue/EHS-169)
