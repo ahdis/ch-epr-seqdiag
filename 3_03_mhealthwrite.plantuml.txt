@@ -14,7 +14,7 @@ box "IdP" #DFF3F7
 	participant idp_user_authentication_provider as "SMART\nAuthz Server"
 end box
 
-box "Mobile Access Portal for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
+box "Mobile Access Gateway  for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
 	participant mp_fhirserver as "SMART\nFHIR Server"
 	participant mp_pix_x_ref_mgr as "Patient Identifier Cross-reference Manager (PIXm)\nPatient Identifier Cross-reference Consumer (PIXV3)"
 	participant mp_doc_recipient as "Document Recipient (MHD)\nDocument Source (XDS) | X-Service User"
