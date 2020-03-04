@@ -1,14 +1,12 @@
 @startuml
 !include design.plantuml.txt
-title 3.02 mHealth - get document for patient
+title 3.02 mHealth - get document for patient (SMART on FHIR option)
 
 actor user as "Patient"
 
 box "mHealth App" #BFCAD2
 	participant app as "App GUI"
     participant docconsumer as "Document Consumer (MHD)"
-    participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer (PIXm)"
-	participant AuthorizationClient as "Authorization Client (IUA)"
 end box
 
 box "IdP" #DFF3F7
@@ -17,9 +15,7 @@ end box
 
 box "Mobile Access Gateway  for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
 	participant mp_fhirserver as "SMART\nFHIR Server"
-	participant mp_pix_x_ref_mgr as "Patient Identifier Cross-reference Manager PIXm |\nPatient Identifier Cross-reference Consumer (PIX V3)"
-	participant mp_AuthorizationServer as "Authorization Server (IUA) | \nX-Assertion Provider"
-	participant mp_doc_responder as "Document Responder (MHD) | Document Consumer (XDS) | X-Service User"
+	participant mp_doc_responder as "Document Responder (MHD) |\nPatient Identifier Cross-reference Consumer (PIX V3) | Document Consumer (XDS) | X-Service User"
 end box
 
 box "Community Components" #FFEFDE
@@ -44,25 +40,35 @@ activate app
 
 !include_many step_mh_idp.plantuml.txt
 
-!include_many step_mh_pixm.plantuml.txt
-
-!include_many step_mh_iua.plantuml.txt
-
 app -[#black]> docconsumer: query documents
 activate docconsumer
-docconsumer -> mp_doc_responder: [ITI-67] Find Document References [MPI_A-PID] grouped with [ITI-72] Incorporate Authorization Token [JWT:UAP-ID]
+docconsumer -> mp_doc_responder: [ITI-67] Find Document References [patient.identifier *see note below] grouped with [ITI-72] Incorporate Authorization Token [JWT:UAP-ID]
+note right docconsumer: Note 1: MHD patient.identifier maps to $XDSSubmissionSetPatientId (ITI MHD 3.66.4.1.3.1 XDS on FHIR Option).\nThe Mobile Access Gateway SHALL translate the UAP-ID to the MPI-PID through the community data store/MPI (see also https://github.com/ahdis/ch-epr-seqdiag/issues/3). Feasible?\nOtherwise a way with PDQm/PIXm needs to be defined.
 
 activate mp_doc_responder
 mp_doc_responder -[#black]> mp_doc_responder: MHD to XDS
 activate mp_doc_responder
+mp_doc_responder -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions [UAP-ID]
+activate cc_x_assertion_provider
+opt resolve it to the EPR-SPID by querying the community data stores.
+cc_x_assertion_provider -[#black]> cc_x_assertion_provider: transform from UAP-ID to MPI_A-PID
+cc_x_assertion_provider -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [MPI_A-PID]
+activate cc_mpi_x_ref_manager
+cc_x_assertion_provider <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
+deactivate cc_mpi_x_ref_manager
 
-note right mp_doc_responder: Note 2: How can we add the X-User Assertion? Is the [ITI-71] Transaction using the SAML Token option (like ATC)
+mp_doc_responder <- cc_x_assertion_provider: CH:XUA Get-XUser Assertions Response [EPR-SPID] according to CH:XUA
+deactivate cc_x_assertion_provider
+
+mp_doc_responder -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [EPR-SPID]
+activate cc_mpi_x_ref_manager
+mp_doc_responder <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
+deactivate cc_mpi_x_ref_manager
 
 mp_doc_responder -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_doc_registry
 mp_doc_responder <- cc_doc_registry: [ITI-18] Registry Stored Query Response
 deactivate cc_doc_registry
-
 
 mp_doc_responder -> cc_ig: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_ig
