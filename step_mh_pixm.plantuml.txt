@@ -1,4 +1,4 @@
-app -[#black]> pixmconsumer: query MPI_A-PID from MPI\nusing local ID / UAP-ID in portal
+app -[#black]> pixmconsumer: query MPI_A-PID from MPI\nusing local ID
 activate pixmconsumer
 pixmconsumer -> mp_pix_x_ref_mgr: [ITI-83] Mobile Patient Identifier Cross-reference Query [local ID]
 activate mp_pix_x_ref_mgr

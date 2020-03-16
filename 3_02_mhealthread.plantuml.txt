@@ -24,7 +24,6 @@ end box
 
 box "Community Components" #FFEFDE
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
-	participant cc_x_assertion_provider as "X-Assertion Provider" 
 	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
 	participant cc_ig as "Initiating Gateway| X-Service Provider\n| X-Service User" 
 end box
@@ -50,13 +49,11 @@ activate app
 
 app -[#black]> docconsumer: query documents
 activate docconsumer
-docconsumer -> mp_doc_responder: [ITI-67] Find Document References [MPI_A-PID] grouped with [ITI-72] Incorporate Authorization Token [JWT:UAP-ID]
+docconsumer -> mp_doc_responder: [ITI-67] Find Document References [MPI_A-PID] grouped with [ITI-72] Incorporate Authorization Token [SAML Token Option]
 
 activate mp_doc_responder
 mp_doc_responder -[#black]> mp_doc_responder: MHD to XDS
 activate mp_doc_responder
-
-note right mp_doc_responder: Note 2: How can we add the X-User Assertion? Is the [ITI-71] Transaction using the SAML Token option (like ATC)
 
 mp_doc_responder -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_doc_registry
@@ -85,15 +82,11 @@ deactivate docconsumer
 
 app -[#black]> docconsumer: retrieve document
 activate docconsumer
-docconsumer -> mp_doc_responder: [ITI-68] Retrieve Document grouped with [ITI-72] Incorporate Authorization Token [JWT:UAP-ID]
+docconsumer -> mp_doc_responder: [ITI-68] Retrieve Document grouped with [ITI-72] Incorporate Authorization Token [SAML Token Option]
 activate mp_doc_responder
 mp_doc_responder -[#black]> mp_doc_responder: MHD to XDS
 
 activate mp_doc_responder
-mp_doc_responder -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions [UAP-ID]
-activate cc_x_assertion_provider
-mp_doc_responder <- cc_x_assertion_provider: CH:XUA Get-XUser Assertions Response [EPR-SPID] according to CH:XUA
-deactivate cc_x_assertion_provider
 
 opt
 mp_doc_responder -> ss_doc_repository: [ITI-43] Retrieve Document Set Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
