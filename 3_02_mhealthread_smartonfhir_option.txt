@@ -1,6 +1,6 @@
 @startuml
 !include design.plantuml.txt
-title 3.02 mHealth - get document for patient (SMART on FHIR option)
+title 3.02 mHealth - get document for patient (3. SMART on FHIR option)
 
 actor user as "Patient"
 
@@ -14,6 +14,7 @@ box "Mobile Access Gateway  for Community\nbased on SMART App Launch Framework a
 	participant mp_fhirserver as "SMART\nFHIR Server"
 	participant mp_authzserver as "SMART\nAuthz Server"
 	participant mp_pix_x_ref_mgr as "Patient Identifier Cross-reference Manager PIXm |\nPatient Identifier Cross-reference Consumer (PIX V3)"
+	participant mp_AuthorizationServer as "Authorization Server (IUA) | \nX-Assertion Provider"
 	participant mp_doc_responder as "Document Responder (MHD) |\nPatient Identifier Cross-reference Consumer (PIX V3) | Document Consumer (XDS) | X-Service User"
 	participant idp_user_authentication_provider as "SMART\nAuthz Server"
 end box
@@ -24,7 +25,6 @@ end box
 
 box "Community Components" #FFEFDE
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
-	participant cc_x_assertion_provider as "X-Assertion Provider" 
 	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
 	participant cc_ig as "Initiating Gateway| X-Service Provider\n| X-Service User" 
 end box
