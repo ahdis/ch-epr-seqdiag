@@ -34,6 +34,18 @@ ps_hpd_provider_info_consumer <- cc_hpd_provider_info_directory : [ITI-58] Provi
 deactivate cc_hpd_provider_info_directory
 deactivate ps_hpd_provider_info_consumer
 
+cc_hpd_provider_info_consumer -> gs_hpd : [ITI-58] Provider Information Query Request
+activate cc_hpd_provider_info_consumer
+activate gs_hpd
+cc_hpd_provider_info_consumer <- gs_hpd : [ITI-58] Provider Information Query Response
+deactivate gs_hpd
+deactivate cc_hpd_provider_info_consumer
 
+cc_hpd_provider_info_consumer -> gs_hpd : [CH:PIDD] Provider Information Delta Download
+activate cc_hpd_provider_info_consumer
+activate gs_hpd
+cc_hpd_provider_info_consumer <- gs_hpd : [CH:PIDD] Provider Information Delta Download Response
+deactivate gs_hpd
+deactivate cc_hpd_provider_info_consumer
 
 @enduml 
