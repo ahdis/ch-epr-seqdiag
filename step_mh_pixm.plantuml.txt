@@ -1,6 +1,6 @@
-app -[#black]> pixmconsumer: query MPI_A-PID from MPI\nusing local ID
+app -[#black]> pixmconsumer: query MPI_A-PID from MPI\nusing local ID and access token
 activate pixmconsumer
-pixmconsumer -> mp_pix_x_ref_mgr: [ITI-83] Mobile Patient Identifier Cross-reference Query [local ID]
+pixmconsumer -> mp_pix_x_ref_mgr: [ITI-83] Mobile Patient Identifier Cross-reference Query [local ID] together with access token
 activate mp_pix_x_ref_mgr
 mp_pix_x_ref_mgr -[#black]> mp_pix_x_ref_mgr: PIXm to PIX V3
 activate mp_pix_x_ref_mgr

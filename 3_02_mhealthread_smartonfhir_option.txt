@@ -4,10 +4,9 @@ title 3.02 mHealth - get document for patient (3. SMART on FHIR option)
 
 actor user as "Patient"
 
-box "mHealth App" #BFCAD2
-	participant app as "App GUI"
+box "mHealth embedded App" #BDBED0
+	participant app2 as "App GUI"
     participant docconsumer as "Document Consumer (MHD)"
-    participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer (PIXm)"
 end box
 
 box "Mobile Access Gateway  for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
@@ -16,11 +15,11 @@ box "Mobile Access Gateway  for Community\nbased on SMART App Launch Framework a
 	participant mp_pix_x_ref_mgr as "Patient Identifier Cross-reference Manager PIXm |\nPatient Identifier Cross-reference Consumer (PIX V3)"
 	participant mp_AuthorizationServer as "Authorization Server (IUA) | \nX-Assertion Provider"
 	participant mp_doc_responder as "Document Responder (MHD) |\nPatient Identifier Cross-reference Consumer (PIX V3) | Document Consumer (XDS) | X-Service User"
-	participant idp_user_authentication_provider as "SMART\nAuthz Server"
+	participant mp_user_authentication_provider as "SMART\nAuthz Server"
 end box
 
 box "IdP" #DFF3F7
-	participant idp_user_authentication_provider as "IdP"
+	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
 end box
 
 box "Community Components" #FFEFDE
@@ -39,14 +38,36 @@ box "Other Communities" #91D2E8
 end box
 
 
-user -[#black]> app: read doc
-activate app
+user -[#black]> app2: read doc
+activate app2
 
-!include_many step_mh_pixm.plantuml.txt
+app2 -> mp_fhirserver: GET /metadata
+activate mp_fhirserver
+app2 <- mp_fhirserver: Conformance statement incl. OAuth 2.0 endpoints
+deactivate mp_fhirserver
 
-!include_many step_mh_idp.scope.plantuml.txt
 
-app -[#black]> docconsumer: query documents
+
+app2 -> mp_authzserver: Redirect to Authz Server (EHR launch sequence)\nwith OpenID Connect
+activate mp_authzserver
+mp_authzserver -> idp_user_authentication_provider: Authenticate User
+activate idp_user_authentication_provider
+mp_authzserver <- idp_user_authentication_provider
+deactivate idp_user_authentication_provider
+mp_authzserver -[#black]> mp_authzserver: Authorize App Access
+mp_authzserver -[#black]> mp_AuthorizationServer: IUA Get Authorization Token Request
+activate mp_AuthorizationServer
+mp_authzserver <[#black]- mp_AuthorizationServer: IUA Get Authorization Token Response
+deactivate mp_AuthorizationServer
+mp_authzserver -> app2: On Approval redirect to app with code
+deactivate mp_authzserver
+app2 -> mp_authzserver: Exchange code for access token
+activate mp_authzserver
+app2 <- mp_authzserver: access token for response [JWT:UAP-ID]
+deactivate mp_authzserver
+
+
+app2 -[#black]> docconsumer: query documents
 activate docconsumer
 docconsumer -> mp_doc_responder: [ITI-67] Find Document References [MPI-PID] grouped with [ITI-72] Incorporate Authorization Token [access token]
 
@@ -74,10 +95,10 @@ mp_doc_responder <[#black]- mp_doc_responder: XDS to MHD
 deactivate mp_doc_responder
 docconsumer <- mp_doc_responder
 deactivate mp_doc_responder
-app <[#black]- docconsumer
+app2 <[#black]- docconsumer
 deactivate docconsumer
 
-app -[#black]> docconsumer: retrieve document
+app2 -[#black]> docconsumer: retrieve document
 activate docconsumer
 docconsumer -> mp_doc_responder: [ITI-68] Retrieve Document grouped with [ITI-72] Incorporate Authorization Token [JWT:UAP-ID]
 activate mp_doc_responder
@@ -106,10 +127,10 @@ mp_doc_responder <[#black]- mp_doc_responder: XDS to MHD
 deactivate mp_doc_responder
 docconsumer <- mp_doc_responder
 deactivate mp_doc_responder
-app <[#black]- docconsumer
+app2 <[#black]- docconsumer
 deactivate docconsumer
 
-user <[#black]- app
-deactivate app
+user <[#black]- app2
+deactivate app2
 
 @enduml 
