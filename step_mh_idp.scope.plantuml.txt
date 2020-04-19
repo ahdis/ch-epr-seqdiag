@@ -5,16 +5,16 @@ activate mp_fhirserver
 app <- mp_fhirserver: Conformance statement incl. OAuth 2.0 endpoints
 deactivate mp_fhirserver
 
-app -> mp_authzserver: Redirect to Authz Server (SMART standalone launce sequence)\nwith OpenID Connect
-activate mp_authzserver
-mp_authzserver -> idp_user_authentication_provider: Authenticate User
+app -> mp_AuthorizationServer: Redirect to Authz Server (SMART standalone launce sequence)\nwith OpenID Connect
+activate mp_AuthorizationServer
+mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
 activate idp_user_authentication_provider
-mp_authzserver <- idp_user_authentication_provider
+mp_AuthorizationServer <- idp_user_authentication_provider
 deactivate idp_user_authentication_provider
-mp_authzserver -[#black]> mp_authzserver: Authorize App Access
-mp_authzserver -> app: On Approval redirect to app with code
-deactivate mp_authzserver
-app -> mp_authzserver: Exchange code for access token
-activate mp_authzserver
-app <- mp_authzserver: access token for response [JWT:UAP-ID]
-deactivate mp_authzserver
+mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
+mp_AuthorizationServer -> app: On Approval redirect to app with code
+deactivate mp_AuthorizationServer
+app -> mp_AuthorizationServer: Exchange code for access token
+activate mp_AuthorizationServer
+app <- mp_AuthorizationServer: access token for response [JWT:UAP-ID]
+deactivate mp_AuthorizationServer

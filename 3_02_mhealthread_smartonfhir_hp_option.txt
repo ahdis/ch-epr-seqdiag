@@ -5,22 +5,21 @@ title 3.02 mHealth - get document for health pro (3. SMART on FHIR option)
 actor user as "Health Professional"
 
 box "mHealth App" #BFCAD2
-	participant app as "App GUI"
-    participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer (PIXm)"
+	participant app as "App GUI\nIUA Authorization Client"
+    participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer (PMIR)"
 end box
 
 box "mHealth embedded App" #BDBED0
-	participant app2 as "App GUI"
+	participant app2 as "App GUI\nIUA Authorization Client"
     participant docconsumer as "Document Consumer (MHD)"
 end box
 
 box "Mobile Access Gateway  for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
 	participant mp_fhirserver as "SMART\nFHIR Server"
-	participant mp_authzserver as "SMART\nAuthz Server"
-	participant mp_pix_x_ref_mgr as "Patient Identifier Cross-reference Manager PIXm |\nPatient Identifier Cross-reference Consumer (PIX V3)"
-	participant mp_AuthorizationServer as "Authorization Server (IUA) | \nX-Assertion Provider"
+	participant mp_pix_x_ref_mgr as "Patient Identity Manager PMIR |\nPatient Identifier Cross-reference Consumer (PIX V3)"
+	participant mp_AuthorizationServer as "Authorization Server (IUA) |\n X-Service User or X-Assertion Provider"
 	participant mp_doc_responder as "Document Responder (MHD) |\nPatient Identifier Cross-reference Consumer (PIX V3) | Document Consumer (XDS) | X-Service User"
-	participant mp_user_authentication_provider as "SMART\nAuthz Server"
+	participant mp_user_authentication_provider as "IUA\nAuthorization Server"
 end box
 
 box "IdP" #DFF3F7
@@ -54,23 +53,19 @@ activate app
 app -> app2: launch app
 activate app2
 
-app2 -> mp_authzserver: Redirect to Authz Server (EHR launch sequence)\nwith OpenID Connect
-activate mp_authzserver
-mp_authzserver -> idp_user_authentication_provider: Authenticate User
-activate idp_user_authentication_provider
-mp_authzserver <- idp_user_authentication_provider
-deactivate idp_user_authentication_provider
-mp_authzserver -[#black]> mp_authzserver: Authorize App Access
-mp_authzserver -[#black]> mp_AuthorizationServer: IUA Get Authorization Token Request
+app2 -> mp_AuthorizationServer: IUA Get Authorization Token
 activate mp_AuthorizationServer
-mp_authzserver <[#black]- mp_AuthorizationServer: IUA Get Authorization Token Response
+mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
+activate idp_user_authentication_provider
+mp_AuthorizationServer <- idp_user_authentication_provider
+deactivate idp_user_authentication_provider
+mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
+mp_AuthorizationServer -> app2: On Approval redirect to app with code
 deactivate mp_AuthorizationServer
-mp_authzserver -> app2: On Approval redirect to app with code
-deactivate mp_authzserver
-app2 -> mp_authzserver: Exchange code for access token
-activate mp_authzserver
-app2 <- mp_authzserver: access token for response [JWT:UAP-ID]
-deactivate mp_authzserver
+app2 -> mp_AuthorizationServer: Exchange code for access token
+activate mp_AuthorizationServer
+app2 <- mp_AuthorizationServer: access token for response [JWT:UAP-ID]
+deactivate mp_AuthorizationServer
 
 
 app2 -[#black]> docconsumer: query documents
