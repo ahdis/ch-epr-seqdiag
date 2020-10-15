@@ -9,7 +9,7 @@ box "mHealth App" #BFCAD2
 end box
 
 box "IdP" #DFF3F7
-	participant idp_user_authentication_provider as "SMART\nAuthz Server"
+	participant idp_user_authentication_provider as "IUA\nAuthorization Server"
 end box
 
 box "Mobile Access Gateway  for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
