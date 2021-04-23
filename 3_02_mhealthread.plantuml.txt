@@ -7,44 +7,28 @@ actor user as "Patient"
 box "mHealth App" #BFCAD2
 	participant app as "App GUI"
     participant docconsumer as "Document Consumer (MHD)"
-    participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer (PMIR)"
+    participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer"
 	participant AuthorizationClient as "Authorization Client (IUA)"
 end box
 
-box "Mobile Access Gateway  for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
-	participant mp_fhirserver as "SMART\nFHIR Server"
-	participant mp_pix_x_ref_mgr as "Patient Identity Manager PMIR |\nPatient Identifier Cross-reference Consumer (PIX V3)"
-	participant mp_AuthorizationServer as "Authorization Server (IUA) | \nX-Service User or X-Assertion Provider"
-	participant mp_doc_responder as "Document Responder (MHD) | Document Consumer (XDS) | X-Service User"
+box "Community Components" #FFEFDE
+	participant mp_pix_x_ref_mgr as "Patient Identifier \nCross-reference \nManger"
+	participant mp_AuthorizationServer as "Authorization Server (IUA)"
+	participant mp_doc_responder as "Document Responder (MHD)"
 end box
 
 box "IdP" #DFF3F7
 	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
 end box
 
-box "Community Components" #FFEFDE
-	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
-	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
-	participant cc_ig as "Initiating Gateway| X-Service Provider\n| X-Service User" 
-end box
-
-box "Secondary Systems" #F7A69E
-	participant ss_doc_repository as "Document Repository | X-Service Provider" 
-end box
-
-box "Other Communities" #91D2E8
-	participant xc_rg as "Responding Gateway\n| X-Service Provider"
-'	participant ss_doc_repository2 as "Document Repository | X-Service Provider" 
-end box
-
 
 user -[#black]> app: read doc
 activate app
 
-app -> mp_fhirserver: GET /metadata
-activate mp_fhirserver
-app <- mp_fhirserver: Conformance statement incl. OAuth 2.0 endpoints
-deactivate mp_fhirserver
+app -> mp_AuthorizationServer: GET /metadata
+activate mp_AuthorizationServer
+app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
+deactivate mp_AuthorizationServer
 
 app -[#black]> AuthorizationClient: Get Authorization Token
 activate AuthorizationClient
@@ -69,69 +53,22 @@ deactivate mp_AuthorizationServer
 
 !include_many step_mh_iua.plantuml.txt
 
-app -[#black]> docconsumer: query documents
+app -> docconsumer: query documents
 activate docconsumer
-docconsumer -> mp_doc_responder: [ITI-67] Find Document References [MPI_A-PID] grouped with [ITI-72] Incorporate Authorization Token [SAML Token Option]
-
+docconsumer -[#black]> mp_doc_responder: query documents [ITI-67]
 activate mp_doc_responder
-mp_doc_responder -[#black]> mp_doc_responder: MHD to XDS
-activate mp_doc_responder
-
-mp_doc_responder -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-activate cc_doc_registry
-mp_doc_responder <- cc_doc_registry: [ITI-18] Registry Stored Query Response
-deactivate cc_doc_registry
-
-
-mp_doc_responder -> cc_ig: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-activate cc_ig
-loop over all responding gateways
-  cc_ig -> xc_rg: [ITI-38, 55]
-  activate xc_rg
-  cc_ig <- xc_rg: [ITI-38, 55]
-  deactivate xc_rg
-end
-
-mp_doc_responder <- cc_ig: [ITI-18] Registry Stored Query Response
-deactivate cc_ig
-
-mp_doc_responder <[#black]- mp_doc_responder: XDS to MHD
+docconsumer <[#black]- mp_doc_responder
 deactivate mp_doc_responder
-docconsumer <- mp_doc_responder
-deactivate mp_doc_responder
-app <[#black]- docconsumer
+docconsumer <- app
 deactivate docconsumer
 
-app -[#black]> docconsumer: retrieve document
+app -> docconsumer: retrieve documents
 activate docconsumer
-docconsumer -> mp_doc_responder: [ITI-68] Retrieve Document grouped with [ITI-72] Incorporate Authorization Token [SAML Token Option]
+docconsumer -[#black]> mp_doc_responder: retrieve document [ITI-68]
 activate mp_doc_responder
-mp_doc_responder -[#black]> mp_doc_responder: MHD to XDS
-
-activate mp_doc_responder
-
-opt
-mp_doc_responder -> ss_doc_repository: [ITI-43] Retrieve Document Set Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-activate ss_doc_repository
-mp_doc_responder <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
-deactivate ss_doc_repository
-else
-mp_doc_responder -> cc_ig: [ITI-43] Retrieve Document Set Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-activate cc_ig
-cc_ig -> xc_rg: [ITI-39]
-activate xc_rg
-cc_ig <- xc_rg: [ITI-39]
-deactivate xc_rg
-mp_doc_responder <- cc_ig: [ITI-43] Retrieve Document Set Response
-deactivate cc_ig
-end
-
-mp_doc_responder <[#black]- mp_doc_responder: XDS to MHD
-
+docconsumer <[#black]- mp_doc_responder
 deactivate mp_doc_responder
-docconsumer <- mp_doc_responder
-deactivate mp_doc_responder
-app <[#black]- docconsumer
+docconsumer <- app
 deactivate docconsumer
 
 user <[#black]- app

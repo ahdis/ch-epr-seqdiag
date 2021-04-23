@@ -6,7 +6,7 @@ actor user as "Patient"
 
 box "mHealth App" #BFCAD2
 	participant app as "App GUI"
-    participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer (PMIR)"
+    participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer"
     participant docsource as "Document Source (MHD)"
 end box
 
@@ -14,19 +14,10 @@ box "IdP" #DFF3F7
 	participant idp_user_authentication_provider as "IUA\nAuthorization Server"
 end box
 
-box "Mobile Access Gateway  for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
-	participant mp_fhirserver as "SMART\nFHIR Server"
-	participant mp_pix_x_ref_mgr as "Patient Identity Manager (PMIR)\nPatient Identifier Cross-reference Consumer (PIXV3)"
-	participant mp_doc_recipient as "Document Recipient (MHD)\nDocument Source (XDS) | X-Service User"
-end box
-
 box "Community Components" #FFEFDE
-	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
+	participant mp_pix_x_ref_mgr as "Patient Identifier \nCross-reference \nManager"
+	participant mp_doc_recipient as "Document Recipient (MHD)\nDocument Source (XDS) | X-Service User"
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
-end box
-
-box "Secondary Systems" #F7A69E
-	participant ss_doc_repository as "Document Repository | X-Service Provider" 
 end box
 
 user -[#black]> app: read doc
@@ -40,22 +31,6 @@ app -[#black]> docsource: write document [MPI-ID, JWT:UAP-ID]
 activate docsource
 docsource -> mp_doc_recipient: [ITI-65] Provide Document Bundle Request [MPI-ID, JWT:UAP-ID]
 activate mp_doc_recipient
-mp_doc_recipient -[#black]> mp_doc_recipient: MHD to XDS
-
-activate mp_doc_recipient
-mp_doc_recipient -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions [UAP-ID]
-activate cc_x_assertion_provider
-mp_doc_recipient <- cc_x_assertion_provider: CH:XUA Get-XUser Assertions Response [EPR-SPID] according to CH:XUA
-deactivate cc_x_assertion_provider
-
-mp_doc_recipient -> ss_doc_repository: [ITI-41] Provide and Register Document Set Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-activate ss_doc_repository
-mp_doc_recipient <- ss_doc_repository: [ITI-41] Provide and Register Set Response
-deactivate ss_doc_repository
-
-mp_doc_recipient <[#black]- mp_doc_recipient: XDS to MHD
-
-deactivate mp_doc_recipient
 docsource <- mp_doc_recipient: [ITI-65] Provide Document Bundle Response 
 deactivate mp_doc_recipient
 app <[#black]- docsource

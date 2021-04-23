@@ -9,11 +9,11 @@ box "mHealth App" #BFCAD2
 end box
 
 box "IdP" #DFF3F7
-	participant idp_user_authentication_provider as "IUA\nAuthorization Server"
+	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
 end box
 
-box "Mobile Access Gateway  for Community\nbased on SMART App Launch Framework and FHIR incl. mobile IHE Profiles" #DEEDE0
-	participant mp_fhirserver as "SMART\nFHIR Server"
+box "Community Components" #FFEFDE
+	participant mp_AuthorizationServer as "Authorization Server (IUA)"
 end box
 
 user -[#black]> app: authenticate

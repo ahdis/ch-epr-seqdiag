@@ -1,9 +1,9 @@
 
 
-app -> mp_fhirserver: GET /metadata
-activate mp_fhirserver
-app <- mp_fhirserver: Conformance statement incl. OAuth 2.0 endpoints
-deactivate mp_fhirserver
+app -> mp_AuthorizationServer: GET /metadata
+activate mp_AuthorizationServer
+app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
+deactivate mp_AuthorizationServer
 
 app -> mp_AuthorizationServer: Redirect to Authz Server (SMART standalone launce sequence)\nwith OpenID Connect
 activate mp_AuthorizationServer
