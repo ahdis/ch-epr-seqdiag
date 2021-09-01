@@ -28,7 +28,7 @@ admin -[#black]> admin: Check EPR-SPID attributed to the correct person
 
 admin -[#black]> cc_mpi_source: register patient including demographics from ZAS and EPR-SPID in MPI and registry
 activate cc_mpi_source
-cc_mpi_source -> cc_mpi_x_ref_manager: [ITI-44] Patient Identity Feed [EPR-SPID]
+cc_mpi_source -> cc_mpi_x_ref_manager: [ITI-44] Patient Identity Feed [EPR-SPID, Local-ID]]
 activate cc_mpi_x_ref_manager
 cc_mpi_source <- cc_mpi_x_ref_manager: Patient Identity Feed Response
 deactivate cc_mpi_x_ref_manager
