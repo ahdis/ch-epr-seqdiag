@@ -10,7 +10,6 @@ box "Community Components" #FFEFDE
   participant cc_mpi_source as "Patient \nIdentity \nSource"
 	participant cc_ppq_policy_source as "Policy Source\n| X-Service User"
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
-  participant cc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant cc_x_assertion_provider as "X-Assertion Provider"
 	participant cc_ppq_policy_repository as "Policy Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User"
 end box
@@ -50,7 +49,7 @@ deactivate gs_upi
 opt optional transactions
 deactivate cc_upi_client
 
-admin -[#black]> cc_doc_admin: Delete all documents in \ncommunity (no transaction defined, IHE ITI RMD as a possiblity)
+admin -[#black]> cc_doc_admin: Delete all documents in \ncommunity (no transaction defined, IHE ITI RMD as a possibility)
 activate cc_doc_admin
 admin <[#black]- cc_doc_admin:  Delete all documents Response
 deactivate cc_doc_admin
@@ -60,12 +59,6 @@ admin -[#black]> cc_mpi_source: Delete patient in MPI
 activate cc_mpi_source
 cc_mpi_source -> cc_mpi_x_ref_manager: Revise patient in MPI [ITI-44]\nNote: Revise is not a real delete in the MPI
 activate cc_mpi_x_ref_manager
-loop
-cc_mpi_x_ref_manager -> cc_pix_x_ref_consumer: Update Notfications for Consumer [ITI-46]
-activate cc_pix_x_ref_consumer
-cc_mpi_x_ref_manager <- cc_pix_x_ref_consumer: Update Notification Response
-deactivate cc_pix_x_ref_consumer
-end
 cc_mpi_source <- cc_mpi_x_ref_manager
 deactivate cc_mpi_x_ref_manager
 admin <[#black]- cc_mpi_source
