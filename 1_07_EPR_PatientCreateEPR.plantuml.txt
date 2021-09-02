@@ -1,5 +1,6 @@
 @startuml
-!include design.plantuml.txt
+skinparam Padding 1
+autonumber 1 1 "<b>[00]"
 title 1.7 EPR_PatientCreateEPR
 
 actor admin as "Policy administrator"
@@ -9,7 +10,7 @@ box "Community Components" #FFEFDE
 	participant cc_mpi_source as "Patient Identity Source |\nPatient Identifier Cross-reference Consumer"
 	participant cc_ppq_policy_source as "Policy Source | X-Service User"
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
-	participant cc_doc_registry as "Document Registry" 
+	participant cc_doc_registry as "Document Registry"
 	participant cc_x_assertion_provider as "X-Assertion Provider"
 	participant cc_ppq_policy_repository as "Policy Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User"
 end box
@@ -35,31 +36,24 @@ admin -[#black]>x admin: Fork if EPR-SPID already exists
 
 admin -[#black]> admin: Check EPR-SPID attributed to the correct person
 
-
 admin -[#black]> cc_mpi_source: register patient including demographics from UPI and EPR-SPID in MPI and registry
 activate cc_mpi_source
-cc_mpi_source -> cc_mpi_x_ref_manager: [ITI-44] Patient Identity Feed [EPR-SPID]
+cc_mpi_source -> cc_mpi_x_ref_manager: [ITI-44] Patient Identity Feed [EPR-SPID, Local-ID]
 activate cc_mpi_x_ref_manager
+
+cc_mpi_x_ref_manager -> cc_doc_registry: [ITI-44] Patient Identity Feed [MPI_A-PID]
+activate cc_doc_registry
+cc_mpi_x_ref_manager <- cc_doc_registry: [ITI-44] Patient Identity Feed Response
+deactivate cc_doc_registry
+
 cc_mpi_source <- cc_mpi_x_ref_manager: Patient Identity Feed Response
 deactivate cc_mpi_x_ref_manager
 
-cc_mpi_source -[#black]> cc_mpi_source: query MPI_A-PID from MPI using EPR-SPID
-activate cc_mpi_source
-cc_mpi_source -> cc_mpi_x_ref_manager: [ITI-45] PIX V3 Query [EPR-SPID]
-activate cc_mpi_x_ref_manager
-cc_mpi_source <- cc_mpi_x_ref_manager: [ITI-45] PIX V3 Response [MPI_A-PID, EPR-SPID]
-deactivate cc_mpi_x_ref_manager
-cc_mpi_source <[#black]- cc_mpi_source
-deactivate cc_mpi_source
 
-cc_mpi_source -> cc_doc_registry: [ITI-44] Patient Identity Feed [MPI_A-PID]
-activate cc_doc_registry
-cc_mpi_source <- cc_doc_registry: [ITI-44] Patient Identity Feed Response
-deactivate cc_doc_registry
 
 admin <[#black]- cc_mpi_source
 deactivate cc_mpi_source
- 
+
 
 opt default policies for patient have to be generated if this is the reference community (EPR-SPID was generated with eCH-0213)
   admin -[#black]> cc_ppq_policy_source: trigger default policies for patient [EPR-SPID]
@@ -70,6 +64,20 @@ opt default policies for patient have to be generated if this is the reference c
   activate idp_user_authentication_provider
   cc_ppq_policy_source <- idp_user_authentication_provider : CH:XUA Authenticate user response \n(SAML 2.0 token returned to Portal with UAP-ID)
   deactivate idp_user_authentication_provider
+
+alt if grouped with Patient Identity Source
+	cc_ppq_policy_source -> cc_mpi_x_ref_manager: [ITI-45] PIX V3 Query
+	activate cc_mpi_x_ref_manager
+	cc_ppq_policy_source<- cc_mpi_x_ref_manager: [ITI-45] PIX V3 Response [MPI_A-PID, EPR-SPID]
+	deactivate cc_mpi_x_ref_manager
+else
+	cc_ppq_policy_source -> cc_mpi_x_ref_manager: [ITI-47] PDQ V3 Query
+	activate cc_mpi_x_ref_manager
+	cc_ppq_policy_source<- cc_mpi_x_ref_manager: [ITI-47] PDQ V3 Response [MPI_A-PID, EPR-SPID]
+	deactivate cc_mpi_x_ref_manager
+	|||
+end
+
   cc_ppq_policy_source -> cc_x_assertion_provider:  CH:XUA Get X-User Assertion with Policy Administrator Extension
   activate cc_x_assertion_provider
   cc_ppq_policy_source <- cc_x_assertion_provider
@@ -84,6 +92,4 @@ opt default policies for patient have to be generated if this is the reference c
   deactivate cc_ppq_policy_source
 end
 
-
-
-@enduml 
+@enduml
