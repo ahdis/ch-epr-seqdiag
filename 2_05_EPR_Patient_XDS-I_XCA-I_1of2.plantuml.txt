@@ -20,7 +20,7 @@ box "Community Components" #FFEFDE
 	participant cc_mpi_patient_demographics_supplier as "Patient \nDemographics \nSupplier"
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
 	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
-	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
+	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
     participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 

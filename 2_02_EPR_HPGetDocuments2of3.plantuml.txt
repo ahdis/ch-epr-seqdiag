@@ -18,7 +18,7 @@ end box
 box "Community Components" #FFEFDE
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
 	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
-	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManger"
+	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
   participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 	participant cc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant cc_doc_consumer as "Document Consumer"
@@ -64,19 +64,19 @@ activate xc_ig
 note left: handling of audit record repository retrieval is missing
 activate cc_rg
 
-cc_rg -[#black]> cc_pix_x_ref_consumer: query MPI_B-PID from MPI using EPR-SPID in portal
+cc_rg -[#black]> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using EPR-SPID in portal
 activate cc_pix_x_ref_consumer
 cc_pix_x_ref_consumer -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [EPR-SPID]
 activate cc_mpi_x_ref_manager
-cc_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_B-PID]
+cc_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID]
 deactivate cc_mpi_x_ref_manager
 cc_rg <[#black]- cc_pix_x_ref_consumer
 deactivate cc_pix_x_ref_consumer
-xc_ig <- cc_rg: [ITI-55] Cross Patient Discovery Response [MPI_B-PID, homeCommunityId]
+xc_ig <- cc_rg: [ITI-55] Cross Patient Discovery Response [MPI_A-PID, homeCommunityId]
 deactivate cc_rg
 deactivate xc_ig
 
-xc_ig -> cc_rg: [ITI-38] Cross Gateway Query [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+xc_ig -> cc_rg: [ITI-38] Cross Gateway Query [MPI_A-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate xc_ig
 activate cc_rg
 cc_rg -[#black]> cc_doc_consumer: retrieve document entries
