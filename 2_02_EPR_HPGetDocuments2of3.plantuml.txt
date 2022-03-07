@@ -41,7 +41,7 @@ box "Other (reference) Community" #91D2E8
     participant xc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
-== documents within other communities from patient who has \nhis reference community in another community ==
+== documents within other communities from patient who has \nhis reference community in another community, actors apply to community A ==
 
 hp -[#black]> ps_gui
 activate ps_gui
@@ -57,31 +57,31 @@ activate ps_gui
 hp <[#black]- ps_gui
 deactivate ps_gui
 
-== Request from external community ==
+== Request from external community, actors apply to community B ==
   
-xc_ig -> cc_rg: [ITI-55] Cross Patient Discovery Request [EPR-SPID]
+xc_ig -> cc_rg: [ITI-55] Cross Patient Discovery Request [EPR-SPID] ([21] continued)
 activate xc_ig
 note left: handling of audit record repository retrieval is missing
 activate cc_rg
 
-cc_rg -[#black]> cc_pix_x_ref_consumer: query MPI_A-PID from MPI using EPR-SPID in portal
+cc_rg -[#black]> cc_pix_x_ref_consumer: query MPI_B-PID from MPI using EPR-SPID in portal
 activate cc_pix_x_ref_consumer
 cc_pix_x_ref_consumer -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [EPR-SPID]
 activate cc_mpi_x_ref_manager
-cc_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID]
+cc_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_B-PID]
 deactivate cc_mpi_x_ref_manager
 cc_rg <[#black]- cc_pix_x_ref_consumer
 deactivate cc_pix_x_ref_consumer
-xc_ig <- cc_rg: [ITI-55] Cross Patient Discovery Response [MPI_A-PID, homeCommunityId]
+xc_ig <- cc_rg: [ITI-55] Cross Patient Discovery Response [MPI_B-PID, homeCommunityId] (return to [22])
 deactivate cc_rg
 deactivate xc_ig
 
-xc_ig -> cc_rg: [ITI-38] Cross Gateway Query [MPI_A-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+xc_ig -> cc_rg: [ITI-38] Cross Gateway Query [MPI_B-PID, homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID], ([23] continued)
 activate xc_ig
 activate cc_rg
 cc_rg -[#black]> cc_doc_consumer: retrieve document entries
 activate cc_doc_consumer
-cc_doc_consumer -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+cc_doc_consumer -> cc_doc_registry: [ITI-18] Registry Stored Query [MPI_B-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate cc_doc_registry
 alt this is reference community of patient
 cc_doc_registry -> cc_adp: ADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
@@ -101,12 +101,12 @@ cc_doc_consumer <- cc_doc_registry: [ITI-18] Registry Stored Query Response
 deactivate cc_doc_registry
 cc_rg <[#black]- cc_doc_consumer
 deactivate cc_doc_consumer
-xc_ig <- cc_rg: [ITI-38] Cross Gateway Response
+xc_ig <- cc_rg: [ITI-38] Cross Gateway Response (return to [24])
 deactivate cc_rg
 deactivate xc_ig
 
 
-xc_ig -> cc_rg: [ITI-39] Cross Gateway Retrieve [homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+xc_ig -> cc_rg: [ITI-39] Cross Gateway Retrieve [homeCommunityId]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID] ([27] continued)
 activate xc_ig
 activate cc_rg
 cc_rg -[#black]> cc_doc_consumer: retrieve document entries
@@ -118,7 +118,7 @@ cc_doc_consumer <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
 deactivate ss_doc_repository
 cc_rg <[#black]- cc_doc_consumer
 deactivate cc_doc_consumer
-xc_ig <- cc_rg: [ITI-39] Cross Gateway Retrieve Response
+xc_ig <- cc_rg: [ITI-39] Cross Gateway Retrieve Response (return to [28])
 
 deactivate cc_rg
 deactivate xc_ig
