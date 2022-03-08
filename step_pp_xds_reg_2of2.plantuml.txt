@@ -23,7 +23,7 @@ loop over all responding gateways
 
   xc_rg -[#black]> xc_doc_consumer: retrieve document entries
   activate xc_doc_consumer
-  xc_doc_consumer -> xc_doc_registry: [ITI-18] Registry Stored Query [MPI_A-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  xc_doc_consumer -> xc_doc_registry: [ITI-18] Registry Stored Query [MPI_B-PID]\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate xc_doc_registry
   xc_doc_registry -> cc_adp: XADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate cc_adp

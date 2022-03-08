@@ -1,3 +1,5 @@
+# 2022-03-04: fixed MPI PID attributions in ITI-38; fixed typo in "Manager"
+
 # 2019-09-24: added group test
 TCU test
 
