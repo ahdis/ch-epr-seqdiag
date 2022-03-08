@@ -19,7 +19,7 @@ box "Community Components" #FFEFDE
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
 	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
-  participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
+    participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 	participant cc_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
 	participant cc_doc_consumer as "Document Consumer"
 	participant cc_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
@@ -41,7 +41,10 @@ box "Other (reference) Community" #91D2E8
     participant xc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
-== documents within other communities from patient who has \nhis reference community in another community, actors apply to community A ==
+== documents within other communities from patient who has \nhis reference community in another community==
+note over cc_adp #aaffaa
+In this diagram section, Community Components belong to Community A
+end note
 
 hp -[#black]> ps_gui
 activate ps_gui
@@ -57,8 +60,11 @@ activate ps_gui
 hp <[#black]- ps_gui
 deactivate ps_gui
 
-== Request from external community, actors apply to community B ==
-  
+== Request from external community ==
+note over cc_adp #aaffaa
+In this diagram section, Community Components belong to Community B
+end note
+
 xc_ig -> cc_rg: [ITI-55] Cross Patient Discovery Request [EPR-SPID] ([21] continued)
 activate xc_ig
 note left: handling of audit record repository retrieval is missing
