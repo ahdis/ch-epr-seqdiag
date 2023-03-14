@@ -1,0 +1,67 @@
+@startuml
+!include design.plantuml.txt
+title 2.3d EPR_HPTcuStoreImages
+
+control tcu as "Techncial User"
+
+box "Secondary Systems" #F7A69E
+	participant ss_gui as "Secondary System"
+	participant ss_x_service_user as "X-Service User"
+	participant ss_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
+	participant ss_img_docsource as "Imaging Document Source| X-Service Provider\nPolicy Enforcement Point" 
+	participant ss_doc_repository as "Document Repository | X-Service Provider\nPolicy Enforcement Point" 
+end box
+
+box "Community Components" #FFEFDE
+	participant cc_x_assertion_provider as "X-Assertion Provider" 
+	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
+	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
+	participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
+end box
+
+box "Other Communities" #91D2E8
+	participant xc_adp as "Authorization Decision Provider\n| X-Service Provider"
+end box
+
+tcu -[#black]> ss_gui
+activate ss_gui
+
+!include step_ss_pix.plantuml.txt
+
+!include step_ss_xua_tcu.plantuml.txt
+
+ss_gui -[#black]> ss_img_docsource : provide and register KOS in repository grouped with xua
+activate ss_img_docsource
+loop For the XDS Register Document Set related access decision enforcement, the EPR relies on the \nXDS Confidentiality Code within the document metadata to be stored in the patient’s Health Record. \nThe Authorization Decisions Consumer (Document Registry) MUST create one request to query for \nan access decision for each Confidentiality Code, before allowing the Register transaction to a Document Repository.
+  ss_img_docsource -> ss_doc_repository: [RAD-68] Provide and Register Imaging Document Set [MPI_A-PID] \ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate ss_doc_repository
+  ss_doc_repository -> cc_doc_registry: [ITI-42] Register Document Set-b Request [MPI_A-PID] \ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate cc_doc_registry
+
+  cc_doc_registry -> cc_adp: ADR Authorization Decision Request (policy enforcing home community)\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  activate cc_adp
+  cc_doc_registry <- cc_adp: ADR Authorization Decision Response
+  deactivate cc_adp
+
+  loop policy enforcing from remote community
+    cc_doc_registry -> xc_adp: XADR Cross-Community Authorization Decision Request\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
+    activate xc_adp
+    cc_doc_registry <- xc_adp: XADR Cross-Community Authorization Decision Response
+    deactivate xc_adp
+  end  
+
+  ss_doc_repository <- cc_doc_registry: [ITI-42] Register Document Set-b Response
+  deactivate cc_doc_registry
+  
+  ss_img_docsource <- ss_doc_repository: [RAD-68]  Provide and Register Imaging Document Set Response
+  deactivate ss_doc_repository
+end  
+
+ss_gui <[#black]- ss_img_docsource
+deactivate ss_img_docsource
+
+tcu <[#black]- ss_gui
+deactivate ss_gui
+
+
+@enduml 
