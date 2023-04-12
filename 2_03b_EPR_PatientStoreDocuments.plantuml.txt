@@ -8,7 +8,7 @@ box "Patient Portal" #B9C0B8
 	participant pp_gui as "Patient Portal"
 	participant pp_x_service_user as "X-Service User"
 	participant pp_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
-    participant pp_doc_source as "Document Sourcey\n| X-Service User"
+    participant pp_doc_source as "Document Source\n| X-Service User"
 end box
 
 box "IdP" #DFF3F7

@@ -1,6 +1,6 @@
 @startuml
 !include design.plantuml.txt
-title 2.5 EPR_Patient_XDS-I/XCA-I
+title 2.5 EPR Patient retrieves Imaging Document Set from reference community XDS-I
 
 actor patient as "Patient"
 

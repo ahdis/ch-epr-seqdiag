@@ -1,6 +1,6 @@
 @startuml
 !include design.plantuml.txt
-title 2.3d EPR_HPTcuStoreImages
+title 2.3d Publish a DICOM study with a Technical User
 
 control tcu as "Techncial User"
 
