@@ -71,11 +71,6 @@ activate cc_img_ig
 
 cc_img_ig -> xc_img_rg: [RAD-75] Cross Gateway Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate xc_img_rg
-xc_img_rg -> xc_img_docsource: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-note left xc_img_docsource: [CH:ADR] Perform Enforcement of\nXDS-I "Imaging Retrieve" transactions (3.1.13)\nimages returned if Document Id is in Stored Query response
-activate xc_img_docsource
-xc_img_rg <- xc_img_docsource: [RAD-69] Retrieve Imaging Document Set Response
-deactivate xc_img_docsource
 cc_img_ig <- xc_img_rg: [RAD-75] Cross Gateway Retrieve Imaging Document Set Response
 deactivate xc_img_rg
 

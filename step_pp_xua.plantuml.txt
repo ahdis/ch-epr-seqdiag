@@ -1,14 +1,8 @@
 pp_gui -[#black]> pp_x_service_user : get XUA Assertion
 activate pp_x_service_user
-pp_x_service_user -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions with Patient Extension [UAP-ID and opt. EPR-SPID]
+pp_x_service_user -> cc_x_assertion_provider: CH:XUA Get-XUser Assertions with Patient Extension\n[SAML 2 Identity Assertion (Subject Name ID, opt principal ID[EPR-SPID]) and resource-id [EPR-SPID]]
 activate cc_x_assertion_provider
-opt resolve it to the EPR-SPID by querying the community data stores.
-cc_x_assertion_provider -[#black]> cc_x_assertion_provider: transform from UAP-ID to MPI_A-PID
-cc_x_assertion_provider -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [MPI_A-PID]
-activate cc_mpi_x_ref_manager
-cc_x_assertion_provider <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
-deactivate cc_mpi_x_ref_manager
-end
+note right cc_x_assertion_provider: If the request is performed by a X-Service User which is not inside the certification scope of the community,\nthe X-Assertion Provider MUST use the Name ID of the <Subject> element in the SAML 2 Identity Assertion\nfrom the security header and resolve it to the EPR-SPID by querying the community data stores.
 pp_x_service_user <- cc_x_assertion_provider: CH:XUA Get-XUser Assertions Response [EPR-SPID] according to CH:XUA
 deactivate cc_x_assertion_provider
 pp_gui <[#black]- pp_x_service_user

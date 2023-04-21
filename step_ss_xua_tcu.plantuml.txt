@@ -1,6 +1,6 @@
 ss_gui -[#black]> ss_x_service_user : get XUA Assertion based on perfomer/operator in KOS Object
 activate ss_x_service_user
-ss_x_service_user -> cc_x_assertion_provider: CH:XUA Get X-User Assertions with Technical User Extension [SAML 2 Identity Assertion, GLN, name] and resource-id [EPR-SPID]
+ss_x_service_user -> cc_x_assertion_provider: CH:XUA Get X-User Assertions with Technical User Extension\n[SAML 2 Identity Assertion (GLN, name) and resource-id [EPR-SPID]]
 note right ss_x_service_user: CP EPDBEP-86 will require DICOM_AUTO for Purpose of Use
 activate cc_x_assertion_provider
 cc_x_assertion_provider -[#black]> cc_x_assertion_provider: Validate the SAML 2 Identity Assertion\nconveyed in the security header

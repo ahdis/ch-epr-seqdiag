@@ -1,8 +1,8 @@
 ps_gui -[#black]> ps_x_service_user : get XUA Assertion
 activate ps_x_service_user
-ps_x_service_user -> cc_x_assertion_provider: CH:XUA Get X-User Assertions with Heathcare Professional Extension [UAP-ID, opt. GLN] and resource-id [EPR-SPID]
+ps_x_service_user -> cc_x_assertion_provider: CH:XUA Get X-User Assertions with Heathcare Professional Extension\n[SAML 2 Identity Assertion (Subject Name ID, opt. GLN) and resource-id [EPR-SPID]]
 activate cc_x_assertion_provider
-cc_x_assertion_provider -[#black]> cc_x_assertion_provider: Identifier Transformation from UAP-ID to GLN if GLN not provided
+cc_x_assertion_provider -[#black]> cc_x_assertion_provider: if GLN not provided transform\nSubject Name ID by\nquerying the community data store
 cc_x_assertion_provider -[#black]> cc_hpd_provider_info_consumer: proof GLN is registered, resolve to all groups
 activate cc_hpd_provider_info_consumer
 cc_hpd_provider_info_consumer -> cc_hpd_provider_info_directory : [ITI-58] Provider Information Query Request

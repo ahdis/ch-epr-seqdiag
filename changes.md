@@ -1,10 +1,11 @@
 # 2023-04-11
 
+clarifed XUA Patient and Healthcare Professional Extension
+
 2_05_EPR_Patient_XDS-I_XCA-I_1of2 
 * detailed policy enforcement for XDS-I
 
 2_05_EPR_Patient_XDS-I_XCA-I_2of2 changed title
-* added note that to policy enforcement that images returned if Document Id is in Stored Query response
 
 2_05_EPR_XDS-I_XCA-I_1of2
 * detailed policy enforcement for XDS-I
