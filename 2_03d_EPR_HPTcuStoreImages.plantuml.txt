@@ -1,31 +1,21 @@
 @startuml
 !include design.plantuml.txt
-title 2.3 EPR_HPStoreDocuments
+title 2.3d Publish a DICOM study with a Technical User
 
-actor hp as "Health Professional"
-
-box "Health Professional Portal" #DCBEC7
-	participant ps_gui as "Health Professional Portal"
-	participant ps_x_service_user as "X-Service User"
-	participant ps_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
-	participant ps_doc_source as "Document Source\n| X-Service User"
-end box
-
-box "IdP" #DFF3F7
-	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
-end box
+control tcu as "Techncial User"
 
 box "Secondary Systems" #F7A69E
-	participant ss_doc_repository as "Document Repository | X-Service Provider" 
+	participant ss_gui as "Secondary System"
+	participant ss_x_service_user as "X-Service User"
+	participant ss_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
+	participant ss_img_docsource as "Imaging Document Source| X-Service Provider\nPolicy Enforcement Point" 
+	participant ss_doc_repository as "Document Repository | X-Service Provider\nPolicy Enforcement Point" 
 end box
 
 box "Community Components" #FFEFDE
 	participant cc_x_assertion_provider as "X-Assertion Provider" 
-  participant cc_hpd_provider_info_consumer as "Provider \nInformation \nConsumer"
-	participant cc_hpd_provider_info_directory as "Provider \nInformation \nDirectory"
 	participant cc_doc_registry as "Document Registry | X-Service Provider\nAuthorization Decision Consumer | X-Service User" 
 	participant cc_mpi_x_ref_manager as "Patient Identifier \nCross-reference \nManager"
-  participant cc_ppq_policy_repository as "Policy Repository | X-Service Provider\nAuthorization Decision Consumer | X-Service User"
 	participant cc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
@@ -33,19 +23,17 @@ box "Other Communities" #91D2E8
 	participant xc_adp as "Authorization Decision Provider\n| X-Service Provider"
 end box
 
-hp -[#black]> ps_gui
-activate ps_gui
+tcu -[#black]> ss_gui
+activate ss_gui
 
-!include step_ps_gui_saml.plantuml.txt
+!include step_ss_pix.plantuml.txt
 
-!include step_ps_pix.plantuml.txt
+!include step_ss_xua_tcu.plantuml.txt
 
-!include step_ps_xua.plantuml.txt
-
-ps_gui -[#black]> ps_doc_source : provide and register document in repository grouped with xua
-activate ps_doc_source
+ss_gui -[#black]> ss_img_docsource : provide and register KOS in repository grouped with xua
+activate ss_img_docsource
 loop For the XDS Register Document Set related access decision enforcement, the EPR relies on the \nXDS Confidentiality Code within the document metadata to be stored in the patient’s Health Record. \nThe Authorization Decisions Consumer (Document Registry) MUST create one request to query for \nan access decision for each Confidentiality Code, before allowing the Register transaction to a Document Repository.
-  ps_doc_source -> ss_doc_repository: [ITI-41] Provide and Register Document Set-b Request [MPI_A-PID] \ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+  ss_img_docsource -> ss_doc_repository: [RAD-68] Provide and Register Imaging Document Set [MPI_A-PID] \ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate ss_doc_repository
   ss_doc_repository -> cc_doc_registry: [ITI-42] Register Document Set-b Request [MPI_A-PID] \ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate cc_doc_registry
@@ -65,15 +53,15 @@ loop For the XDS Register Document Set related access decision enforcement, the 
   ss_doc_repository <- cc_doc_registry: [ITI-42] Register Document Set-b Response
   deactivate cc_doc_registry
   
-  ps_doc_source <- ss_doc_repository: [ITI-41] Provide and Register Document Set-b Response
+  ss_img_docsource <- ss_doc_repository: [RAD-68]  Provide and Register Imaging Document Set Response
   deactivate ss_doc_repository
 end  
 
-ps_gui <[#black]- ps_doc_source
-deactivate ps_doc_source
+ss_gui <[#black]- ss_img_docsource
+deactivate ss_img_docsource
 
-hp <[#black]- ps_gui
-deactivate ps_gui
+tcu <[#black]- ss_gui
+deactivate ss_gui
 
 
 @enduml 

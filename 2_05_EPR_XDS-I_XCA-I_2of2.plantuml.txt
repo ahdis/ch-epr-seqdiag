@@ -1,7 +1,7 @@
 @startuml
 
 !include design.plantuml.txt
-title 2.5 EPR_XDS-I/XCA-Is
+title 2.5 EPR Health Professional retrieves Imaging Document Set from another community XCA-I
 
 actor hp as "Health Professional"
 
@@ -72,11 +72,6 @@ activate cc_img_ig
 
 cc_img_ig -> xc_img_rg: [RAD-75] Cross Gateway Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate xc_img_rg
-xc_img_rg -> xc_img_docsource: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
-activate xc_img_docsource
-note right xc_img_docsource: [CH:ADR] Perform Enforcement of\nXDS-I "Imaging Retrieve" transactions (3.1.13)
-xc_img_rg <- xc_img_docsource: [RAD-69] Retrieve Imaging Document Set Response
-deactivate xc_img_docsource
 cc_img_ig <- xc_img_rg: [RAD-75] Cross Gateway Retrieve Imaging Document Set Response
 deactivate xc_img_rg
 

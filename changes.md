@@ -1,3 +1,22 @@
+# 2023-04-11
+
+clarifed XUA Patient and Healthcare Professional Extension
+
+2_05_EPR_Patient_XDS-I_XCA-I_1of2 
+* detailed policy enforcement for XDS-I
+
+2_05_EPR_Patient_XDS-I_XCA-I_2of2 changed title
+
+2_05_EPR_XDS-I_XCA-I_1of2
+* detailed policy enforcement for XDS-I
+
+2_05_EPR_XDS-I_XCA-I_2of2 
+* added note that to policy enforcement that images returned if Document Id is in Stored Query response
+
+2_03d_EPR_HPTcuStoreImages
+* new sequence diagram for Publishing a DICOM study with a Technical User
+* added note that CP_EPDBEP-86 will require DICOM_AUTO for Purpose of Use
+
 # 2022-03-04: fixed MPI PID attributions in ITI-38; fixed typo in "Manager"
 
 # 2019-09-24: added group test

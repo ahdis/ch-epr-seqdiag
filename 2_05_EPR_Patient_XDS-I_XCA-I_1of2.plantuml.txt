@@ -1,6 +1,6 @@
 @startuml
 !include design.plantuml.txt
-title 2.5 EPR_Patient_XDS-I/XCA-I
+title 2.5 EPR Patient retrieves Imaging Document Set from reference community XDS-I
 
 actor patient as "Patient"
 
@@ -51,17 +51,35 @@ deactivate cc_doc_registry
 
 pp_doc_consumer -> ss_doc_repository: [ITI-43] Retrieve Document Set for DICOM Manifest (KOS)\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate ss_doc_repository
-note right ss_doc_repository: [CH:ADR] Perform Enforcement of\nXDS Retrieve Document Set transactions (3.1.12)
+note left ss_doc_repository: [CH:ADR] Perform Enforcement of\nXDS Retrieve Document Set transactions (3.1.12)
+ss_doc_repository -> cc_doc_registry: [ITI-18] Registry Stored Query GetDocuments ObjectRef\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_doc_registry
+cc_doc_registry -> cc_adp: ADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+cc_doc_registry <- cc_adp: ADR Authorization Decision Response
+deactivate cc_adp
+ss_doc_repository <- cc_doc_registry: [ITI-18] Registry Stored Query Response with Document Id's
 deactivate cc_doc_registry
-pp_doc_consumer <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
+
+deactivate cc_doc_registry
+pp_doc_consumer <- ss_doc_repository: [ITI-43] Retrieve Document Set Response, document returned if Document Id is in Stored Query response
 deactivate ss_doc_repository
 
 pp_doc_consumer -[#black]> pp_img_doc_consumer: retrieve dicom objects
 activate pp_img_doc_consumer
 pp_img_doc_consumer -> ss_img_docsource: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate ss_img_docsource
-note right ss_img_docsource: [CH:ADR] Perform Enforcement of\nXDS-I "Imaging Retrieve" transactions (3.1.13)
-pp_img_doc_consumer <- ss_img_docsource: [RAD-69] Retrieve Imaging Document Set Response
+note left ss_img_docsource: [CH:ADR] Perform Enforcement of\nXDS-I "Imaging Retrieve" transactions (3.1.13)
+
+ss_img_docsource -> cc_doc_registry: [ITI-18] Registry Stored Query FindDocumentsByReferenceId with formatCode for DICOM and StudyInstanceUID\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_doc_registry
+cc_doc_registry -> cc_adp: ADR Authorization Decision Request\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+activate cc_adp
+cc_doc_registry <- cc_adp: ADR Authorization Decision Response
+deactivate cc_adp
+ss_img_docsource <- cc_doc_registry: [ITI-18] Registry Stored Query Response with Document Id's
+deactivate cc_doc_registry
+pp_img_doc_consumer <- ss_img_docsource: [RAD-69] Retrieve Imaging Document Set Response, images returned if Document Id is in Stored Query response
 deactivate ss_img_docsource
 
 pp_doc_consumer <[#black]- pp_img_doc_consumer

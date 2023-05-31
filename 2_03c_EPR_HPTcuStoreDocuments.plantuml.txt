@@ -8,7 +8,7 @@ box "Health Professional Portal" #DCBEC7
 	participant ps_gui as "Health Professional Portal\nTechnical User"
 	participant ps_x_service_user as "X-Service User"
 	participant ps_pix_x_ref_consumer as "Patient Identifier \nCross-reference \nConsumer"
-	participant ps_doc_source as "Document Sourcey\n| X-Service User"
+	participant ps_doc_source as "Document Sourcy\n| X-Service User"
 end box
 
 box "Secondary Systems" #F7A69E

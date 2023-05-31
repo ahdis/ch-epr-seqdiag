@@ -1,0 +1,8 @@
+ss_gui -[#black]> ss_pix_x_ref_consumer: query MPI_A-PID from MPI using local ID from KOS Object\noptional use of demographics query [ITI-47] instead of local PID
+activate ss_pix_x_ref_consumer
+ss_pix_x_ref_consumer -> cc_mpi_x_ref_manager: ITI-45 PIX V3 Query [local ID]
+activate cc_mpi_x_ref_manager
+ss_pix_x_ref_consumer <- cc_mpi_x_ref_manager: ITI-45 PIX V3 Response [MPI_A-PID, EPR-SPID]
+deactivate cc_mpi_x_ref_manager
+ss_gui <[#black]- ss_pix_x_ref_consumer
+deactivate ss_pix_x_ref_consumer
