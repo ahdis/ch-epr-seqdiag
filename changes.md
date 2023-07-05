@@ -1,3 +1,7 @@
+# 2023-07-05
+
+* adapted to 2023-06-01 release fo XDS-I / XCA-I tests.
+
 # 2023-04-11
 
 clarifed XUA Patient and Healthcare Professional Extension

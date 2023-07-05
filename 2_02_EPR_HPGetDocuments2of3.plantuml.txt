@@ -119,7 +119,7 @@ cc_rg -[#black]> cc_doc_consumer: retrieve document entries
 activate cc_doc_consumer
 cc_doc_consumer -> ss_doc_repository: [ITI-43] Retrieve Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate ss_doc_repository
-note right ss_doc_repository: [CH:ADR] Perform Enforcement of\nXDS Retrieve Document Set transactions (3.1.12)
+note right ss_doc_repository: [CH:ADR] Perform Enforcement of\nXDS Retrieve Document Set transactions (A5E21 3.1.7.1)
 cc_doc_consumer <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
 deactivate ss_doc_repository
 cc_rg <[#black]- cc_doc_consumer

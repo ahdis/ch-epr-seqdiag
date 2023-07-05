@@ -50,17 +50,19 @@ loop For the XDS Register Document Set related access decision enforcement, the 
   ss_doc_repository -> cc_doc_registry: [ITI-42] Register Document Set-b Request [MPI_A-PID] \ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate cc_doc_registry
 
+alt this is reference community of patient
+
   cc_doc_registry -> cc_adp: ADR Authorization Decision Request (policy enforcing home community)\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate cc_adp
   cc_doc_registry <- cc_adp: ADR Authorization Decision Response
   deactivate cc_adp
 
-  loop policy enforcing from remote community
+else look for reference community of patient
     cc_doc_registry -> xc_adp: XADR Cross-Community Authorization Decision Request\ngrouped with with [ITI-40] Provide X-User Assertion [EPR-SPID]
     activate xc_adp
     cc_doc_registry <- xc_adp: XADR Cross-Community Authorization Decision Response
     deactivate xc_adp
-  end  
+end  
 
   ss_doc_repository <- cc_doc_registry: [ITI-42] Register Document Set-b Response
   deactivate cc_doc_registry

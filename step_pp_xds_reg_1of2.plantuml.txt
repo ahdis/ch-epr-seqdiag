@@ -11,7 +11,7 @@ deactivate cc_doc_registry
 loop
   pp_doc_consumer -> ss_doc_repository: [ITI-43] Retrieve Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
   activate ss_doc_repository
-  note right ss_doc_repository: [CH:ADR] Perform Enforcement of\nXDS Retrieve Document Set transactions (3.1.12)
+  note right ss_doc_repository: [CH:ADR] Perform Enforcement of\nXDS Retrieve Document Set transactions (A5E21 3.1.7.1)
   pp_doc_consumer <- ss_doc_repository: [ITI-43] Retrieve Document Set Response
 end
 deactivate ss_doc_repository
