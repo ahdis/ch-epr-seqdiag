@@ -63,7 +63,7 @@ activate ps_img_doc_consumer
 ps_img_doc_consumer -> ss_img_docsource: [RAD-69] Retrieve Imaging Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 !include_many step_is_adr_3172.plantuml.txt
 
-ps_img_doc_consumer <- ss_img_docsource: [RAD-69] Retrieve Imaging Document Set Response, DICOM objects are returned if referenced in DICOM object references in the KOS object and in the Retrieve Imaging Document Set request.
+ps_img_doc_consumer <- ss_img_docsource: [RAD-69] Retrieve Imaging Document Set Response, DICOM objects are returned if referenced in DICOM object references in the DICOM Manifest (KOS) and in the Retrieve Imaging Document Set request.
 deactivate ss_img_docsource
 
 ps_doc_consumer <[#black]- ps_img_doc_consumer
