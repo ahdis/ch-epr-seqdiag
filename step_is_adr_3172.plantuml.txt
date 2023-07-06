@@ -12,7 +12,7 @@ cc_doc_registry <- cc_adp: ADR Authorization Decision Response
 deactivate cc_adp
 ss_img_docsource <- cc_doc_registry: [ITI-18] Registry Stored Query Response with Document Id's
 deactivate cc_doc_registry
-ss_img_docsource -> ss_doc_repository: [ITI-43] Retrieve KOS objects with Retrieve Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
+ss_img_docsource -> ss_doc_repository: [ITI-43] Retrieve DICOM Manifest (KOS) with Retrieve Document Set\ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
 activate ss_doc_repository
 note left ss_doc_repository: [CH:ADR] Perform Enforcement of\nXDS Retrieve Document Set transactions (A5E21 3.1.7.1) (see above)
 ss_img_docsource <- ss_doc_repository: [ITI-43] Retrieve Document Set Response

@@ -29,7 +29,6 @@ end box
 box "Other Communities" #91D2E8
 	participant xc_rg as "Responding Gateway\n| X-Service Provider"
 	participant xc_img_rg as "Responding Imaging Gateway\n| X-Service Provider"
-	participant xc_img_docsource as "Imaging Document Source| X-Service Provider\nPolicy Enforcement Point"
 end box
 
 == viewing or downloading dicom images in the health professional portal from another community (XCA-I) ==

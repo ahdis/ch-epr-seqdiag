@@ -30,7 +30,7 @@ activate ss_gui
 
 !include step_ss_xua_tcu.plantuml.txt
 
-ss_gui -[#black]> ss_img_docsource : provide and register KOS in repository grouped with xua
+ss_gui -[#black]> ss_img_docsource : provide and register DICOM Manifest (KOS) in repository grouped with xua
 activate ss_img_docsource
 loop For the XDS Register Document Set related access decision enforcement, the EPR relies on the \nXDS Confidentiality Code within the document metadata to be stored in the patient’s Health Record. \nThe Authorization Decisions Consumer (Document Registry) MUST create one request to query for \nan access decision for each Confidentiality Code, before allowing the Register transaction to a Document Repository.
   ss_img_docsource -> ss_doc_repository: [RAD-68] Provide and Register Imaging Document Set [MPI_A-PID] \ngrouped with [ITI-40] Provide X-User Assertion [EPR-SPID]
