@@ -1,31 +1,54 @@
 @startuml
 !include design.plantuml.txt
-title 3.03 mHealth - write document for patient
+title 3.03 mHealth - write document for patient by HP
 
-actor user as "Patient"
+actor user as "HP"
 
 box "mHealth App" #BFCAD2
 	participant app as "App GUI"
     participant pixmconsumer as "Patient Identifier Cross-\nreference Consumer"
     participant docsource as "Document Source (MHD)"
-end box
-
-box "IdP" #DFF3F7
-	participant idp_user_authentication_provider as "IUA\nAuthorization Server"
+	participant AuthorizationClient as "Authorization Client (IUA)"
 end box
 
 box "Community Components" #FFEFDE
+	participant mp_AuthorizationServer as "Authorization Server (IUA)"
 	participant mp_pix_x_ref_mgr as "Patient Identifier \nCross-reference \nManager"
-	participant mp_doc_recipient as "Document Recipient (MHD)\nDocument Source (XDS) | X-Service User"
-	participant cc_x_assertion_provider as "X-Assertion Provider" 
+	participant mp_doc_recipient as "Document Recipient (MHD)"
+end box
+
+
+box "IdP" #DFF3F7
+	participant idp_user_authentication_provider as "User \nAuthentication \nProvider"
 end box
 
 user -[#black]> app: read doc
 activate app
 
-!include_many step_mh_idp.plantuml.txt
+app -> mp_AuthorizationServer: GET /metadata
+activate mp_AuthorizationServer
+app <- mp_AuthorizationServer: Conformance statement incl. OAuth 2.1 endpoints
+deactivate mp_AuthorizationServer
+
+app -[#black]> AuthorizationClient: Get Access Token
+activate AuthorizationClient
+AuthorizationClient -> mp_AuthorizationServer: [ITI-71] Get Access Token Request 
+activate mp_AuthorizationServer
+mp_AuthorizationServer -> idp_user_authentication_provider: Authenticate User
+activate idp_user_authentication_provider
+mp_AuthorizationServer <- idp_user_authentication_provider
+deactivate idp_user_authentication_provider
+mp_AuthorizationServer -[#black]> mp_AuthorizationServer: Authorize App Access
+AuthorizationClient <- mp_AuthorizationServer: [ITI-71] Get Access Token Response 
+deactivate mp_AuthorizationServer
+app <[#black]- AuthorizationClient: 
+deactivate AuthorizationClient
+
 
 !include_many step_mh_pixm.plantuml.txt
+
+!include_many step_mh_iua.plantuml.txt
+
 
 app -[#black]> docsource: write document [MPI-ID, JWT:UAP-ID]
 activate docsource
