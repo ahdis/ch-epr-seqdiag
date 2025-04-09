@@ -50,7 +50,7 @@
             <path transform="matrix(1,0,0,-1,1245.6504,681.2257)" stroke-width="1.2" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#ffffff" d="M0 0C0-.812-.664-1.476-1.476-1.476H-624.345C-625.157-1.476-625.821-.812-625.821 0V71.938C-625.821 72.75-625.157 73.414-624.345 73.414H-1.476C-.664 73.414 0 72.75 0 71.938V0Z" />
             <path transform="matrix(1,0,0,-1,1239.9824,691.9967)" d="M0 0C0-.823-.673-1.496-1.496-1.496H-624.325C-625.148-1.496-625.821-.823-625.821 0V77.02C-625.821 77.842-625.148 78.516-624.325 78.516H-1.496C-.673 78.516 0 77.842 0 77.02Z" fill="#d4effc" />
         </g>
-        <text fill="#3d5f73" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="9.5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-376.0386" x="86">Community</tspan><tspan y="-248.1211" x="623">Other CommunitiesGovernment Services</tspan><tspan y="-825.2271" x="620">Identity Provider</tspan></text>
+        <text fill="#3d5f73" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="9.5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-376" x="86">Community</tspan><tspan y="-248" x="623">Other CommunitiesGovernment Services</tspan><tspan y="-825" x="620">Identity Provider</tspan></text>
     </g>
     <g inkscape:groupmode="layer" inkscape:label="Systems Fl&#xE4;chen und Titel">
         <g clip-path="url(#clip_1)">
@@ -66,8 +66,8 @@
             <path transform="matrix(1,0,0,-1,1238.4556,374.5235)" d="M0 0C.78 0 1.417-.638 1.417-1.417V-160.792C1.417-161.571 .78-162.209 0-162.209H-1157.635C-1158.415-162.209-1159.052-161.571-1159.052-160.792V-1.417C-1159.052-.638-1158.415 0-1157.635 0Z" fill="#ffead5" />
             <path transform="matrix(1,0,0,-1,1238.4548,177.3512)" d="M0 0C.78 0 1.417-.638 1.417-1.417V-71.546C1.417-72.326 .78-72.964 0-72.964H-1157.635C-1158.414-72.964-1159.052-72.326-1159.052-71.546V-1.417C-1159.052-.638-1158.414 0-1157.635 0Z" fill="#bcc4c0" />
         </g>
-        <text fill="#37584e" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="9.5" font-family="HelveticaNeueLTPro"><tspan y="-745.9038" x="85">Patient Portal</tspan></text>
-        <text fill="#963f70" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="9.5" font-family="HelveticaNeueLTPro"><tspan y="-652.8418" x="86">Health Professional Portal, Primary Systems, Administrator Portal</tspan></text>
+        <text fill="#37584e" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="9.5" font-family="HelveticaNeueLTPro"><tspan y="-745" x="85">Patient Portal</tspan></text>
+        <text fill="#963f70" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="9.5" font-family="HelveticaNeueLTPro"><tspan y="-652" x="86">Health Professional Portal, Primary Systems, Administrator Portal</tspan></text>
     </g>
     <g inkscape:groupmode="layer" inkscape:label="Pfeile">
         <g clip-path="url(#clip_2)">
@@ -96,7 +96,7 @@
             <path transform="matrix(1,0,0,-1,683.0059,622.3468)" stroke-width="1.2" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="#58595b" d="M0 0V102.522" />
             <path transform="matrix(1,0,0,-1,765.2789,622.3468)" stroke-width="1.2" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="#58595b" d="M0 0V102.522" />
         </g>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="12" font-family="MyriadPro"><tspan y="-296.2529" x="304">274.027 mm</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="12" font-family="MyriadPro"><tspan y="-296" x="304">274.027 mm</tspan></text>
         <g clip-path="url(#clip_3)">
             <path transform="matrix(1,0,0,-1,514.0884,642.409)" stroke-width="1.2" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="#58595b" d="M0 0H-7.171C-11.292 0-14.633 3.342-14.633 7.464V88.384 90.683 143.454C-14.633 147.947-10.991 151.589-6.498 151.589H-.046" />
             <path transform="matrix(1,0,0,-1,590.549,642.409)" stroke-width="1.2" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="#58595b" d="M0 0H7.171C11.292 0 14.633 3.342 14.633 7.464V88.384 90.683 125.677C14.633 130.17 10.991 133.812 6.498 133.812H.046" />
@@ -239,255 +239,283 @@
         </g>
     </g>
     <g inkscape:groupmode="layer" inkscape:label="Pfeilbeschriftung">
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="317.063">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="320.14799"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="321.60298">[ITI-45]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.2705" x="336.383"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="210.47797">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="213.56298"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="215.01798">[ITI-47] </tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.2705" x="231.17798">Patient Demographics </tspan><tspan y="-593.2705" x="210">  Query HL7 V3</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456.7155" x="767.20297">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456.7155" x="770.28799"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-456.7155" x="771.743">[ITI-18]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="976.863">&#xf069;</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="981.403">[ITI-43]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.8855" x="771">&#xf069; </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.8855" x="776.068">[ITI-38]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359.8855" x="790.848">Cross Gateway Query</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-353.8855" x="771">&#xf069; </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-353.8855" x="776.068">[ITI-39]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-353.8855" x="790.848">Cross Gateway Retrieve</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-347.8855" x="771">&#xf069; </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-347.8855" x="776.068">[RAD-75]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-347.8855" x="794.2981">Cross Gateway Retrieve Image Document Set</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="931.15798">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="934.243"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="935.698">[ITI-18]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.2705" x="950.478"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="870.78799">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="873.873"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="875.328">[ITI-57]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.2705" x="890.10806"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-500.7055" x="940.688">[ITI-57] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-500.7055" x="956.668">&#xf068;</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-500.7055" x="976.868">[ITI-42] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-500.7055" x="992.848">&#xf068;</tspan><tspan y="-599.2705" x="73.703">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="76.788"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="78.243007">[ITI-1]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.2705" x="90.623"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="123">&#xf069;&#xf068;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="129.383"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="130.37799">[ITI-19]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.2705" x="145.15796"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="123.21799">&#xf069;&#xf068;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="129.38298"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.4955" x="130.37798">[ITI-19]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="638.29299">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="641.378"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="642.833">[ITI-40]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.2705" x="657.61306"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="607.723">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="610.80807"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.4955" x="612.26309">[ITI-40]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.4955" x="627.0431"> Provide X-User Assertion</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="MyriadPro"><tspan y="-734.85049" x="699.63809">CH:XUA </tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-728.85049" x="699.63809">GetX-User</tspan><tspan y="-722.85049" x="699.63809">Assertion</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504.02546" x="73.70807">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504.02546" x="76.79307"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-504.02546" x="78.24807">[ITI-1]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456.72047" x="744.32809">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456.72047" x="747.4131"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-456.72047" x="748.8681">[ITI-43]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456.72047" x="826">&#xf069; </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-456.72047" x="831.08816">[ITI-92]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.12046" x="922.60317">&#xf068;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.12046" x="925.6882"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.12046" x="927.1432">[ITI-92]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-409.02046" x="893">&#xf069; </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-409.02046" x="898.02328">[ITI-92]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.88545" x="687">&#xf068; </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.88545" x="692.01327">[ITI-38]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-353.88545" x="687.4783">&#xf068;</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-353.88545" x="690.5633"> [ITI-39]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-347.88545" x="687">&#xf068; </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-347.88545" x="692.01327">[RAD-75]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.27047" x="502.86323">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.27047" x="505.9482"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.27047" x="507.4032">[ITI-58]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.27047" x="522.1832"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.27047" x="556.8232">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.27047" x="559.9082"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.27047" x="561.3632">[ITI-59]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.27047" x="580">Provider</tspan><tspan y="-593.27047" x="580">Information </tspan><tspan y="-587.27047" x="580">Feed</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.88545" x="317">&#xf069; </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.88545" x="321.6332">[ITI-48]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359.88545" x="337.61326">Retrieve Value Sets</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.88545" x="213.3932">eCH-0213</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359.88545" x="232.62319">generate, inactivate, cancel</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-353.88545" x="213.3932">eCH-0214</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-353.88545" x="232.62319"> query by demographics, </tspan><tspan y="-347.88545" x="213">  query by ID, compare</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-341.88545" x="213">eCH-0215</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-341.88545" x="232"> broadcast</tspan><tspan y="-409.02046" x="965">Authorization Decision Request</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="1035.4132">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="1038.4982"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.4955" x="1039">[CH:PPQ-1]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.4955" x="1061"> Privacy Policy Feed</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="1036.2232">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="1039.3081"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="1040">[CH:PPQ-1]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-688.4955" x="1064">Privacy Policy Retrieve </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-688.4955" x="1109">[CH:PPQ-2] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-688.4955" x="1132.3629">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.4955" x="987">Retrieve </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.4955" x="1004">[RAD-69] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="1023.9782">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-688.4955" x="987">Imaging Doc Set </tspan><tspan y="-599.2705" x="1106.5982"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="1107">[CH:PPQ-2] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="1131.058">&#xf069;</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="1003">[RAD-69] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="1022.8682">&#xf069;</tspan><tspan y="-456.72053" x="792.2731">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456.72053" x="795.3581"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-456.72053" x="796">[RAD-69]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5105" x="1067.9782">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5105" x="1071.0631"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551.5105" x="1072">[CH:PPQ-1]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5105" x="1104.1581">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5105" x="1107.243"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551.5105" x="1108">[CH:PPQ-2]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-409.9405" x="1106.953">&#xf068;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-409.9405" x="1110.038"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-409.9405" x="1111">[CH:ADR]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.12049" x="963.8479">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.12049" x="966.9329"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.12049" x="968">[CH:ADR] </tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359.12049" x="987">Authorization Decision Request</tspan><tspan y="-359.8855" x="394">Community Information Query </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.8855" x="452">[CH:CIQ] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.8855" x="470.76313">&#xf069;</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-409.0205" x="936">[CH:ADR] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-409.0205" x="956.2131">&#xf069;</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.8855" x="662">[ITI-55] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.8855" x="678.523">&#xf068;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359.8855" x="716">Cross Gateway </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.8855" x="745">[ITI-55] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.8855" x="761.073">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-353.8855" x="716">Patient Discovery</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.8855" x="502.40797">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359.8855" x="505.49296"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.8855" x="506">[ITI-58]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359.8855" x="521"> Provider Information Query</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-353.8855" x="502.41294">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-353.8855" x="505.49794"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-353.8855" x="506">[CH:PIDD] </tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-353.8855" x="527">Provider Information Delta Download</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.8855" x="607.7729">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359.8855" x="610.8579"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.8855" x="612">[ITI-59]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359.8855" x="627"> Provider </tspan><tspan y="-353.8855" x="607">  Information </tspan><tspan y="-347.8855" x="607">  Feed</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5105" x="638.3479">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5105" x="641.4329"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551.5105" x="642">[ITI-40]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-551.5105" x="657.66799"> </tspan><tspan y="-768.0005" x="640">CH:XUA Authenticate User</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="1186.593">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="1189.678"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="1191">[ITI-41]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.2705" x="1205.913"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504.0255" x="1185.4629">&#xf068;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504.0255" x="1188.5479"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-504.0255" x="1190">[ITI-43]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-504.0255" x="1204">   </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504.0255" x="1143.4628">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504.0255" x="1146.5477"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-504.0255" x="1148">[ITI-42]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-504.0255" x="1162.7827"> </tspan><tspan y="-498.0255" x="1143">Register </tspan><tspan y="-492.0255" x="1143">Document </tspan><tspan y="-486.0255" x="1143">Set</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-461.0555" x="1164.5827"> </tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-461.0555" x="1169">Provide and Register</tspan><tspan y="-456.0555" x="1164"> Img Doc Set </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-456.0555" x="1193">[RAD-68] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456.0555" x="1212.4646">&#xf068;</tspan><tspan y="-457.4255" x="1139.8126">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-457.4255" x="1142.8976"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-457.4255" x="1144">[RAD-69]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-457.4255" x="1162.5825"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.1205" x="1163">[ITI-81] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.1205" x="1179.0475">&#xf069;</tspan><tspan y="-551.5105" x="1186.0525">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5105" x="1189.1375"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551.5105" x="1190">[ITI-41]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-551.5105" x="1205.3724"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="1144.8975">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="1147.9824"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.4955" x="1149">[ITI-41]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.4955" x="1164"> Provide &#x0026; Register Document Set</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="830.9874">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="834.07247"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.4955" x="835">[ITI-57]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.4955" x="850"> Update </tspan><tspan y="-688.4955" x="830">                Document Set</tspan><tspan y="-694.4955" x="937">Retrieve </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.4955" x="954">[ITI-43] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="970.73257">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.4955" x="973.8175"> </tspan><tspan y="-688.4955" x="937">Document Set</tspan><tspan y="-694.4955" x="725">Retrieve  </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.4955" x="744">[ITI-81] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="760.09249">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.4955" x="763.1725"> </tspan><tspan y="-688.4955" x="725">Audit Event</tspan><tspan y="-694.4955" x="892">Registry </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.4955" x="909">[ITI-18] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.4955" x="925.06759">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.4955" x="928.1525"> </tspan><tspan y="-688.4955" x="892">Stored Query</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="424.41755">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.2705" x="427.50254"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.2705" x="428">[ITI-44]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599.2705" x="443.73756"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5605" x="317.17753">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5605" x="320.2625"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551.5605" x="321">[ITI-45]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-551.5605" x="336.49754"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5605" x="210.5925">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5605" x="213.6775"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551.5605" x="215">[ITI-47]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5155" x="530.6325">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5155" x="533.7175"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551.5155" x="535">[ITI-58]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5705" x="556.91757">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5705" x="560.00259"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551.5705" x="561">[ITI-59]</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5605" x="373.2876">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551.5605" x="376.3726"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551.5605" x="377">[ITI-44]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-551.5605" x="392.6076"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.5005" x="288.51258">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.5005" x="291.59757"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.5005" x="293">[ITI-45]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.5005" x="307"> PIX V3 Query</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.5005" x="502.48255">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.5005" x="505.56755"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.5005" x="507">[ITI-58]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.5005" x="521"> Provider Information Query</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.5005" x="395.4425">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.5005" x="398.5275"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.5005" x="399">[ITI-44]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.5005" x="414"> Patient Identity Feed HL7 V3</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.5005" x="73.82248">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.5005" x="76.90748"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.5005" x="78">[ITI-1]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.5005" x="90"> Maintain Time</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504.0305" x="123">&#xf069;&#xf068;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504.0305" x="129.50247"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-504.0305" x="130">[ITI-19]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-504.0305" x="145"> Node </tspan><tspan y="-498.0305" x="123">  Authentication</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.5005" x="156">[ITI-20] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.5005" x="172.14243">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-688.5005" x="138">Record Audit Event</tspan><tspan y="-694.5005" x="780"> Restricted  </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694.5005" x="803">[ITI-92] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694.5005" x="819.8675">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694.5005" x="822.94747"> </tspan><tspan y="-688.5005" x="780">Update Document Set</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-686.6155" x="743.40249"> </tspan><tspan y="-687.04049" x="125.97748"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599.27548" x="156">[ITI-20] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599.27548" x="172.03745">&#xf069;</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-458.64045" x="156">[ITI-20] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-458.64045" x="172.03745">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359.12544" x="1077.8424"> </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359.12544" x="1079">[CH:ADR] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359.12544" x="1098.5624">&#xf068;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-353.89045" x="404">Community Information </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-353.89045" x="450">[CH:CIDD] </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-353.89045" x="470.92759">&#xf069;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-347.89045" x="404">Delta Download</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="317">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="320"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="321">[ITI-83]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599" x="336"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="210">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="213"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="215">[ITI-119] </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-594" x="215">Patient Demographics Match</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456" x="767">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456" x="770"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-456" x="771">[ITI-18]</tspan></text> <!-- gateway-->
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="976">&#xf069;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="981">[ITI-68]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="771">&#xf069; </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="776">[ITI-38]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359" x="790">Cross Gateway Query</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-353" x="771">&#xf069; </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-353" x="776">[ITI-39]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-353" x="790">Cross Gateway Retrieve</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-347" x="771">&#xf069; </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-347" x="776">[RAD-75]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-347" x="794">Cross Gateway Retrieve Image Document Set</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="931">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="934"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="935">[ITI-67]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599" x="950"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="870">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="873"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="875">[ITI-57]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599" x="890"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-500" x="940">[ITI-57] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-500" x="956">&#xf068;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"  text-decoration="line-through" font-weight="bold"><tspan y="-500" x="976">[ITI-42] </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-500" x="992">&#xf068;</tspan><tspan y="-599" x="73">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="76"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="78">[ITI-1]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599" x="90"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="123">&#xf069;&#xf068;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="129"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="130">[ITI-19]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599" x="145"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="123">&#xf069;&#xf068;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="129"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="130">[ITI-19]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="638">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="641"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="642">[ITI-72]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599" x="657"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="607">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="610"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="612">[ITI-72]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694" x="630">Incorporate Access Token</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-689" x="643">Get Access Token</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-689" x="680">[ITI-71]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-684" x="678">[ITI-103]</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-689" x="698">&#xf069;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-684" x="607">Get Authorization Server Metadata</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-689" x="698">&#xf069;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-684" x="698">&#xf069;</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-556" x="705">&#xf069;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="705">&#xf069;</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro" font-weight="bold" font-style="italic"><tspan y="-600" x="700">X Dashed Line  needs to be solid, no arrow</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-556" x="710">[ITI-71]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551" x="710">[ITI-103]</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="MyriadPro" text-decoration="line-through"><tspan y="-734" x="699">CH:XUA </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" text-decoration="line-through"><tspan y="-728" x="699">GetX-User</tspan><tspan y="-722" x="699">Assertion</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504" x="73">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504" x="76"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-504" x="78">[ITI-1]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456" x="744">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456" x="747"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-456" x="748">[ITI-43]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456" x="826">&#xf069; </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-456" x="831">[ITI-92]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="922">&#xf068;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="925"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="927">[ITI-92]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-409" x="893">&#xf069; </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-409" x="898">[ITI-92]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="687">&#xf068; </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="692">[ITI-38]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-353" x="687">&#xf068;</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-353" x="690"> [ITI-39]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-347" x="687">&#xf068; </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-347" x="692">[RAD-75]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="502">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="505"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="507">[ITI-90]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599" x="522"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="556">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599" x="559"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="561">[ITI-130]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599" x="581">Care</tspan><tspan y="-593" x="581">Services</tspan><tspan y="-587" x="581">Feed</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="317">&#xf069; </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="321">[ITI-48]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359" x="337">Retrieve Value Sets</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="213">eCH-0213</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359" x="232">generate, inactivate, cancel</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-353" x="213">eCH-0214</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-353" x="232"> query by demographics, </tspan><tspan y="-347" x="213">  query by ID, compare</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-341" x="213">eCH-0215</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-341" x="232"> broadcast</tspan><tspan y="-409" x="965">Authorization Decision Request</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="1035">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="1038"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="1038">[PPQ-3/5]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694" x="1060">Mobile Privacy Policy (Bundle) Feed</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="1036">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="1039"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="1040">[PPQ-3]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-594" x="1036">&#xf069;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-594" x="1040">[PPQ-5]</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-688" x="1050">Mobile Privacy Policy Retrieve</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-688" x="1114">[PPQ-5] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-688" x="1132">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694" x="987">Retrieve </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="1004">[RAD-69] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="1023">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-688" x="987">Imaging Doc Set </tspan><tspan y="-599" x="1106"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="1112">[PPQ-5]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="1131">&#xf069;</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="1003">[RAD-69] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="1022">&#xf069;</tspan><tspan y="-456" x="792">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456" x="795"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-456" x="796">[RAD-69]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="1068">&#xf069;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551" x="1072">[PPQ-3]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-556" x="1068">&#xf069;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-556" x="1072">[PPQ-3]</tspan></text>
+
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="1104">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="1107"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551" x="1108">[PPQ-5]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-409" x="1106">&#xf068;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-409" x="1110"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-409" x="1111">[CH:ADR]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="963">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="966"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="968">[CH:ADR] </tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359" x="987">Authorization Decision Request</tspan><tspan y="-359" x="394">Community Information Query </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="452">[CH:CIQ] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="470">&#xf069;</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-409" x="936">[CH:ADR] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-409" x="956">&#xf069;</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="662">[ITI-55] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="678">&#xf068;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359" x="716">Cross Gateway </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="745">[ITI-55] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="761">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-353" x="716">Patient Discovery</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="502">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359" x="505"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="506">[ITI-90]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359" x="521"> Provider Information Query</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-353" x="502">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-353" x="505"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-353" x="506">[CH:PIDD] </tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-353" x="527">Provider Information Delta Download</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="607">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359" x="610"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="612">[ITI-59]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359" x="627"> Provider </tspan><tspan y="-353" x="607">  Information </tspan><tspan y="-347" x="607">  Feed</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="638">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="641"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551" x="642">[ITI-72]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-551" x="657"> </tspan><tspan y="-768" x="640">CH:XUA Authenticate User</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="1186">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="1189"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="1191">[ITI-65]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599" x="1205"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504" x="1185">&#xf068;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504" x="1188"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-504" x="1190">[ITI-43]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-504" x="1204">   </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"  text-decoration="line-through"><tspan y="-504" x="1143">&#xf069;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold" text-decoration="line-through"><tspan y="-504" x="1148">[ITI-42]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" text-decoration="line-through"><tspan y="-504" x="1162"> </tspan><tspan y="-498" x="1143">Register </tspan><tspan y="-492" x="1143">Document </tspan><tspan y="-486" x="1143">Set</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-461" x="1164"> </tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-461" x="1169">Provide and Register</tspan><tspan y="-456" x="1164"> Img Doc Set </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-456" x="1193">[RAD-68] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-456" x="1212">&#xf068;</tspan><tspan y="-457" x="1139">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-457" x="1142"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-457" x="1144">[RAD-69]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-457" x="1162"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="1163">[ITI-81] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="1179">&#xf069;</tspan><tspan y="-551" x="1186">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="1189"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551" x="1190">[ITI-65]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-551" x="1205"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="1144">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="1147"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="1149">[ITI-65]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694" x="1167">Provide Document Bundle</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="830">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="834"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="835">[ITI-57]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694" x="850"> Update </tspan><tspan y="-688" x="830">                Document Set</tspan><tspan y="-694" x="937">Retrieve </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="954">[ITI-68]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="970">&#xf069;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694" x="973"> </tspan><tspan y="-688" x="937">Document</tspan><tspan y="-694" x="725">Retrieve  </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="744">[ITI-81] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="760">&#xf069;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694" x="763"> </tspan><tspan y="-688" x="725">Audit Event</tspan><tspan y="-694" x="890">Find Doc.</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="909">[ITI-67]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="925">&#xf069;</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694" x="928"> </tspan><tspan y="-688" x="890">References</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="424">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="427"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="428">[ITI-104]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-599" x="443"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="317">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="320"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551" x="321">[ITI-83]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-551" x="336"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="210">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="213"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551" x="215">[ITI-119]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="530">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="533"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551" x="535">[ITI-90]</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="556">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="560"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551" x="561">[ITI-130]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-551" x="496">X</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-546" x="460">Remove Line</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-490" x="1050">X Remove Line X</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="373">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-551" x="376"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-551" x="377">[ITI-104]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-551" x="392"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="288">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="291"> </tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="293">[ITI-83]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-686" x="293">Mobile Patient Identifier Cross-reference Query</tspan></text>
+
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="502">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="505"> </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="507">[ITI-90]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-687" x="521">Find Matching Care Services</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="395">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="398"> </tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="399">[ITI-104]</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-686" x="400">Patient Identity Feed FHIR</tspan></text>
+
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="73">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="76"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="78">[ITI-1]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694" x="90"> Maintain Time</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504" x="123">&#xf069;&#xf068;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-504" x="129"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-504" x="130">[ITI-19]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-504" x="145"> Node </tspan><tspan y="-498" x="123">  Authentication</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="156">[ITI-20] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="172">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-688" x="138">Record Audit Event</tspan><tspan y="-694" x="780"> Restricted  </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-694" x="803">[ITI-92] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-694" x="819">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-694" x="822"> </tspan><tspan y="-688" x="780">Update Document Set</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-686" x="743"> </tspan><tspan y="-687" x="125"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-599" x="156">[ITI-20] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-599" x="172">&#xf069;</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-458" x="156">[ITI-20] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-458" x="172">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-359" x="1077"> </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-359" x="1079">[CH:ADR] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-359" x="1098">&#xf068;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-353" x="404">Community Information </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-353" x="450">[CH:CIDD] </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-353" x="470">&#xf069;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-347" x="404">Delta Download</tspan></text>
     </g>
     <g inkscape:groupmode="layer" inkscape:label="Boxes">
         <g clip-path="url(#clip_6)">
@@ -628,48 +656,67 @@
         </g>
     </g>
     <g inkscape:groupmode="layer" inkscape:label="Beschriftung">
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-627.021" x="198.6533">Patient Demographics</tspan><tspan y="-619.021" x="216.78131">Consumer</tspan><tspan y="-535.165" x="313.7333">Patient Identi&#xfb01;er</tspan><tspan y="-527.165" x="314.1813">Cross-reference</tspan><tspan y="-519.165" x="325.49333">Manager</tspan><tspan y="-630.389" x="313">Patient Identi&#xfb01;er</tspan><tspan y="-622.389" x="314">Cross-reference</tspan><tspan y="-614.389" x="323">Consumer</tspan><tspan y="-531.805" x="198">Patient Demographics</tspan><tspan y="-523.805" x="218">Supplier </tspan><tspan y="-441.109" x="752">Initiating</tspan><tspan y="-433.109" x="751">(Imaging)</tspan><tspan y="-425.109" x="752">Gateway</tspan><tspan y="-531.805" x="963">Document</tspan><tspan y="-523.805" x="966">Registry</tspan><tspan y="-441.109" x="638">Responding</tspan><tspan y="-433.109" x="641">(Imaging)</tspan><tspan y="-425.109" x="642">Gateway</tspan><tspan y="-627.021" x="643">X-Service</tspan><tspan y="-619.021" x="650">User </tspan><tspan y="-531.797" x="643">X-Service</tspan><tspan y="-523.797" x="645">Provider</tspan><tspan y="-801.357" x="628">User Authentication</tspan><tspan y="-793.357" x="645">Provider</tspan><tspan y="-296.32499" x="440">CPI</tspan><tspan y="-288.32499" x="432">Provider</tspan><tspan y="-292.29298" x="107">Time Server</tspan><tspan y="-300.46098" x="545">HPD</tspan><tspan y="-292.46098" x="522">Healthcare Provider</tspan><tspan y="-284.46098" x="538">Directory</tspan><tspan y="-300.46098" x="332">MDI</tspan><tspan y="-292.46098" x="314">Metadata Index </tspan><tspan y="-284.46098" x="327">Service</tspan><tspan y="-531.78897" x="539">Provider</tspan><tspan y="-523.78897" x="518">Information Directory </tspan><tspan y="-436.38096" x="324">Value Set</tspan><tspan y="-428.38096" x="323">Consumer</tspan><tspan y="-617.605" x="538">Provider </tspan><tspan y="-609.605" x="523">Information Source</tspan><tspan y="-437.093" x="440">CPI</tspan><tspan y="-429.093" x="430">Consumer</tspan><tspan y="-722.229" x="643">X-Service</tspan><tspan y="-714.229" x="651">User</tspan><tspan y="-627.013" x="421">Patient Identitiy</tspan><tspan y="-619.013" x="434">Source</tspan><tspan y="-300.317" x="744">Responding</tspan><tspan y="-292.317" x="748">(Imaging)</tspan><tspan y="-284.317" x="749">Gateway</tspan><tspan y="-300.317" x="645">Initiating</tspan><tspan y="-292.317" x="644">(Imaging)</tspan><tspan y="-284.317" x="645">Gateway</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732.3623" x="623.7729">XUA</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-725.7407" x="1064.8325">Policy Source</tspan><tspan y="-706.4607" x="1060.0325">Policy Consumer</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637.3335" x="197">PDQ</tspan> <tspan y="-618.6435" x="517">HPD</tspan><tspan y="-713.5085" x="1105">CH:PPQ</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637.3335" x="303">PIX</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637.3335" x="410">PIX</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637.3335" x="517">HPD</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-631.5054" x="1064">Policy Source</tspan><tspan y="-612.22537" x="1060">Policy Consumer</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-619.2739" x="1105">CH:PPQ</tspan><tspan y="-637.3339" x="623">XUA</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-731.0415" x="965">Imaging </tspan><tspan y="-723.0415" x="946">Document Consumer</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637.334" x="410">PIX</tspan><tspan y="-541.92398" x="517">HPD</tspan><tspan y="-446.51396" x="304">SVS</tspan>
-        <tspan y="-541.92398" x="623">XUA</tspan><tspan y="-541.92398" x="197">PDQ</tspan><tspan y="-637.334" x="360">CH:PIX</tspan><tspan y="-541.92398" x="303">PIX</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-725.7417" x="108">Time Client</tspan><tspan y="-706.4617" x="106">Secure Node</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732.3618" x="90">CT</tspan><tspan y="-713.50686" x="90">ATNA</tspan><tspan y="-713.50686" x="140">CH:ATNA</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-630.7124" x="108">Time Client</tspan><tspan y="-613.0164" x="106">Secure Node</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637.3335" x="90">CT</tspan><tspan y="-618.4785" x="90">ATNA</tspan><tspan y="-618.4785" x="140">CH:ATNA</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-535.3013" x="108">Time Client</tspan><tspan y="-516.02127" x="106">Secure Node</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-541.9224" x="90">CT</tspan><tspan y="-523.06747" x="90">ATNA</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-531.8008" x="747">X-Assertion</tspan><tspan y="-523.8008" x="752">Provider</tspan><tspan y="-531.8008" x="850">Patient Audit</tspan><tspan y="-523.8008" x="841">Record Repository</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-542.1099" x="837">CH:ATC</tspan><tspan y="-446.88993" x="730">XCA(-I)</tspan><tspan y="-440.88993" x="730">XCPD</tspan><tspan y="-446.88993" x="998">CH:ADR</tspan><tspan y="-306.0899" x="690">&#x00a0;&#x00a0;</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-437.1055" x="944">Authorization Decision</tspan><tspan y="-429.1055" x="963">Consumer</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446.8906" x="1105">CH:ADR</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-437.1055" x="1051">Authorization Decision</tspan><tspan y="-429.1055" x="1073">Provider</tspan><tspan y="-531.8015" x="1076">Policy</tspan><tspan y="-523.8015" x="1069">Repository</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-541.9224" x="1105">CH:PPQ</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-730.4639" x="208">Portable Media </tspan><tspan y="-722.4639" x="221">Creator</tspan><tspan y="-712.0639" x="208">Portable Media </tspan><tspan y="-704.0639" x="219">Importer</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446.8906" x="623">XCA(-I)</tspan><tspan y="-440.8906" x="623">XCPD</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-439.2676" x="843">Update Responder</tspan><tspan y="-421.5716" x="848">Update Initiator</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446.8906" x="837">RMU</tspan><tspan y="-428.0906" x="837">RMU</tspan><tspan y="-446.8906" x="463">CH:CPI</tspan><tspan y="-306.09059" x="460">CH:CPI</tspan><tspan y="-305.9156" x="90">CT</tspan><tspan y="-306.09059" x="730">XCA</tspan><tspan y="-300.09059" x="730">XCPD</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-295.9687" x="1051">Authorization Decision</tspan><tspan y="-287.9687" x="1069">Consumer</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-306.0918" x="1105">CH:ADR</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-295.9687" x="944">Authorization Decision</tspan><tspan y="-287.9687" x="966">Provider</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-306.0918" x="998">CH:ADR</tspan><tspan y="-306.0918" x="623">XCA</tspan><tspan y="-300.0918" x="623">XCPD</tspan>
-        <tspan y="-306.2068" x="303">SVS</tspan>
-        <tspan y="-306.2068" x="517">HPD</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-300.4697" x="227">UPI</tspan><tspan y="-292.4697" x="210">Unique Person</tspan><tspan y="-284.4697" x="200">Identi&#xfb01;cation</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="MyriadPro"><tspan y="-284.4697" x="240.34851"> </tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-284.4697" x="242">Service</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732.1719" x="943">XDS-I</tspan><tspan y="-732.5519" x="197">XDM</tspan><tspan y="-713.96188" x="197">XDM</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-725.4155" x="313">Patient Identi&#xfb01;er</tspan><tspan y="-717.4155" x="314">Cross-reference</tspan><tspan y="-709.4155" x="323">Consumer</tspan><tspan y="-722.04757" x="521">Provider Information</tspan><tspan y="-714.04757" x="536">Consumer</tspan><tspan y="-636.17556" x="538">Provider </tspan><tspan y="-628.17556" x="518">Information Consumer</tspan><tspan y="-722.04757" x="421">Patient Identitiy</tspan><tspan y="-714.04757" x="434">Source</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732.3628" x="303">PIX</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732.3628" x="410">PIX</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732.3628" x="517">HPD</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637" x="303">PIXm</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637" x="410">PIXm</tspan></text>
+
+
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-627" x="198">Patient Demographics</tspan><tspan y="-619" x="216">Consumer</tspan><tspan y="-801" x="628">User Authentication</tspan><tspan y="-793" x="645">Provider</tspan><tspan y="-535" x="313">Patient Identi&#xfb01;er</tspan><tspan y="-527" x="314">Cross-reference</tspan><tspan y="-519" x="325">Manager</tspan><tspan y="-630" x="313">Patient Identi&#xfb01;er</tspan><tspan y="-622" x="314">Cross-reference</tspan><tspan y="-614" x="323">Consumer</tspan><tspan y="-531" x="198">Patient Demographics</tspan><tspan y="-523" x="218">Supplier </tspan><tspan y="-441" x="752">Initiating</tspan><tspan y="-433" x="751">(Imaging)</tspan><tspan y="-425" x="752">Gateway</tspan><tspan y="-441" x="638">Responding</tspan><tspan y="-433" x="641">(Imaging)</tspan><tspan y="-425" x="642">Gateway</tspan></text>
+        
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-531" x="963">Document</tspan><tspan y="-523" x="963">Responder</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-722" x="640">Authorization</tspan><tspan y="-714" x="650">Client</tspan><tspan y="-627" x="640">Authorization</tspan><tspan y="-619" x="650">Client</tspan><tspan y="-531" x="641">Resource</tspan><tspan y="-523" x="645">Server</tspan></text>
+        
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-296" x="440">CPI</tspan><tspan y="-288" x="432">Provider</tspan><tspan y="-292" x="107">Time Server</tspan><tspan y="-300" x="545">HPD</tspan><tspan y="-292" x="522">Healthcare Provider</tspan><tspan y="-284" x="538">Directory</tspan><tspan y="-300" x="332">MDI</tspan><tspan y="-292" x="314">Metadata Index </tspan><tspan y="-284" x="327">Service</tspan>
+        
+        <tspan y="-436" x="324">Value Set</tspan><tspan y="-428" x="323">Consumer</tspan><tspan y="-437" x="440">CPI</tspan><tspan y="-429" x="430">Consumer</tspan><tspan y="-627" x="421">Patient Identitiy</tspan><tspan y="-619" x="434">Source</tspan><tspan y="-300" x="744">Responding</tspan><tspan y="-292" x="748">(Imaging)</tspan><tspan y="-284" x="749">Gateway</tspan><tspan y="-300" x="645">Initiating</tspan><tspan y="-292" x="644">(Imaging)</tspan><tspan y="-284" x="645">Gateway</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446" x="304">SVS</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-725" x="1064">Policy Source</tspan><tspan y="-706" x="1060">Policy Consumer</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732" x="623">IUA</tspan><tspan y="-637" x="623">IUA</tspan><tspan y="-637" x="197">PDQm</tspan><tspan y="-541" x="197">PDQm</tspan> <tspan y="-618" x="517">mCSD</tspan><tspan y="-713" x="1100">CH:PPQm</tspan><tspan y="-733" x="1100">CH:PPQm</tspan><tspan y="-638" x="1100">CH:PPQm</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-541" x="303">PIXm</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637" x="517">mCSD</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-631" x="1064">Policy Source</tspan><tspan y="-612" x="1060">Policy Consumer</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-619" x="1100">CH:PPQm</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-731" x="965">Imaging </tspan><tspan y="-723" x="946">Document Consumer</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-541" x="517">mCSD</tspan>
+        <tspan y="-541" x="623">IUA</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-725" x="108">Time Client</tspan><tspan y="-706" x="106">Secure Node</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732" x="90">CT</tspan><tspan y="-713" x="90">ATNA</tspan><tspan y="-714" x="125">STX:HTTPS IUA</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-630" x="108">Time Client</tspan><tspan y="-613" x="106">Secure Node</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637" x="90">CT</tspan><tspan y="-618" x="90">ATNA</tspan><tspan y="-619" x="125">STX:HTTPS IUA</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-535" x="108">Time Client</tspan><tspan y="-516" x="106">Secure Node</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-541" x="90">CT</tspan><tspan y="-523" x="90">ATNA</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-531" x="850">Patient Audit</tspan><tspan y="-523" x="841">Record Repository</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-542" x="837">CH:ATC</tspan><tspan y="-446" x="730">XCA(-I)</tspan><tspan y="-440" x="730">XCPD</tspan><tspan y="-446" x="998">CH:ADR</tspan><tspan y="-306" x="690">&#x00a0;&#x00a0;</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-437" x="944">Authorization Decision</tspan><tspan y="-429" x="963">Consumer</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446" x="1105">CH:ADR</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-437" x="1051">Authorization Decision</tspan><tspan y="-429" x="1073">Provider</tspan><tspan y="-531" x="1076">Policy</tspan><tspan y="-523" x="1069">Repository</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-541" x="1100">CH:PPQm</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-730" x="208">Portable Media </tspan><tspan y="-722" x="221">Creator</tspan><tspan y="-712" x="208">Portable Media </tspan><tspan y="-704" x="219">Importer</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446" x="623">XCA(-I)</tspan><tspan y="-440" x="623">XCPD</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-439" x="843">Update Responder</tspan><tspan y="-421" x="848">Update Initiator</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446" x="837">RMU</tspan><tspan y="-428" x="837">RMU</tspan><tspan y="-446" x="463">CH:CPI</tspan><tspan y="-306" x="460">CH:CPI</tspan><tspan y="-305" x="90">CT</tspan><tspan y="-306" x="730">XCA</tspan><tspan y="-300" x="730">XCPD</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-295" x="1051">Authorization Decision</tspan><tspan y="-287" x="1069">Consumer</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-306" x="1105">CH:ADR</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-295" x="944">Authorization Decision</tspan><tspan y="-287" x="966">Provider</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-306" x="998">CH:ADR</tspan><tspan y="-306" x="623">XCA</tspan><tspan y="-300" x="623">XCPD</tspan>
+        <tspan y="-306" x="303">SVS</tspan>
+        <tspan y="-306" x="517">HPD</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-300" x="227">UPI</tspan><tspan y="-292" x="210">Unique Person</tspan><tspan y="-284" x="200">Identi&#xfb01;cation</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="MyriadPro"><tspan y="-284" x="240"> </tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-284" x="242">Service</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732" x="943">XDS-I</tspan><tspan y="-732" x="197">XDM</tspan><tspan y="-713" x="197">XDM</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-531" x="742">Authorization</tspan><tspan y="-523" x="752">Server</tspan><tspan y="-717" x="531">Query Client</tspan><tspan y="-631" x="531">Query Client</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-614" x="533">Data Source</tspan></text>
+
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-725" x="313">Patient Identi&#xfb01;er</tspan><tspan y="-717" x="314">Cross-reference</tspan><tspan y="-709" x="323">Consumer</tspan><tspan y="-722" x="421">Patient Identitiy</tspan><tspan y="-714" x="434">Source</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732" x="303">PIXm</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732" x="410">PIXm</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-541" x="730">IUA</tspan><tspan y="-732" x="517">mCSD</tspan></text>
         <g clip-path="url(#clip_7)">
             <path transform="matrix(1,0,0,-1,1148.2211,782.6105)" stroke-width="1.2" stroke-linecap="butt" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="#58595b" d="M0 0V-13.334C0-17.827 3.642-21.469 8.135-21.469H18.612" />
             <path transform="matrix(1,0,0,-1,1104.9423,782.6105)" stroke-width="1.2" stroke-linecap="butt" stroke-dasharray="2" stroke-miterlimit="4" stroke-linejoin="miter" fill="none" stroke="#58595b" d="M0 0V-49.127C0-53.62 3.642-57.263 8.135-57.263H28.947" />
@@ -680,38 +727,46 @@
             <path transform="matrix(1,0,0,-1,1169.692,746.2439)" d="M0 0C0 .78-.638 1.417-1.417 1.417H-74.759C-75.538 1.417-76.176 .78-76.176 0V-34.95C-76.176-35.729-75.538-36.367-74.759-36.367H-1.417C-.638-36.367 0-35.729 0-34.95Z" fill="#ffffff" />
             <path transform="matrix(1,0,0,-1,1169.692,746.2439)" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#231f20" d="M0 0C0 .78-.638 1.417-1.417 1.417H-74.759C-75.538 1.417-76.176 .78-76.176 0V-34.95C-76.176-35.729-75.538-36.367-74.759-36.367H-1.417C-.638-36.367 0-35.729 0-34.95V0Z" />
         </g>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-183.9746" x="1096">IHE Pro&#xfb01;leCH:Pro&#xfb01;le</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-142.4746" x="1151">&#xf069; </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-142.4746" x="1156">[ITI-x]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-142.4746" x="1168"> IHE Transaction</tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-136.4746" x="1151">&#xf069; </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-136.4746" x="1156">[CH:x]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-136.4746" x="1168"> National Integration Pro&#xfb01;le</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-169.1416" x="1123">Actor</tspan></text>
-        <text xml:space="preserve" transform="matrix(.8041423 0 -0 1.2435609 0 935.433)" font-size="4.5705845" font-family="HelveticaNeueLTPro"><tspan y="-106.29597" x="1417.5023"> </tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-99.5283" x="1111">not speci&#xfb01;ed by IHE</tspan><tspan y="-116.6033" x="1135">IHE Transactions grouped with </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-116.6033" x="1195">[ITI-40]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-116.6033" x="1209"> or </tspan></text>
-        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-116.6033" x="1216">[ITI-72]</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-116.6033" x="1231"> including EPR-SPID</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="10" font-family="HelveticaNeueLTPro"><tspan y="-202.5259" x="1092">Legend</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-706.4609" x="945">Document Consumer </tspan></text>
-        <text fill="#3d5f73" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="18" font-family="GloberxBold" font-weight="bold"><tspan y="-877.4512" x="42">Swiss Electronic Patient Record (EPR)</tspan></text>
-        <text fill="#3d5f73" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="14" font-family="GloberRegular"><tspan y="-860.6514" x="42">Overview of IHE Integration Pro&#xfb01;les, National Extensions and National Integration Pro&#xfb01;les   </tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-722.2383" x="743">Patient Audit</tspan><tspan y="-714.2383" x="747">Consumer</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732.3623" x="785">CH:ATC</tspan><tspan y="-713.5073" x="943">XDS</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-725.7407" x="848">Update Initiator</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732.1719" x="837">RMU</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-712.4834" x="856">Document</tspan><tspan y="-704.4834" x="850">Administrator </tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-713.5093" x="837">XDS MU</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-630.9019" x="848">Update Initiator</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637.333" x="837">RMU</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-617.6445" x="856">Document</tspan><tspan y="-609.6445" x="850">Administrator </tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-618.6704" x="837">XDS MU</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-437.1069" x="227">UPI</tspan><tspan y="-429.1069" x="223">Client</tspan><tspan y="-437.1069" x="117">Audit</tspan><tspan y="-429.1069" x="109">Repository</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446.8901" x="90">ATNA</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="MyriadPro"><tspan y="-446.8901" x="258">eCH</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="MyriadPro"><tspan y="-306.0903" x="258">eCH</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-183" x="1096">IHE Pro&#xfb01;leCH:Pro&#xfb01;le</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-142" x="1151">&#xf069; </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-142" x="1156">[ITI-x]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-142" x="1168"> IHE Transaction</tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="Wingdings3"><tspan y="-136" x="1151">&#xf069; </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-136" x="1156">[CH:x]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-136" x="1168"> National Integration Pro&#xfb01;le</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-169" x="1123">Actor</tspan></text>
+        <text xml:space="preserve" transform="matrix(.8041423 0 -0 1.2435609 0 935.433)" font-size="4.5705845" font-family="HelveticaNeueLTPro"><tspan y="-106" x="1417"> </tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-99" x="1111">not speci&#xfb01;ed by IHE</tspan><tspan y="-116" x="1135">IHE Transactions grouped with </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="4" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-116" x="1198">[ITI-40]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-116" x="1211"> or </tspan></text>
+        <text fill="#00aeef" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="4" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-116" x="1217">[ITI-72]</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-116" x="1231"> including EPR-SPID</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="10" font-family="HelveticaNeueLTPro"><tspan y="-202" x="1092">Legend</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-706" x="945">Document Consumer </tspan></text>
+        <text fill="#3d5f73" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="18" font-family="GloberxBold" font-weight="bold"><tspan y="-877" x="42">Swiss Electronic Patient Record (EPR)</tspan></text>
+        <text fill="#3d5f73" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="14" font-family="GloberRegular"><tspan y="-860" x="42">Overview of IHE Integration Pro&#xfb01;les, National Extensions and National Integration Pro&#xfb01;les   </tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-722" x="743">Patient Audit</tspan><tspan y="-714" x="747">Consumer</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732" x="785">CH:ATC</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-725" x="848">Update Initiator</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732" x="837">RMU</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-712" x="856">Document</tspan><tspan y="-704" x="850">Administrator </tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-713" x="837">XDS MU</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-630" x="848">Update Initiator</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637" x="837">RMU</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-617" x="856">Document</tspan><tspan y="-609" x="850">Administrator </tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-618" x="837">XDS MU</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-437" x="227">UPI</tspan><tspan y="-429" x="223">Client</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-437" x="105">Audit</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-437" x="125">Record</tspan></text>        
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-429" x="109">Repository</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-528" x="539">Directory</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446" x="90">ATNA</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446" x="127">ATX: FHIR Feed</tspan></text>
+
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="MyriadPro"><tspan y="-446" x="258">eCH</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="MyriadPro"><tspan y="-306" x="258">eCH</tspan></text>
         <g clip-path="url(#clip_8)">
             <path transform="matrix(1,0,0,-1,1145.6215,46.0141)" d="M0 0C.234-.148 .507-.234 .877-.234 1.367-.234 1.771 .017 1.771 .581 1.771 1.361-.051 1.458-.051 2.5-.051 3.138 .507 3.537 1.208 3.537 1.401 3.537 1.714 3.509 1.988 3.406L1.925 3.047C1.749 3.144 1.469 3.195 1.202 3.195 .792 3.195 .342 3.025 .342 2.512 .342 1.714 2.164 1.709 2.164 .547 2.164-.257 1.475-.575 .86-.575 .473-.575 .171-.496-.04-.404Z" fill="#231f20" />
             <path transform="matrix(1,0,0,-1,1150.8733,44.003358)" d="M0 0C-.193 .085-.427 .148-.621 .148-1.321 .148-1.715-.359-1.715-1.065-1.715-1.726-1.316-2.279-.661-2.279-.433-2.279-.222-2.227-.005-2.148L.029-2.484C-.216-2.569-.444-2.586-.718-2.586-1.652-2.586-2.108-1.874-2.108-1.065-2.108-.171-1.532 .456-.672 .456-.325 .456-.074 .376 .029 .342Z" fill="#231f20" />
@@ -876,16 +931,18 @@
             <path transform="matrix(1,0,0,-1,1139.0565,42.371767)" d="M0 0C0 0-3.013 1.32-8.057 1.32H-8.058C-13.102 1.32-16.115 0-16.115 0-16.115 0-16.385-5.842-15.241-9.145-13.221-14.954-8.059-16.585-8.059-16.585H-8.057-8.056C-8.056-16.585-2.894-14.954-.873-9.145 .271-5.842 0 0 0 0" fill="#ed1c24" />
             <path transform="matrix(1,0,0,-1,1136.3536,47.408205)" d="M0 0V-3.219H-3.755V-6.974H-6.974V-3.219H-10.73V0H-6.974V3.755H-3.756L-3.755 0Z" fill="#ffffff" />
         </g>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-298.2339" x="843">Update Responder</tspan><tspan y="-279.91389" x="848">Update Initiator</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-306.0898" x="837">RMU</tspan><tspan y="-287.69984" x="837">RMU</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-627.0215" x="1176">Document</tspan><tspan y="-619.0215" x="1181">Source</tspan><tspan y="-531.7975" x="1176">Document</tspan><tspan y="-523.7975" x="1175">Repository</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637.334" x="1157">XDS</tspan><tspan y="-541.92398" x="1157">XDS</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-437.0444" x="1179">Imaging</tspan><tspan y="-429.0444" x="1164">Document Source</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446.7036" x="1157">XDS-I</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-721.8594" x="1176">Document</tspan><tspan y="-713.8594" x="1181">Source</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732.1719" x="1157">XDS</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-295.9673" x="1159">Patient Audit Record </tspan><tspan y="-287.9673" x="1175">Repository</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-306.0903" x="1212">CH:ATC</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-298" x="843">Update Responder</tspan><tspan y="-279" x="848">Update Initiator</tspan></text>
+
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-531" x="1176">Document</tspan><tspan y="-523" x="1175">Recipient</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-306" x="837">RMU</tspan><tspan y="-287" x="837">RMU</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-627" x="1176">Document</tspan><tspan y="-619" x="1181">Source</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637" x="1157">MHD</tspan><tspan y="-541" x="1157">MHD</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-437" x="1179">Imaging</tspan><tspan y="-429" x="1164">Document Source</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446" x="1157">XDS-I</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-721" x="1176">Document</tspan><tspan y="-713" x="1181">Source</tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-732" x="1157">MHD</tspan><tspan y="-713" x="943">XDS</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-295" x="1159">Patient Audit Record </tspan><tspan y="-287" x="1175">Repository</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-306" x="1212">CH:ATC</tspan></text>
         <g clip-path="url(#clip_9)">
             <path transform="matrix(1,0,0,-1,1044.131,70.41687)" d="M0 0V9.237H5.304V7.561H2.174V5.581H5.082V3.919H2.174V1.676H5.428V0Z" fill="#00345e" />
             <path transform="matrix(1,0,0,-1,1053.5059,65.44537)" d="M0 0H.554C1.399 0 1.787 .554 1.787 1.329 1.787 2.16 1.316 2.659 .499 2.659H0ZM-2.16-4.971V4.265H.845C2.687 4.265 4.016 3.268 4.016 1.329 4.016-.623 2.673-1.62 .831-1.62H.014V-4.971Z" fill="#00345e" />
@@ -927,28 +984,28 @@
             <path transform="matrix(1,0,0,-1,1013.7202,76.4577)" d="M0 0C-5.857 0-10.622 4.765-10.622 10.622-10.622 16.478-5.857 21.243 0 21.243 5.856 21.243 10.621 16.478 10.621 10.622 10.621 4.765 5.856 0 0 0" fill="#00345e" />
             <path transform="matrix(1,0,0,-1,1019.5309,64.09247)" d="M0 0V-3.486H-4.068V-7.554H-7.554V-3.486H-11.621V0H-7.554V4.067H-4.068V0Z" fill="#ffffff" />
         </g>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-201.5898" x="42">IHE Pro&#xfb01;les (Annex 5), CH:Extension (Annex 5, Amendment 1)</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-191.98979" x="42">ATNA Audit Trail and Node Authentication</tspan><tspan y="-182.38979" x="42">CT Consistent Time (basic functionality)</tspan><tspan y="-172.78978" x="42">HPD Health Provider Directory</tspan><tspan y="-163.18978" x="42">PDQV3 Patient Demographics Query HL7 V3</tspan><tspan y="-153.58977" x="42">PIXV3 Patient Identi&#xfb01;er Cross-referencing HL7 V3</tspan><tspan y="-143.98976" x="42">RMU Restricted Metadata Update</tspan><tspan y="-134.38976" x="42">SVS Sharing Value Sets</tspan><tspan y="-124.78976" x="42">XCA Cross-Community Access</tspan><tspan y="-115.18976" x="42">XCA-I Cross-Community Access for Imaging </tspan><tspan y="-105.58976" x="42">XCPD Cross-Community Patient Discovery</tspan><tspan y="-95.98976" x="42">XDM Cross-Enterprise Document Media Interchange</tspan><tspan y="-86.38976" x="42">XDS Cross-Enterprise Document Sharing</tspan><tspan y="-76.789768" x="42">XDS-I Cross-Enterprise Document Sharing for Imaging</tspan><tspan y="-67.189769" x="42">XDS MU Document Metadata Update</tspan><tspan y="-57.589769" x="42">XUA Cross-Enterprise User Assertion</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-201.58977" x="323">National Integration Pro&#xfb01;les (Annex 5, Amendment 2)</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-191.98976" x="323">CH:ADR Authorization Decision Request </tspan><tspan y="-182.38976" x="323">CH:ATC Audit Trail Consumption</tspan><tspan y="-172.78975" x="323">CH:CPI Community Portal Index</tspan><tspan y="-163.18975" x="323">CH:PPQ Privacy Policy Query</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-147.18975" x="323">eCH</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-137.58974" x="323">213, 214, 215 Unique Person Identi&#xfb01;cation Service</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-121.58974" x="323">Electronic Authentication Means and Their Issuers  (Annex 8)</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-111.98974" x="323">PP Protection Pro&#xfb01;le for Authentication Means</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-636.17379" x="965">Imaging </tspan><tspan y="-628.17379" x="946">Document Consumer</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637.3066" x="943">XDS-I</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-612.2227" x="945">Document Consumer </tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-618.645" x="943">XDS</tspan><tspan y="-541.92007" x="943">XDS</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-201" x="42">IHE Pro&#xfb01;les (Annex 5), CH:Extension (Annex 5, Amendment 1)</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-191" x="42">ATNA Audit Trail and Node Authentication</tspan><tspan y="-182" x="42">CT Consistent Time (basic functionality)</tspan><tspan y="-172" x="42">HPD Health Provider Directory</tspan><tspan y="-163" x="42">PDQV3 Patient Demographics Query HL7 V3</tspan><tspan y="-153" x="42">PIXmV3 Patient Identi&#xfb01;er Cross-referencing HL7 V3</tspan><tspan y="-143" x="42">RMU Restricted Metadata Update</tspan><tspan y="-134" x="42">SVS Sharing Value Sets</tspan><tspan y="-124" x="42">XCA Cross-Community Access</tspan><tspan y="-115" x="42">XCA-I Cross-Community Access for Imaging </tspan><tspan y="-105" x="42">XCPD Cross-Community Patient Discovery</tspan><tspan y="-95" x="42">XDM Cross-Enterprise Document Media Interchange</tspan><tspan y="-86" x="42">XDS Cross-Enterprise Document Sharing</tspan><tspan y="-76" x="42">XDS-I Cross-Enterprise Document Sharing for Imaging</tspan><tspan y="-67" x="42">XDS MU Document Metadata Update</tspan><tspan y="-57" x="42">XUA Cross-Enterprise User Assertion</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-201" x="323">National Integration Pro&#xfb01;les (Annex 5, Amendment 2)</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-191" x="323">CH:ADR Authorization Decision Request </tspan><tspan y="-182" x="323">CH:ATC Audit Trail Consumption</tspan><tspan y="-172" x="323">CH:CPI Community Portal Index</tspan><tspan y="-163" x="323">CH:PPQ Privacy Policy Query</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-147" x="323">eCH</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-137" x="323">213, 214, 215 Unique Person Identi&#xfb01;cation Service</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro" font-weight="bold"><tspan y="-121" x="323">Electronic Authentication Means and Their Issuers  (Annex 8)</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-111" x="323">PP Protection Pro&#xfb01;le for Authentication Means</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-636" x="965">Imaging </tspan><tspan y="-628" x="946">Document Consumer</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-637" x="943">XDS-I</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-612" x="945">Document Consumer </tspan></text>
+        <text fill="#f50000" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-618" x="943">MHD</tspan><tspan y="-541" x="943">MHD</tspan></text>
         <g clip-path="url(#clip_10)">
             <path transform="matrix(1,0,0,-1,589.5305,500.70799)" d="M0 0H-75.701" fill="#ffffff" />
             <path transform="matrix(1,0,0,-1,589.5305,500.70799)" stroke-width="2" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#f68b1e" d="M0 0H-75.701" />
         </g>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-427.249" x="538">Provider </tspan><tspan y="-419.249" x="522">Information Source</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446.9653" x="516">HPD</tspan><tspan y="-428.2753" x="516">HPD</tspan></text>
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-445.8076" x="538">Provider </tspan><tspan y="-437.8076" x="517">Information Consumer</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-427" x="538">Provider </tspan><tspan y="-419" x="522">Information Source</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="5" font-family="HelveticaNeueLTPro"><tspan y="-446" x="516">HPD</tspan><tspan y="-428" x="516">HPD</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="8" font-family="HelveticaNeueLTPro"><tspan y="-445" x="538">Provider </tspan><tspan y="-437" x="517">Information Consumer</tspan></text>
     </g>
     <g inkscape:groupmode="layer" inkscape:label="Blank out Logos">
-        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="6" font-family="HelveticaNeueLTPro"><tspan y="-25.5303" x="1161">V4.0 gem&#x00e4;ss EPDV-EDI vom 15.04.2021</tspan></text>
+        <text fill="#231f20" xml:space="preserve" transform="matrix(1 0 -0 1 0 935.433)" font-size="6" font-family="HelveticaNeueLTPro"><tspan y="-25" x="1161">V4.0 gem&#x00e4;ss EPDV-EDI vom 15.04.2021</tspan></text>
         <g clip-path="url(#clip_11)">
             <path transform="matrix(1,0,0,-1,1240.7905,895.8366)" d="M0 0C.001-2.668-2.16-4.832-4.828-4.833-7.497-4.835-9.661-2.674-9.663-.006V0C-9.664 2.668-7.502 4.832-4.834 4.834-2.166 4.835-.002 2.674 0 .006Z" fill="#ffffff" />
             <path transform="matrix(1,0,0,-1,1238.3496,895.29708)"
